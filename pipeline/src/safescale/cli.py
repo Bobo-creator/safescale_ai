@@ -4,7 +4,7 @@ import argparse
 import logging
 from pathlib import Path
 
-from safescale import config
+from safescale import config, db
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -27,7 +27,9 @@ def main(argv: list[str] | None = None) -> int:
     config.load_dotenv()
 
     if args.command == "migrate":
-        raise NotImplementedError("migrate is implemented in task 2")
+        with db.connect() as conn:
+            applied = db.migrate(conn)
+        print(f"applied {len(applied)} migration(s): {', '.join(applied) or 'up to date'}")
     if args.command == "ingest":
         raise NotImplementedError("ingest is implemented in task 7")
     return 0
