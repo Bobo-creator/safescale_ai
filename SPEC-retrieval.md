@@ -184,6 +184,17 @@ pipeline/tests/retrieval/
    This is a manual check; the formal benchmark is in `evaluation`.
 7. Tests and lint pass with no network access.
 
+## Implementation notes (2026-10-07)
+
+- **Vector search is plpgsql with dynamic SQL** (`003_vector_search_plan.sql`). As a SQL function
+  with a `SET search_path` clause it was planned with `k` unknown, and Postgres chose a sequential
+  scan + sort (~62 ms) over the HNSW index. Planning per call with the real `k` brings it to ~1 ms.
+- **Measured on Supabase (warm):** vector ~1.2 ms, hybrid ~21 ms in the database; ~110 ms round
+  trip from a laptop. The first query after the free-tier project has been idle can take seconds
+  (cold cache), so warm it up before a live demo.
+- **Full embed:** 10,039 recalls, 2.85 M tokens (≈ $0.06 at $0.02 / 1M), ~2 minutes.
+- `Hit` also carries `recall_date`; `FakeEmbedder` lives in `pipeline/tests/fake_embedder.py`.
+
 ## Open questions
 
 1. **OpenAI API key:** you'll need to create one (platform.openai.com → API keys) and add

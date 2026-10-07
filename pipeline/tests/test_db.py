@@ -8,7 +8,7 @@ def _tables(conn) -> set[str]:
 
 def test_migrate_creates_tables(conn):
     applied = db.migrate(conn)
-    assert applied == ["001_recalls.sql", "002_retrieval.sql"]
+    assert applied == ["001_recalls.sql", "002_retrieval.sql", "003_vector_search_plan.sql"]
     assert {"recalls", "ingest_runs", "schema_migrations", "recall_embeddings"} <= _tables(conn)
 
 

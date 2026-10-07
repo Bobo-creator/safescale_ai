@@ -34,7 +34,7 @@ Early development: CS Seminar MVP (Layer 1: Product Hazard Intelligence).
 |---|---|---|
 | data-ingest | [SPEC-data-ingest.md](SPEC-data-ingest.md) | Done: 10,039 recalls in Supabase |
 | hazard-taxonomy | — | Not started |
-| retrieval | [SPEC-retrieval.md](SPEC-retrieval.md) | Spec drafted |
+| retrieval | [SPEC-retrieval.md](SPEC-retrieval.md) | Done: 10,039 recalls embedded; vector / keyword / hybrid search |
 | hazard-analysis | — | Not started |
 | explain | — | Not started |
 | app | — | Not started |
@@ -64,7 +64,10 @@ cp .env.example .env
 cd pipeline && uv sync
 uv run safescale migrate      # create tables
 uv run safescale ingest       # download all CPSC recalls (~10k) and load them
-uv run pytest                 # tests (use the safescale_test database)
+uv run safescale embed        # embed new/changed recalls with OpenAI (needs OPENAI_API_KEY)
+uv run safescale search "rechargeable night light, lithium-ion battery" --method hybrid
+uv run pytest                 # offline tests (use the safescale_test database)
+uv run pytest -m live         # optional: one real OpenAI call
 ```
 
 ### Supabase
