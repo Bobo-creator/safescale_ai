@@ -8,8 +8,8 @@ def _tables(conn) -> set[str]:
 
 def test_migrate_creates_tables(conn):
     applied = db.migrate(conn)
-    assert applied == ["001_recalls.sql"]
-    assert {"recalls", "ingest_runs", "schema_migrations"} <= _tables(conn)
+    assert applied == ["001_recalls.sql", "002_retrieval.sql"]
+    assert {"recalls", "ingest_runs", "schema_migrations", "recall_embeddings"} <= _tables(conn)
 
 
 def test_migrate_is_idempotent(conn):
