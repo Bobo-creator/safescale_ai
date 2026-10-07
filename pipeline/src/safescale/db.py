@@ -13,7 +13,9 @@ _CREATE_MIGRATIONS_TABLE = """
 create table if not exists schema_migrations (
   filename   text primary key,
   applied_at timestamptz not null default now()
-)
+);
+-- Keep bookkeeping out of Supabase's public Data API, like the data tables.
+alter table schema_migrations enable row level security;
 """
 
 

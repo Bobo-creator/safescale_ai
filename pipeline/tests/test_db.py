@@ -17,9 +17,9 @@ def test_migrate_is_idempotent(conn):
     assert db.migrate(conn) == []
 
 
-def test_rls_enabled_on_data_tables(migrated_conn):
+def test_rls_enabled_on_every_public_table(migrated_conn):
     rows = migrated_conn.execute(
-        "select relname from pg_class where relname in ('recalls', 'ingest_runs') "
-        "and relrowsecurity"
+        "select c.relname from pg_class c join pg_namespace n on n.oid = c.relnamespace "
+        "where n.nspname = 'public' and c.relkind = 'r' and not c.relrowsecurity"
     )
-    assert {row[0] for row in rows} == {"recalls", "ingest_runs"}
+    assert [row[0] for row in rows] == []
