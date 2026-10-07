@@ -32,7 +32,7 @@ Early development: CS Seminar MVP (Layer 1: Product Hazard Intelligence).
 
 | Module | Spec | Status |
 |---|---|---|
-| data-ingest | [SPEC-data-ingest.md](SPEC-data-ingest.md) | Built and verified locally (Supabase pending) |
+| data-ingest | [SPEC-data-ingest.md](SPEC-data-ingest.md) | Done: 10,039 recalls in Supabase |
 | hazard-taxonomy | — | Not started |
 | retrieval | — | Not started |
 | hazard-analysis | — | Not started |
@@ -66,6 +66,22 @@ uv run safescale migrate      # create tables
 uv run safescale ingest       # download all CPSC recalls (~10k) and load them
 uv run pytest                 # tests (use the safescale_test database)
 ```
+
+### Supabase
+
+Production data lives in the Supabase project `safescale-ai` (`us-east-1`, Postgres 17). The
+pipeline connects through the **session pooler** as a dedicated `safescale_pipeline` role, which
+can create and write its own tables in `public` but is not a superuser:
+
+```sql
+create role safescale_pipeline login password '<secret>';
+grant usage, create on schema public to safescale_pipeline;
+```
+
+Its connection string lives only in `.env` (git-ignored). To run the pipeline against your
+local database instead, override it: `DATABASE_URL=postgresql://localhost/safescale uv run safescale ingest`.
+All tables have RLS enabled with no policies, so the public Data API cannot read them until the
+`app` module defines access.
 
 ## Repository layout (planned)
 

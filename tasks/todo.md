@@ -106,14 +106,14 @@ record with its RecallID and reason.
 put the connection string in `.env`, run `safescale migrate` and `safescale ingest` against it,
 then check the Supabase security advisors.
 **Acceptance:**
-- [ ] Supabase has ≥ 10,000 rows in `recalls` and one `ingest_runs` row
-- [ ] RLS is enabled on the new tables (no public read/write through the Data API until `app` decides access)
-- [ ] No critical security advisor warnings
+- [x] Supabase has ≥ 10,000 rows in `recalls` and one `ingest_runs` row
+- [x] RLS is enabled on the new tables (no public read/write through the Data API until `app` decides access)
+- [x] No critical security advisor warnings
 **Verify:** row count via SQL; Supabase advisors
 **Dependencies:** 7
 **Files:** `.env` (local only), possibly `db/migrations/002_rls.sql`
 **Scope:** S
 
 ### Checkpoint: data-ingest complete
-- [ ] Spec success criteria met on Supabase
-- [ ] README status updated; commit
+- [x] Spec success criteria met on Supabase
+- [x] README status updated; commit
