@@ -1,12 +1,8 @@
-import os
-
 import psycopg
 import pytest
+from tests_support import TEST_DATABASE_URL
 
-from safescale import config, db
-
-config.load_dotenv()
-TEST_DATABASE_URL = os.environ.get("TEST_DATABASE_URL", "postgresql://localhost/safescale_test")
+from safescale import db
 
 
 @pytest.fixture
@@ -26,3 +22,14 @@ def conn():
 def migrated_conn(conn):
     db.migrate(conn)
     return conn
+
+
+@pytest.fixture
+def fixture_recalls(migrated_conn):
+    """Migrated test DB loaded with the 18 fixture recalls."""
+    from pathlib import Path
+
+    from safescale.ingest import run_ingest
+
+    run_ingest(migrated_conn, snapshot=Path(__file__).parent / "fixtures" / "recalls_sample.json")
+    return migrated_conn
