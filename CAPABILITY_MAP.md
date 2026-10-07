@@ -29,5 +29,9 @@ Approach: a thin end-to-end slice first (small record subset, plain k-NN, minima
 | Ingestion runtime | Run locally / scheduled job, writes to Supabase | Not part of the request path |
 | Labeled test set | Claude drafts candidates; project owner reviews and labels | |
 | Team / timeline | Solo builder, no fixed deadline | |
+| Vector store | pgvector in Supabase (not Pinecone) | ~10k records; one DB for vectors, metadata and BM25 |
+
+Data finding (2026-10-06): CPSC `HazardType` is empty on every record, so hazard-taxonomy must
+classify from free text.
 
 Out of scope for v1 (brief's nice-to-haves): auth, saved projects, BOM upload, HDBSCAN clustering, second jurisdiction.
