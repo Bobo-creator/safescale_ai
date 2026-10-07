@@ -32,7 +32,7 @@ Early development: CS Seminar MVP (Layer 1: Product Hazard Intelligence).
 
 | Module | Spec | Status |
 |---|---|---|
-| data-ingest | [SPEC-data-ingest.md](SPEC-data-ingest.md) | Spec drafted |
+| data-ingest | [SPEC-data-ingest.md](SPEC-data-ingest.md) | Built and verified locally (Supabase pending) |
 | hazard-taxonomy | — | Not started |
 | retrieval | — | Not started |
 | hazard-analysis | — | Not started |
@@ -47,13 +47,25 @@ See [CAPABILITY_MAP.md](CAPABILITY_MAP.md) for module boundaries, build order an
 | Layer | Choice |
 |---|---|
 | Data pipeline | Python 3.12, `uv`, `httpx`, `pydantic`, `psycopg` |
-| Database | PostgreSQL + `pgvector` (Supabase in production, Docker locally) |
+| Database | PostgreSQL 17 + `pgvector` (Supabase in production, Homebrew locally) |
 | Embeddings | OpenAI `text-embedding-3-small` (open-source model benchmarked in evaluation) |
 | LLM explanation | OpenAI, grounded in retrieved records only |
 | API | FastAPI |
 | Frontend | Next.js / React |
 | Hosting | Vercel + Supabase |
 | Data source | [CPSC Recalls API](https://www.saferproducts.gov/RestWebServices/Recall) (U.S.) |
+
+## Getting started (pipeline)
+
+```bash
+brew install uv postgresql@17 pgvector && brew services start postgresql@17
+createdb safescale && createdb safescale_test
+cp .env.example .env
+cd pipeline && uv sync
+uv run safescale migrate      # create tables
+uv run safescale ingest       # download all CPSC recalls (~10k) and load them
+uv run pytest                 # tests (use the safescale_test database)
+```
 
 ## Repository layout (planned)
 

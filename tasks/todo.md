@@ -8,9 +8,9 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-data-ingest.md](../SPEC-data-ingest.md)
 **Description:** Install `uv`; create the `pipeline/` package with a `safescale` CLI entry point,
 ruff and pytest configured; add `.gitignore` (data/raw, .env, venvs) and `.env.example`.
 **Acceptance:**
-- [ ] `uv run safescale --help` lists `migrate` and `ingest`
-- [ ] `uv run pytest` runs (a smoke test passes); `uv run ruff check .` is clean
-- [ ] `data/raw/` and `.env` are git-ignored
+- [x] `uv run safescale --help` lists `migrate` and `ingest`
+- [x] `uv run pytest` runs (a smoke test passes); `uv run ruff check .` is clean
+- [x] `data/raw/` and `.env` are git-ignored
 **Verify:** run the three commands above; `git check-ignore data/raw/x.json .env`
 **Dependencies:** None
 **Files:** `pipeline/pyproject.toml`, `pipeline/src/safescale/cli.py`, `pipeline/tests/test_smoke.py`, `.gitignore`, `.env.example`
@@ -21,9 +21,9 @@ ruff and pytest configured; add `.gitignore` (data/raw, .env, venvs) and `.env.e
 Write `db/migrations/001_recalls.sql` (from the spec) and `db.py` with a runner that applies
 pending files in order and records them in `schema_migrations`.
 **Acceptance:**
-- [ ] `uv run safescale migrate` creates `recalls`, `ingest_runs`, `schema_migrations`
-- [ ] Running it again applies nothing and exits 0
-- [ ] Integration test proves both behaviours on a throwaway test database
+- [x] `uv run safescale migrate` creates `recalls`, `ingest_runs`, `schema_migrations`
+- [x] Running it again applies nothing and exits 0
+- [x] Integration test proves both behaviours on a throwaway test database
 **Verify:** `uv run pytest tests/test_db.py`; `psql safescale -c '\dt'`
 **Dependencies:** 1
 **Files:** `db/migrations/001_recalls.sql`, `pipeline/src/safescale/db.py`, `pipeline/src/safescale/cli.py`, `pipeline/tests/conftest.py`, `pipeline/tests/test_db.py`
@@ -34,15 +34,15 @@ pending files in order and records them in `schema_migrations`.
 chosen for edge cases: no hazards, no description, HTML entities, multiple products, a 1970s
 record, a recent record with empty `Products[].Type`.
 **Acceptance:**
-- [ ] Fixture file exists, is valid JSON, and covers every edge case listed (noted in a README beside it)
+- [x] Fixture file exists, is valid JSON, and covers every edge case listed (noted in a README beside it)
 **Verify:** `python -m json.tool` on the file; manual review of the edge-case list
 **Dependencies:** 1
 **Files:** `pipeline/tests/fixtures/recalls_sample.json`, `pipeline/tests/fixtures/README.md`
 **Scope:** XS
 
 ### Checkpoint: Foundation
-- [ ] Tests and lint pass
-- [ ] `safescale migrate` works on the local DB
+- [x] Tests and lint pass
+- [x] `safescale migrate` works on the local DB
 
 ## Phase 2: Core pipeline
 
@@ -51,8 +51,8 @@ record, a recent record with empty `Products[].Type`.
 unescape/strip, whitespace, placeholders → None, list dedupe, date parsing) and maps a raw record
 to a cleaned `RecallRow`.
 **Acceptance:**
-- [ ] All fixture records parse; a deliberately malformed record raises a validation error naming the field
-- [ ] Unit tests cover each cleaning rule and each fixture edge case
+- [x] All fixture records parse; a deliberately malformed record raises a validation error naming the field
+- [x] Unit tests cover each cleaning rule and each fixture edge case
 **Verify:** `uv run pytest tests/ingest/test_clean.py`
 **Dependencies:** 3
 **Files:** `ingest/models.py`, `ingest/clean.py`, `tests/ingest/test_clean.py`
@@ -62,8 +62,8 @@ to a cleaned `RecallRow`.
 **Description:** `document.py` builds the `Title / Products / Hazard / Description / Injuries` text,
 omitting empty sections, and computes `content_hash`.
 **Acceptance:**
-- [ ] Every fixture produces a non-empty document; empty sections are omitted
-- [ ] The same input always produces the same hash (deterministic order and formatting)
+- [x] Every fixture produces a non-empty document; empty sections are omitted
+- [x] The same input always produces the same hash (deterministic order and formatting)
 **Verify:** `uv run pytest tests/ingest/test_document.py`
 **Dependencies:** 4
 **Files:** `ingest/document.py`, `tests/ingest/test_document.py`
@@ -73,9 +73,9 @@ omitting empty sections, and computes `content_hash`.
 **Description:** `load.py` upserts cleaned rows in one transaction, returns
 inserted/updated/unchanged/rejected counts, and writes an `ingest_runs` row.
 **Acceptance:**
-- [ ] Fresh load: inserted = N, updated = 0
-- [ ] Immediate re-load: inserted = 0, updated = 0
-- [ ] Changing one record's raw content: updated = 1, and `updated_at` moves for that row only
+- [x] Fresh load: inserted = N, updated = 0
+- [x] Immediate re-load: inserted = 0, updated = 0
+- [x] Changing one record's raw content: updated = 1, and `updated_at` moves for that row only
 **Verify:** `uv run pytest tests/ingest/test_load.py`
 **Dependencies:** 2, 5
 **Files:** `ingest/load.py`, `tests/ingest/test_load.py`
@@ -86,18 +86,18 @@ inserted/updated/unchanged/rejected counts, and writes an `ingest_runs` row.
 SHA-256. Wire `safescale ingest [--snapshot PATH] [--limit N]` end to end, logging every rejected
 record with its RecallID and reason.
 **Acceptance:**
-- [ ] Mocked-HTTP test: fetch writes a snapshot and returns the correct hash
-- [ ] `--snapshot` makes no network call; `--limit 500` loads exactly 500 rows
-- [ ] Real run against local DB: ≥ 10,000 rows in < 2 min; re-run reports 0 inserted / 0 updated
+- [x] Mocked-HTTP test: fetch writes a snapshot and returns the correct hash
+- [x] `--snapshot` makes no network call; `--limit 500` loads exactly 500 rows
+- [x] Real run against local DB: ≥ 10,000 rows in < 2 min; re-run reports 0 inserted / 0 updated
 **Verify:** `uv run pytest`; `time uv run safescale ingest`; run it twice; SQL spot-checks for the spec's success criteria 3–6
 **Dependencies:** 6
 **Files:** `ingest/fetch.py`, `ingest/__init__.py` (pipeline orchestration), `cli.py`, `tests/ingest/test_fetch.py`
 **Scope:** M
 
 ### Checkpoint: Core (spec success criteria 1–7, locally)
-- [ ] All tests and lint pass
-- [ ] Full local ingest meets every success criterion in the spec
-- [ ] Review with you before touching Supabase
+- [x] All tests and lint pass
+- [x] Full local ingest meets every success criterion in the spec
+- [x] Review with you before touching Supabase
 
 ## Phase 3: Production database
 

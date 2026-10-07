@@ -44,11 +44,15 @@ and re-running it changes nothing unless CPSC published changes.
 4. **Build `document`:** a canonical text field that `retrieval` (embeddings + BM25) uses:
    ```
    Title: <title>
-   Products: <product names; types>
+   Products: <product names>
+   Product types: <types>
    Hazard: <hazard names>
    Description: <description>
    Injuries: <injury text>
    ```
+   Empty sections are omitted, and so are injury texts that only say none occurred
+   ("None reported.", "No incidents have been reported."), since they appear in thousands of
+   records and would only add noise to similarity.
    `content_hash = sha256(document)`, so downstream modules re-embed only rows that changed.
 5. **Load:** upsert into `recalls` keyed on `recall_id`, in one transaction. Insert a row into
    `ingest_runs` recording counts and the snapshot hash.
@@ -57,7 +61,7 @@ and re-running it changes nothing unless CPSC published changes.
 
 ```sql
 CREATE TABLE recalls (
-  recall_id              INTEGER PRIMARY KEY,         -- CPSC RecallID
+  recall_id              BIGINT PRIMARY KEY,          -- CPSC RecallID
   recall_number          TEXT,
   recall_date            DATE NOT NULL,
   last_publish_date      DATE,
@@ -79,7 +83,7 @@ CREATE TABLE recalls (
 );
 
 CREATE TABLE ingest_runs (
-  run_id           BIGSERIAL PRIMARY KEY,
+  run_id           BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   started_at       TIMESTAMPTZ NOT NULL,
   finished_at      TIMESTAMPTZ,
   source           TEXT NOT NULL,          -- 'api' | 'snapshot'
@@ -92,18 +96,19 @@ CREATE TABLE ingest_runs (
 );
 ```
 
-Vector and full-text columns are **not** added here; `retrieval` adds them in its own migration.
+Row Level Security is enabled on every table (no policies), so Supabase's public Data API
+cannot read or write them until `app` defines access. Vector and full-text columns are **not** added here; `retrieval` adds them in its own migration.
 
 ## Tech stack
 
 Python 3.12 managed with `uv`; `httpx` (fetch), `pydantic` v2 (validation), `psycopg` 3 (Postgres),
-`pytest`, `ruff`. Local Postgres uses the `pgvector/pgvector:pg16` Docker image so it matches
-Supabase. Migrations are plain SQL files applied in order by a small runner.
+`pytest`, `ruff`. Local Postgres is Homebrew `postgresql@17` + `pgvector`, matching Supabase's
+Postgres 17 (Docker is not used). Migrations are plain SQL files applied in order by a small runner.
 
 ## Commands
 
 ```bash
-docker compose up -d db                                     # local Postgres + pgvector
+brew services start postgresql@17                           # local Postgres + pgvector
 cd pipeline && uv sync                                      # install deps
 uv run safescale migrate                                    # apply db/migrations/*.sql
 uv run safescale ingest                                     # fetch from API → load
@@ -118,7 +123,6 @@ uv run ruff check . && uv run ruff format --check .         # lint
 ## Project structure
 
 ```
-docker-compose.yml
 db/migrations/001_recalls.sql
 data/raw/                          # snapshots (git-ignored)
 pipeline/

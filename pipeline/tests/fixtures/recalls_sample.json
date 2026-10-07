@@ -1,0 +1,1319 @@
+[
+  {
+    "RecallID": 3722,
+    "RecallNumber": "73003",
+    "RecallDate": "1973-06-08T00:00:00",
+    "Description": "Tappan Built-In Ovens Warning NEWS from CPSC U.S. Consumer Product Safety Commission Office of Information and Public Affairs Washington, DC 20207 FOR IMMEDIATE RELEASE June 8, 1973 Release # 73-003 Consumer Product Safety Commission Says Some Tappan Built-In Ovens May Pose Hazard To Consumers WASHINGTON, D.C. (June 8) - The Consumer Product Safety Commission Friday said it has learned from the Tappan Company of a defect in certain Tappan Company built-in gas ovens manufactured for installation primarily in mobile homes and other newly constructed homes. The Commission said the defect --a possible loose fitting connection-- could result in a hazard to consumers from gas leakage. The ovens in question were manufactured between January 23, 1973, and May 31, 1973, by the F.H. Lawson Company, Springfield, Tennessee, for the Tappan Company. While the majority of the ovens carry the \"Tappan\" name, some were produced for Montgomery Ward and carry the brand-name \"Signature.\" According to Tappan, the problem occurred in some 15,185 ovens, of which 11,974 have been shipped from the place of manufacture. The ovens carry model numbers AZ12-1239; AZ12-1249; AZ12-1441; AKTM-3850; and AKTM-3893. Some 8,172 of the ovens-- model number AZ12-1239-- are used exclusively in mobile homes. The Montgomery Ward ovens--\"Signature\"--carry the \"AKTM\" model number prefix. CPSC Chairman Richard 0. Simpson said the Commission is asking wholesalers, distributors, and retailers who may have the affected ovens in stock or installed in mobile homes or newly constructed homes immediately to contact the Tappan Company. In addition, Simpson said consumers who may have purchased a Tappan or \"Signature\" built-in oven with one of the model numbers in question should contact their local gas company or the nearest Tappan dealer regarding possible gas leakage between the shut-off valve and the pressure regulator. The Commission was told by Tappan that consumers can locate the model number on the oven by opening the top oven door and looking at the metal strip at the top of the oven which carries the model number on it. CPSC investigators have been sent to the Tappan headquarters, Mansfield, Ohio, and to the F.H. Lawson Company to determine whether the remedial action proposed by Tappan is appropriate and to determine the degree of potential hazard to consumers.",
+    "URL": "https://www.cpsc.gov/Recalls/1973/Consumer-Product-Safety-Commission-Says-Some-Tappan-Built-In-Ovens-May-Pose-Hazard-To-Consumers",
+    "Title": "Tappan Built-In Ovens Warning",
+    "ConsumerContact": null,
+    "LastPublishDate": "2015-02-03T00:00:00",
+    "Products": [
+      {
+        "Name": "",
+        "Description": "",
+        "Model": "",
+        "Type": "Ovens/Stoves/Ranges/Microwaves",
+        "CategoryID": "2056",
+        "NumberOfUnits": ""
+      },
+      {
+        "Name": "Montgomery Ward Signature built-in gas ovens",
+        "Description": "",
+        "Model": "",
+        "Type": "",
+        "CategoryID": "",
+        "NumberOfUnits": ""
+      },
+      {
+        "Name": "Tappan built-in gas ovens",
+        "Description": "",
+        "Model": "",
+        "Type": "",
+        "CategoryID": "",
+        "NumberOfUnits": ""
+      }
+    ],
+    "Inconjunctions": [],
+    "Images": [],
+    "Injuries": [],
+    "Manufacturers": [
+      {
+        "Name": "F.H. Lawson",
+        "CompanyID": ""
+      },
+      {
+        "Name": "Tappan",
+        "CompanyID": ""
+      },
+      {
+        "Name": "Montgomery Ward",
+        "CompanyID": ""
+      }
+    ],
+    "Retailers": [],
+    "Importers": [],
+    "Distributors": [],
+    "SoldAtLabel": null,
+    "ManufacturerCountries": [],
+    "ProductUPCs": [],
+    "Hazards": [],
+    "Remedies": [],
+    "RemedyOptions": []
+  },
+  {
+    "RecallID": 2574,
+    "RecallNumber": "04084",
+    "RecallDate": "2004-02-18T00:00:00",
+    "Description": null,
+    "URL": "https://www.cpsc.gov/Recalls/2004/CPSC-Ariens-Co-Announce-Recall-of-Snow-Throwers-",
+    "Title": "CPSC, Ariens Co. Announce Recall of Snow Throwers",
+    "ConsumerContact": "For more information, call Ariens toll-free at (888) 927-4367 between 7:30 a.m. and 4:30 p.m. CT Monday through Friday. Visit the Ariens website: www.ariens.com/safety_recall",
+    "LastPublishDate": "2025-01-28T00:00:00",
+    "Products": [
+      {
+        "Name": "Ariens 13-Horsepower Sno-Throw™, Model 924506",
+        "Description": "",
+        "Model": "",
+        "Type": "Snow Blowers & Throwers",
+        "CategoryID": "2137",
+        "NumberOfUnits": "571"
+      }
+    ],
+    "Inconjunctions": [],
+    "Images": [
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/ariens-snow-blower.jpg",
+        "Caption": "Recalled Ariens 13-Horsepower Sno-Throw™, Model 924506"
+      }
+    ],
+    "Injuries": [
+      {
+        "Name": "Ariens Co. has not received any reports of injuries."
+      }
+    ],
+    "Manufacturers": [
+      {
+        "Name": "Ariens Co., of Brillion, Wis.",
+        "CompanyID": ""
+      }
+    ],
+    "Retailers": [
+      {
+        "Name": "Home Depot stores, from October 7, 2003 to October 24, 2003, for between $2,500 and $2,800. Some units were sold elsewhere but Ariens already has notified those consumers.",
+        "CompanyID": ""
+      }
+    ],
+    "Importers": [],
+    "Distributors": [],
+    "SoldAtLabel": null,
+    "ManufacturerCountries": [
+      {
+        "Country": "United States"
+      }
+    ],
+    "ProductUPCs": [],
+    "Hazards": [
+      {
+        "Name": "The blade may not stop when the blade brake control is applied, resulting in continued blade movement. The potential for injury exists if consumers make contact with the rotary blade.",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [
+      {
+        "Name": "Consumers should stop using these snow throwers immediately and return them to a local Ariens dealer for a free inspection and, if needed, repair. To access the serial numbers for the units affected, check the Ariens website: www.ariens.com/safety_recall"
+      }
+    ],
+    "RemedyOptions": []
+  },
+  {
+    "RecallID": 205,
+    "RecallNumber": "10208",
+    "RecallDate": "2010-04-28T00:00:00",
+    "Description": "This recall involves buoyancy compensators with the following model numbers. Buoyancy compensators provide buoyancy control for scuba divers by allowing them to inflate or deflate the devices. The compensators were sold in black or red. \"OMS\" is printed on the front inside of the compensators. Item and serial numbers are printed on the warning label located in the non-inflation area of the buoyancy compensator. A list of serial numbers included in this recall is available from the firm. Item Number Description BC-TCPS- B TACOPS® BC ; Black BC-TCPS-R TACOPS® BC ; Red BC116-32B16 B Non retraction single tank BC 32 lb. lift / Black BC116-32R Non retraction single tank BC 32 lb. lift / Red BC-LGS45 Larry Green Signature Series 45 lb. lift BC BC-LGS70 Larry Green Signature Series 70 lb. lift BC BC118 - K Dual Bladder BC [inflated] 94 lb. lift Black or Red BC115 - KB Dual Bladder BC, 60 lb. lift in Black BC115 - KR Dual Bladder BC, 60 lb. lift in Red BC118 - K Dual Bladder BC [deflated] 94 lb. lift Black or Red BC117 - K45 Single Bladder BC 45 lb. lift / Black BC117CR - K45 Chemically Resistant 45 lb. lift / Black BC117 - K60 Single Bladder BC, 60 lb. lift / Black BC117 - KB Single Bladder BC, 94 lb. lift / Black BC117 - KR Single Bladder BC, 94 lb. lift / Red BC116-45B Non-retraction Single Bladder BC 45 lb. lift/ Black BC116-60B Non-retraction Single Bladder BC 60 lb. lift/ Black BC116-60R Non-retraction Single Bladder BC 60 lb. lift/ Red BC116-60C Chemically Resistant 60 lb. lift / Black",
+    "URL": "https://www.cpsc.gov/Recalls/2010/Scuba-Diving-Buoyancy-Compensators-Recalled-by-Ocean-Management-Systems-Due-to-Drowning-Hazard",
+    "Title": "Scuba Diving Buoyancy Compensators Recalled by Ocean Management Systems Due to Drowning Hazard",
+    "ConsumerContact": "For additional information, contact Ocean Management Systems toll-free at (877) 791-0315 between 9 a.m. and 4:30 p.m. ET Monday through Friday, visit the firm's website at www.omsdive.com, or email the firm at recall@omsdive.com",
+    "LastPublishDate": "2014-05-23T00:00:00",
+    "Products": [
+      {
+        "Name": "Buoyancy Compensators used for Scuba Diving",
+        "Description": "",
+        "Model": "",
+        "Type": "Scuba Diving/Water Activity Equipment",
+        "CategoryID": "2118",
+        "NumberOfUnits": "About 20,000"
+      }
+    ],
+    "Inconjunctions": [],
+    "Images": [
+      {
+        "URL": "https://www.cpsc.gov/~/link/a9683888e6c04a238461e350f581a779.jpg",
+        "Caption": "Picture of location of BCA 500 Seal Ring"
+      },
+      {
+        "URL": "https://www.cpsc.gov/~/link/70086b23ec7e48ab841b83b36a09d039.jpg",
+        "Caption": "Picture of Recalled OMS-TCPS-R Buoyancy Compensator"
+      },
+      {
+        "URL": "https://www.cpsc.gov/~/link/351200997de744bf8bd2eae3a6cbfbec.jpg",
+        "Caption": "Picture of Recalled BC-LGS45 / BC-LGS70 Buoyancy Compensator"
+      },
+      {
+        "URL": "https://www.cpsc.gov/~/link/835f983d5eb3484fb5b38ea07015ebc8.jpg",
+        "Caption": "Picture of Recalled BC116-32R Buoyancy Compensator"
+      },
+      {
+        "URL": "https://www.cpsc.gov/~/link/603b6c364edc47f3af5475f8b70d00fa.jpg",
+        "Caption": "Picture of Recalled BC118-K / BC115-KR Buoyancy Compensator"
+      },
+      {
+        "URL": "https://www.cpsc.gov/~/link/8c50700d0634459ca91fa1950cdcd25b.jpg",
+        "Caption": "Picture of Recalled BC117-K45<br>BC117CR-K45 Buoyancy Compensator"
+      }
+    ],
+    "Injuries": [
+      {
+        "Name": "None reported."
+      }
+    ],
+    "Manufacturers": [
+      {
+        "Name": "Ocean Management Systems Inc., of Middletown, N.Y.",
+        "CompanyID": ""
+      }
+    ],
+    "Retailers": [
+      {
+        "Name": "Dive stores nationwide from May 2006 through August 2008 for about $400.",
+        "CompanyID": ""
+      }
+    ],
+    "Importers": [],
+    "Distributors": [],
+    "SoldAtLabel": null,
+    "ManufacturerCountries": [
+      {
+        "Country": "United States"
+      }
+    ],
+    "ProductUPCs": [],
+    "Hazards": [
+      {
+        "Name": "The buoyancy compensator seal ring could crack, posing a drowning hazard to divers.",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [
+      {
+        "Name": "Consumers should immediately stop using the diving equipment and contact Ocean Management Systems to receive a free repair."
+      }
+    ],
+    "RemedyOptions": []
+  },
+  {
+    "RecallID": 9237,
+    "RecallNumber": "22082",
+    "RecallDate": "2022-02-16T00:00:00",
+    "Description": "This recall involves Viking Range Freestanding 5 Series Gas Ranges (models VGR and VGIC) manufactured between August 10, 2021 and December 1, 2021 and sold in stainless steel, white, and 14 other contemporary colors, which can be found at www.vikingincolor.com/the-contemporary-colors. The ranges were sold in various surface configurations including all burners or burners with griddle and/or grill. Units with model numbers and the following prefixes and serial numbers beginning with the following date codes are included in this recall: Model Numbers Serial Number Date Codes VGR5304B From 081021 to 120121 VGR5366B From 081021 to 120121 VGR5364G From 081021 to 120121 VGR5488B From 081021 to 120121 VGR5486G From 081021 to 120121 VGR5606GQ From 090221 to 120121 VGIC53024B From 081021 to 120121 VGIC53626B From 081021 to 120121 The model number for each unit is followed by a two-letter abbreviation that indicates the color of the unit. All colors, burner configurations, and gas types designated at the end of the model number are included. For example, base model VGIC53024B may include white units set for propane which would be VGIC53024BWHLP. The first six numeric characters in the serial number represent the manufacturing date. For example, a range with serial number 082421C10019872 was produced August 24, 2021. The model and serial numbers can be found on a label in one of three locations: On the left side panel under the left front grate support/burner bowl, on the front of the oven cavity face frame below the control panel, or on the bottom of the control panel above the door. Consumers should not search for the model and serial number when the range is hot.",
+    "URL": "https://www.cpsc.gov/Recalls/2022/Viking-Range-Recalls-Freestanding-Gas-Ranges-Due-to-Risk-of-Gas-Leak-and-Fire-Hazard",
+    "Title": "Viking Range Recalls Freestanding Gas Ranges Due to Risk of Gas Leak and Fire Hazard",
+    "ConsumerContact": "Viking Range toll-free at 888-566-2512 from 8 a.m. to 5 p.m. ET Monday through Friday, at www.vikingrange.com/rangetubingrecall.com, or at www.vikingrange.com and click on \"Safety Recall Information\" under \"UTILITIES\" at the bottom of the page, then click on \"Freestanding Gas Range Tubing Recall\" for more information.",
+    "LastPublishDate": "2022-02-16T00:00:00",
+    "Products": [
+      {
+        "Name": "Viking 5 Series Freestanding Gas Ranges",
+        "Description": "",
+        "Model": "",
+        "Type": "",
+        "CategoryID": "",
+        "NumberOfUnits": "About 3,050"
+      }
+    ],
+    "Inconjunctions": [],
+    "Images": [
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/1-114019.png",
+        "Caption": "Recalled Viking 5 Series Freestanding Gas Range – Model VGIC53024B"
+      },
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/2-114026.png",
+        "Caption": "Recalled Viking 5 Series Freestanding Gas Range – Model VGIC53626B"
+      },
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/3-114034.png",
+        "Caption": "Recalled Viking 5 Series Freestanding Gas Range – Model VGR5304B"
+      },
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/4-114045.png",
+        "Caption": "Recalled Viking 5 Series Freestanding Gas Range – Model VGR5364G"
+      },
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/5-114055.png",
+        "Caption": "Recalled Viking 5 Series Freestanding Gas Range – Model VGR5366B"
+      },
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/6-114131.png",
+        "Caption": "Recalled Viking 5 Series Freestanding Gas Range – Model VGR5486G"
+      },
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/7-114138PM.png",
+        "Caption": "Recalled Viking 5 Series Freestanding Gas Range – Model VGR5488B"
+      }
+    ],
+    "Injuries": [
+      {
+        "Name": "None reported"
+      }
+    ],
+    "Manufacturers": [
+      {
+        "Name": "Viking Range LLC, of Greenwood, Miss.",
+        "CompanyID": ""
+      }
+    ],
+    "Retailers": [
+      {
+        "Name": "ABT, Ferguson, Best Buy, Pacific Sales, PC Richard &amp; Son and other stores nationwide from August 2021 through December 2021 for between $5,220 and $19,300.",
+        "CompanyID": ""
+      }
+    ],
+    "Importers": [],
+    "Distributors": [],
+    "SoldAtLabel": null,
+    "ManufacturerCountries": [
+      {
+        "Country": "United States"
+      }
+    ],
+    "ProductUPCs": [],
+    "Hazards": [
+      {
+        "Name": "The rigid gas tubing can separate at the joint to the bake, broil and griddle burners, posing a risk of a gas leak and fire hazard when these burners are in operation.",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [
+      {
+        "Name": "Consumers should immediately stop using the bake, broil and griddle functions to avoid a risk of gas leak and contact Viking Range to arrange for a free repair by an Authorized Service Provider. Consumers can continue to use only the top surface burners of the range. Surface burners are those covered by the cooking grates on the top surface of the range. The griddle and ovens should not be operated."
+      }
+    ],
+    "RemedyOptions": [
+      {
+        "Option": "Repair"
+      }
+    ]
+  },
+  {
+    "RecallID": 3724,
+    "RecallNumber": "73014",
+    "RecallDate": "1973-08-20T00:00:00",
+    "Description": "3-M and Borden Spray Adhesives Banned NEWS from CPSC U.S. Consumer Product Safety Commission Office of Information and Public Affairs Washington, DC 20207 FOR IMMEDIATE RELEASE August 20, 1973 Release # 73-014 CPSC Bans Three Spray Adhesives-- Asks Manufacturers Of Others To Halt Production WASHINGTON, D.C. --The Consumer Product Safety Commission Monday, acting under the Hazardous Substances Act, declared that three aerosol spray adhesives manufactured by 3-M Company and Borden Company constitute an imminent hazard and, therefore, banned the products. The Commission--while praising the voluntary action by both Borden and 3-M in immediately halting production and distribution of their spray adhesives--said it was taking the step to stop retail sales of such products to consumers. On Friday, the Commission had urged consumers to discontinue use of spray adhesives which have been possibly linked to chromosome breakage and resulting multiple birth defects. \"We have sufficient evidence to officially declare `Foil Art Spray Adhesive,' 'Scotch Brand Spra-Ment' and 'Krylon Spray Adhesive' banned hazardous products,\" CPSC Chairman Richard 0. Simpson said. \"But we are asking manufacturers of all other aerosol spray adhesives to voluntarily discontinue production and distribution of their goods. And we expect that retailers will act immediately to halt sales of all such products,\" he said. The Commission's action was based on findings by a University of Oklahoma scientist which strongly suggest a causal relationship between exposure to spray adhesives and presence of chromosome breaks and resulting severe birth defects. Under the Hazardous Substances Act, retailers face criminal penalties of up to one year in jail and/or $3,000 in fines for continued sales of the 3-M and Borden brand aerosol spray glues. \"We have instructed CPSC field investigators to begin an immediate spot-check of retail establishments to assure that those spray adhesives are off the shelves,\" Chairman Simpson said. \"In addition, we are designing a comprehensive effort to determine the full extent and implications of the problem. But the complex nature of the situation will prevent an immediate determination of the exact relationship between the spray adhesives and the possible chromosome breakage and resulting multiple birth defects,\" he said. Simpson said that the Commission will continue to release information as it becomes available.",
+    "URL": "https://www.cpsc.gov/Recalls/1973/CPSC-Bans-Three-Spray-Adhesives--Asks-Manufacturers-Of-Others-To-Halt-Production",
+    "Title": "3-M and Borden Spray Adhesives Banned",
+    "ConsumerContact": null,
+    "LastPublishDate": "2015-02-03T00:00:00",
+    "Products": [
+      {
+        "Name": "Foil Art Spray Adhesive aerosol spray adhesives",
+        "Description": "",
+        "Model": "",
+        "Type": "Arts & Crafts",
+        "CategoryID": "1824",
+        "NumberOfUnits": ""
+      },
+      {
+        "Name": "Krylon Spray Adhesive aerosol spray adhesives",
+        "Description": "",
+        "Model": "",
+        "Type": "",
+        "CategoryID": "",
+        "NumberOfUnits": ""
+      },
+      {
+        "Name": "Scotch Brand Spra-Ment aerosol spray adhesives",
+        "Description": "",
+        "Model": "",
+        "Type": "",
+        "CategoryID": "",
+        "NumberOfUnits": ""
+      }
+    ],
+    "Inconjunctions": [],
+    "Images": [],
+    "Injuries": [],
+    "Manufacturers": [
+      {
+        "Name": "Borden",
+        "CompanyID": ""
+      },
+      {
+        "Name": "3M",
+        "CompanyID": ""
+      },
+      {
+        "Name": "Krylon",
+        "CompanyID": ""
+      }
+    ],
+    "Retailers": [],
+    "Importers": [],
+    "Distributors": [],
+    "SoldAtLabel": null,
+    "ManufacturerCountries": [],
+    "ProductUPCs": [],
+    "Hazards": [
+      {
+        "Name": "Poisoning",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [],
+    "RemedyOptions": []
+  },
+  {
+    "RecallID": 3760,
+    "RecallNumber": "74085",
+    "RecallDate": "1974-12-18T00:00:00",
+    "Description": "CPSC Issues Warning On Certain Christmas Lites NEWS from CPSC U.S. Consumer Product Safety Commission Office of Information and Public Affairs Washington, DC 20207 FOR IMMEDIATE RELEASE December 18, 1974 Release # 74-085 CPSC Issues Warning On Certain Christmas Lites Washington, D.C. (Dec. 18, 1974) -- The U.S. Consumer Product Safety Commission in cooperation with the S.S. Kresge Co. and Noma Manufacturing and Import Co. today warned consumers that approximately 300,000 sets of indoor-outdoor miniature Christmas lights sold nationwide over the past two years could present severe hazard of electric shock and fire. Exposed metal contacts in the female end connector and loose or exposed bare wire connections make the lights potentially hazardous. Kresge sold the lights under its own brand name in K-Mart, Kresge and Jupiter stores across the country for between $2.00 and $5.00. The label on the greenish blue and white carton reads: \"35 or 50 Professional Decorator's Miniature Lites.\" Possibly defective sets have the following serial numbers on the front of the carton: 91-21; 91-23; 91-24; 91-25; 91-26: 91-27; 91-28; 91-40B and 91-43 (for indoor only.) The Noma brand lights, which were sold in small retail outlets across the nation, are called \"Noma Deluxe\" and also state \"35 or 50 Mini-Mini Lites\" on the front of the box. Possibly defective sets carry the following numbers on the box cover: 3835; 3836: 3850; 3851; 3854; 3856. These lights were designed to be used singly or in groups. Noma will correct and repair, at no cost, all sets returned to them -- Noma, Forest Park, Illinois 60130. Consumers who purchased these lights should cease using them immediately and carefully disconnect them from electrical outlets. The Kresge Co. has stated that it will refund the purchase price. The Commission was alerted to the hazard after a youngster in Chicago received a shock when he accidentally touched the lights. The Commission urges consumers to check all their Christmas lights for possible hazards.",
+    "URL": "https://www.cpsc.gov/Recalls/1974/CPSC-Issues-Warning-On-Certain-Christmas-Lites",
+    "Title": "CPSC Issues Warning On Certain Christmas Lites",
+    "ConsumerContact": null,
+    "LastPublishDate": "2015-02-03T00:00:00",
+    "Products": [
+      {
+        "Name": "",
+        "Description": "",
+        "Model": "",
+        "Type": "Lights (Seasonal)",
+        "CategoryID": "2031",
+        "NumberOfUnits": ""
+      },
+      {
+        "Name": "Kresge indoor-outdoor Christmas lights",
+        "Description": "",
+        "Model": "",
+        "Type": "",
+        "CategoryID": "",
+        "NumberOfUnits": ""
+      },
+      {
+        "Name": "Kresge Professional Decorator's Miniature Lites",
+        "Description": "",
+        "Model": "",
+        "Type": "",
+        "CategoryID": "",
+        "NumberOfUnits": ""
+      },
+      {
+        "Name": "Noma Deluxe Mini-Mini Lites",
+        "Description": "",
+        "Model": "",
+        "Type": "",
+        "CategoryID": "",
+        "NumberOfUnits": ""
+      }
+    ],
+    "Inconjunctions": [],
+    "Images": [],
+    "Injuries": [],
+    "Manufacturers": [
+      {
+        "Name": "Jupiter",
+        "CompanyID": ""
+      },
+      {
+        "Name": "Noma",
+        "CompanyID": ""
+      },
+      {
+        "Name": "Kmart",
+        "CompanyID": ""
+      },
+      {
+        "Name": "Kresge",
+        "CompanyID": ""
+      },
+      {
+        "Name": "S.S. Kresge",
+        "CompanyID": ""
+      }
+    ],
+    "Retailers": [],
+    "Importers": [],
+    "Distributors": [],
+    "SoldAtLabel": null,
+    "ManufacturerCountries": [],
+    "ProductUPCs": [],
+    "Hazards": [
+      {
+        "Name": "Electrocution/Electric Shock",
+        "HazardType": "",
+        "HazardTypeID": ""
+      },
+      {
+        "Name": "Fire & Fire-Related Burn",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [],
+    "RemedyOptions": []
+  },
+  {
+    "RecallID": 4670,
+    "RecallNumber": "86072",
+    "RecallDate": "1986-11-18T00:00:00",
+    "Description": "Toy Train With Small Parts Recalled by Electra Plastics NEWS from CPSC U.S. Consumer Product Safety Commission Office of Information and Public Affairs Washington, DC 20207 FOR RELEASE November 18, 1986 Release # 86-72 Electra Plastics Recalls Toy Train With Small Parts WASHINGTON, DC -- In cooperation with the U.S. Consumer Product Safety Commission, Electra-Plastics, Inc., of Newark, New Jersey is recalling the Romper Room Animal Train No. H732R, because the three small balls in the train are small parts and present a choking hazard to children. Neither Electra-Plastics nor CPSC knows of any injuries involving this toy. Officials in the state of Kentucky's Cabinet for Human Resources brought this small parts hazard to the attention of the CPSC. The plastic train is approximately 11 l/4 inches long with an orange engine, a green car with two tigers facing each other and a purple car with two elephants facing each other. The engine and cars each have two pairs of black wheels. A string is attached to the engine for pulling the train. Blue and white balls approximately 1 l/8 inches in diameter are in the middle of the engine and each of the two cars where they can be easily detached. The balls, which are small parts, present a choking hazard to children. Consumers should take the trains away from children immediately and discard them or return them to the retail stores where purchased for a refund. Approximately 5,600 trains were sold since June 1985 primarily - by Pathmark stores and Rite-Aid stores in states east of the Mississippi River. The toy was sold for approximately $2.40. Anyone wishing additional information may contact Electra Plastics at 201-589-2525.",
+    "URL": "https://www.cpsc.gov/Recalls/1986/Electra-Plastics-Recalls-Toy-Train-With-Small-Parts",
+    "Title": "Toy Train With Small Parts Recalled by Electra Plastics",
+    "ConsumerContact": null,
+    "LastPublishDate": "2014-12-31T00:00:00",
+    "Products": [
+      {
+        "Name": "",
+        "Description": "",
+        "Model": "",
+        "Type": "Toy Animals Stuffed/Not Stuffed",
+        "CategoryID": "2182",
+        "NumberOfUnits": ""
+      },
+      {
+        "Name": "",
+        "Description": "",
+        "Model": "",
+        "Type": "Toy Trains",
+        "CategoryID": "2206",
+        "NumberOfUnits": ""
+      },
+      {
+        "Name": "Romper Room Animal Train",
+        "Description": "",
+        "Model": "",
+        "Type": "Toy Balls",
+        "CategoryID": "2183",
+        "NumberOfUnits": ""
+      }
+    ],
+    "Inconjunctions": [],
+    "Images": [],
+    "Injuries": [],
+    "Manufacturers": [
+      {
+        "Name": "Electra Plastics",
+        "CompanyID": ""
+      },
+      {
+        "Name": "Pathmark",
+        "CompanyID": ""
+      },
+      {
+        "Name": "Rite Aid",
+        "CompanyID": ""
+      }
+    ],
+    "Retailers": [],
+    "Importers": [],
+    "Distributors": [],
+    "SoldAtLabel": null,
+    "ManufacturerCountries": [],
+    "ProductUPCs": [],
+    "Hazards": [
+      {
+        "Name": "Choking",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [],
+    "RemedyOptions": []
+  },
+  {
+    "RecallID": 3725,
+    "RecallNumber": "73015",
+    "RecallDate": "1973-08-21T00:00:00",
+    "Description": "Little Wonder TV Antenna by A.K. Electric Warning NEWS from CPSC U.S. Consumer Product Safety Commission Office of Information and Public Affairs Washington, DC 20207 FOR IMMEDIATE RELEASE August 21, 1973 Release # 73-015 CPSC Warns Of Electric Shock Dangers From \"Little Wonder TV Antenna\" WASHINGTON, D.C. (August 21)--Citing the potential for severe electric shock hazard, the Consumer Product Safety Commission today warned consumers to immediately unplug and then disconnect the \"Little Wonder TV Antenna.\" The product --manufactured by the A.K. Electric Corporation, Brooklyn, New York, Mr. Jack Arthur Meltzer President-- connects television antenna leads directly to home electrical outlets. CPSC Chairman Richard 0. Simpson said the product \"contains no safety device\" to prevent electrical shock and possible electrocution. He said the Commission is taking all necessary steps to remove the product from the marketplace. Simpson said the item has been distributed nationwide by Windsor House, Island Park, New York, and Sunset House, Los Angeles, California, two mail-order firms. In addition to the CPSC action, Simpson said he is referring the matter to the Federal Trade Commission for their follow-up on the basis of what he termed \"misleading and possibly fraudulent advertising\" associated with distribution of the product. While there are several similar products on the market, the CPSC action was limited to the \"Little Wonder TV Antenna,\" pending further study of the others. Simpson said the \"Little Wonder\" appears to contain but does not contain any safety devices, found in the other similar products, which would greatly reduce the potential for electric shock. The \"Little Wonder\" has an identifying label only on the package but not on the product itself. The other similar products generally bear the manufacturer's name or brand name on the devices. In making the announcement, Simpson criticized Windsor House and Sunset House for \"failing to verify the safety\" of a product they were advertising for sale to millions of consumers. And he said they have a responsibility in that regard. Simpson said he was \"totally dismayed\" by the clear lack of engineering design demonstrated by the \"Little Wonder TV Antenna.\" The product, he said, is imminently hazardous.",
+    "URL": "https://www.cpsc.gov/Recalls/1973/CPSC-Warns-Of-Electric-Shock-Dangers-From-Little-Wonder-TV-Antenna-",
+    "Title": "Little Wonder TV Antenna by A.K. Electric Warning",
+    "ConsumerContact": null,
+    "LastPublishDate": "2015-02-03T00:00:00",
+    "Products": [
+      {
+        "Name": "",
+        "Description": "",
+        "Model": "",
+        "Type": "Televisions, Mounts, Guards & Antennas",
+        "CategoryID": "2169",
+        "NumberOfUnits": ""
+      },
+      {
+        "Name": "Little Wonder TV Antenna",
+        "Description": "",
+        "Model": "",
+        "Type": "",
+        "CategoryID": "",
+        "NumberOfUnits": ""
+      }
+    ],
+    "Inconjunctions": [],
+    "Images": [],
+    "Injuries": [],
+    "Manufacturers": [
+      {
+        "Name": "A.K. Electric",
+        "CompanyID": ""
+      },
+      {
+        "Name": "Windsor House",
+        "CompanyID": ""
+      },
+      {
+        "Name": "Sunset House",
+        "CompanyID": ""
+      }
+    ],
+    "Retailers": [],
+    "Importers": [],
+    "Distributors": [],
+    "SoldAtLabel": null,
+    "ManufacturerCountries": [],
+    "ProductUPCs": [],
+    "Hazards": [
+      {
+        "Name": "Electrocution/Electric Shock",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [],
+    "RemedyOptions": []
+  },
+  {
+    "RecallID": 9491,
+    "RecallNumber": "23085",
+    "RecallDate": "2023-01-05T00:00:00",
+    "Description": "This recall involves children's 65% polyester and 35% rayon, two-piece long-sleeve shirt and pant pajama sets. The pajama sets were sold in sizes x-small, small, medium, large and x-large in the following colors and print patterns: camo print in olive, tie dye in black, and striped in light blue and charcoal. \"P.J. Salvage,\" \"Made in China,\" and the size are printed on a black sewn-in fabric label at the neck of the recalled garments. The size, \"Not Intended for Sleepwear,\" \"RN 15741,\" the fiber content, \"Made in China,\" and washing instructions are printed on a white sewn-in, side-seam label. Tracking code \"09/2021 T2022\" is printed on a second white sewn-in, side seam label underneath the washing instructions label.",
+    "URL": "https://www.cpsc.gov/Recalls/2023/PJ-Salvage-Recalls-Childrens-Pajamas-Due-to-Burn-Hazard",
+    "Title": "P.J. Salvage Recalls Children's Pajamas Due to Burn Hazard",
+    "ConsumerContact": "P.J. Salvage toll-free at 844-975-2699 from 9 a.m. to 5 p.m. PT Monday through Friday, by email at recall@pjsalvage.com, online at https://www.pjsalvage.com/pages/recall-information or https://www.pjsalvage.com/ and click on \"RECALL INFORMATION\" at the top of the page for more information.",
+    "LastPublishDate": "2023-01-05T00:00:00",
+    "Products": [
+      {
+        "Name": "Children's pajamas",
+        "Description": "",
+        "Model": "",
+        "Type": "",
+        "CategoryID": "",
+        "NumberOfUnits": "About 2,650"
+      }
+    ],
+    "Inconjunctions": [],
+    "Images": [
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/RecalledPJSalvagepajamasetincamoprintinolive.JPG",
+        "Caption": "Recalled P.J. Salvage pajama set in camo print in olive"
+      },
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/RecalledPJSalvagepajamasetincamoprintinlightblueandcharcoalstripes.JPG",
+        "Caption": "Recalled P.J. Salvage pajama set in light blue and charcoal stripes"
+      },
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/RecalledPJSalvagepajamasetintiedyeblack.JPG",
+        "Caption": "Recalled P.J. Salvage pajama set in tie-dye black"
+      },
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/Sewn-inblackfabriclabel.JPG",
+        "Caption": "Sewn-in black fabric label at the neck states \"P.J. Salvage,\" \"Made in China,\" and size"
+      },
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/Sewn-inblackfabriclabel2.JPG",
+        "Caption": "Sewn-in, side-seam label states size, \"Not Intended for Sleepwear,\" \"RN 15741,\" the fiber content, \"Made in China,\" and washing instructions"
+      },
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/Sewn-inblackfabriclabel3.JPG",
+        "Caption": "Second sewn-in, side-seam label with tracking code \"09/2021 T2022\""
+      }
+    ],
+    "Injuries": [
+      {
+        "Name": "None reported"
+      }
+    ],
+    "Manufacturers": [],
+    "Retailers": [
+      {
+        "Name": "Online at https://www.pjsalvage.com/, www.amazon.com, www.zappos.com and at Animal Crackers, Auntie Barbara's, Bumps N Bundles, Down to Earth Kids, Everafter, Gold Coast Kids, Jami Lyn, Midland Clothing, Millstead Boutique, Rhinestone Cowgirl, Rocky Mountain Day Spa, Simply Authentic LLC, Stoopher &amp; Boots, Sweats Appeal, T Georgiano's Boutique, Tack of the Town, and at Twinkle Twinkle Little One stores nationwide from December 2021 through December 2022 for about $56.",
+        "CompanyID": ""
+      }
+    ],
+    "Importers": [
+      {
+        "Name": "P.J. Salvage, of Irvine, California",
+        "CompanyID": ""
+      }
+    ],
+    "Distributors": [],
+    "SoldAtLabel": null,
+    "ManufacturerCountries": [
+      {
+        "Country": "China"
+      }
+    ],
+    "ProductUPCs": [],
+    "Hazards": [
+      {
+        "Name": "The recalled children's pajamas fail to meet the federal flammability standards for children's sleepwear, posing a risk of burn injuries to children.",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [
+      {
+        "Name": "Consumers should immediately take the recalled pajamas away from children, stop using them and contact P.J. Salvage for instructions on how to receive a pre-paid mailer and return the pajamas for a full refund. Consumers who purchased the pajamas directly from P.J. Salvage will be contacted via email and/or postage mail."
+      }
+    ],
+    "RemedyOptions": [
+      {
+        "Option": "Refund"
+      }
+    ]
+  },
+  {
+    "RecallID": 2,
+    "RecallNumber": "00010a",
+    "RecallDate": "1999-11-01T00:00:00",
+    "Description": "The novelty lighters are plastic and shaped as a \"BMW\" toy car with flashing lights and keychain, a \"Coke\" soda bottle, a \"Budweiser\" beer can with flashing lights, a fire extinguisher, and a telephone pager with flashing lights belt clip. The disposable lighters are silver-colored metal and are relatively flat, measuring 2.75 inches long, 1 inch wide and .25 inch thick. A \"MADE IN CHINA\" label is on each lighter.",
+    "URL": "https://www.cpsc.gov/Recalls/2000/CPSC--Penda-New-York-Recall-Cigarette-Lighters",
+    "Title": "CPSC & Penda New York Recall Cigarette Lighters",
+    "ConsumerContact": "For more information, call Penda New York Inc. collect at (212) 889-6740 between 9 a.m. and 5 p.m. ET Monday through Friday.",
+    "LastPublishDate": "1999-11-01T00:00:00",
+    "Products": [
+      {
+        "Name": "Novelty and disposable cigarette lighters",
+        "Description": "",
+        "Model": "",
+        "Type": "Lighters",
+        "CategoryID": "2028",
+        "NumberOfUnits": "About 22,300"
+      }
+    ],
+    "Inconjunctions": [],
+    "Images": [
+      {
+        "URL": "http://www.cpsc.gov/PageFiles/69471/00010a.jpg",
+        "Caption": "Recalled novelty cigarette lighters"
+      }
+    ],
+    "Injuries": [
+      {
+        "Name": "None reported."
+      }
+    ],
+    "Manufacturers": [],
+    "Retailers": [
+      {
+        "Name": "Small stores and souvenir shops in the New York and Miami areas sold the lighters, from January 1999 through July 1999, for about $5.",
+        "CompanyID": ""
+      }
+    ],
+    "Importers": [
+      {
+        "Name": "Penda New York Inc., of New York, N.Y.",
+        "CompanyID": ""
+      }
+    ],
+    "Distributors": [],
+    "SoldAtLabel": null,
+    "ManufacturerCountries": [
+      {
+        "Country": "China"
+      }
+    ],
+    "ProductUPCs": [],
+    "Hazards": [
+      {
+        "Name": "The lighters do not have any child-resistant mechanisms, as required by federal law. Young children could ignite the lighters, presenting fire and burn hazards.",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [
+      {
+        "Name": "Stop using these lighters immediately and return them to the store where purchased, for a full refund."
+      }
+    ],
+    "RemedyOptions": []
+  },
+  {
+    "RecallID": 9294,
+    "RecallNumber": "22127",
+    "RecallDate": "2022-04-28T00:00:00",
+    "Description": "This recall involves Generac and DR Power brand electric start pressure washers with model numbers DPW3100DEN, DPW3101DEN, DPW3102DEN, G0071320, G0071321, G0071430 and G0071431. The electric start pressure washers have an electric start/stop button for the unit's gasoline-powered engines, as well as a rechargeable battery used to power the button.   The model and serial numbers are printed on a label located on the product's frame. Consumers can check specific unit type, model number and serial number location information at www.generac.com/service-support/product-support-lookup. This recall involves only the following Generac and DR Power brand electric start pressure washers: Recalled Pressure Washers Model Number Serial Number Range DR Pressure Washer PRO 3100 DPW3100DEN 3003024185-3004600505 DR Pressure Washer PRO 3100 DPW3101DEN 3003074891-3004603299 DR Pressure Washer PRO 3100 DPW3102DEN 3006177112-3008763507 3125 CON GAS PW ES CARB EPA3 G0071320 3002690991-3005933713 3125 CON GAS PW ES CARB EPA3 G0071321 3003692980-3009910753 3125 CON GAS PW ES SPEEDWASH CARB EPA3 G0071430 3002778837-3005933361 3125 CON GAS PW ES SPEEDWASH CARB EPA3 G0071431 3006132052-3006132052",
+    "URL": "https://www.cpsc.gov/Recalls/2022/Generac-Power-Systems-Recalls-Generac-and-DR-Power-Electric-Start-Pressure-Washers-Due-to-Carbon-Monoxide-Hazard",
+    "Title": "Generac Power Systems Recalls Generac and DR Power Electric Start Pressure Washers Due to Carbon Monoxide Hazard",
+    "ConsumerContact": "Generac Power Systems toll-free at 855-625-2933 from 8 a.m. to 5 p.m. CT Monday through Friday, or online at www.generac.com and click on \"Important Recall Information\" located at the bottom of the page or go to http://www.generac.com/estartpressurewasher for more information.",
+    "LastPublishDate": "2022-04-28T00:00:00",
+    "Products": [
+      {
+        "Name": "Electric Start Pressure Washers",
+        "Description": "",
+        "Model": "",
+        "Type": "",
+        "CategoryID": "",
+        "NumberOfUnits": "About 53,000 (In addition, 1,750 were sold in Canada)"
+      }
+    ],
+    "Inconjunctions": [
+      {
+        "URL": "https://recalls-rappels.canada.ca/en/alert-recall/dr-power-brand-generac-brand-electric-start-pressure-washers-recalled-due-carbon"
+      }
+    ],
+    "Images": [
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/Recalled3125CONGASPWESSPEEDWASHCARBEPA3Pressure.PNG",
+        "Caption": "Recalled 3125 CON GAS PW ES SPEEDWASH CARB EPA3 Pressure Washer"
+      },
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/RecalledDRPressureWasherPRO3100.PNG",
+        "Caption": "Recalled DR Pressure Washer PRO 3100"
+      },
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/RecalledGeneracElectricStartPressureWasherslabellocation.PNG",
+        "Caption": "Recalled Generac Electric Start Pressure Washers label location"
+      },
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/RecalledGeneracElectricStartPressureWasherslabel.PNG",
+        "Caption": "Recalled Generac Electric Start Pressure Washers label"
+      }
+    ],
+    "Injuries": [
+      {
+        "Name": "The firm has received nine reports of the pressure washers self-starting and operating without being connected to a water supply. No injuries or property damage have been reported."
+      }
+    ],
+    "Manufacturers": [
+      {
+        "Name": "Generac Power Systems Inc., of Waukesha, Wisconsin",
+        "CompanyID": ""
+      }
+    ],
+    "Retailers": [
+      {
+        "Name": "Major home improvement and hardware stores nationwide and online, including Ace Hardware, Amazon, City Electric Supply, Costco, Do It Best, eBay, Essendant, Fastenal, Home Depot, Lowe's Stores, Menard's, Orgill, Power Equipment Direct, Ravitsky Bros., Tractor Supply, True Value and Walmart from February 2018 through February 2022 for between $450 and $650.",
+        "CompanyID": ""
+      }
+    ],
+    "Importers": [],
+    "Distributors": [],
+    "SoldAtLabel": null,
+    "ManufacturerCountries": [
+      {
+        "Country": "United States"
+      }
+    ],
+    "ProductUPCs": [],
+    "Hazards": [
+      {
+        "Name": "The electronic start/stop button on the pressure washer can malfunction and self-start, posing a risk of carbon monoxide poisoning if the unit is in a confined space.",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [
+      {
+        "Name": "Consumers should immediately stop using the recalled pressure washer unless they have removed the rechargeable battery, and contact Generac to arrange to have an authorized dealer replace the start/stop switch on the pressure washer free of charge. The pressure washer can continue to be used with the battery removed but using the pull-start option to start the unit. Generac is contacting known consumers directly to provide more details about the repair."
+      }
+    ],
+    "RemedyOptions": [
+      {
+        "Option": "Repair"
+      }
+    ]
+  },
+  {
+    "RecallID": 3730,
+    "RecallNumber": "73039",
+    "RecallDate": "1973-11-10T00:00:00",
+    "Description": "The CPSC warned owners of some 1,600 \"Electric Heater Log\" decorative fireplaces to immediately unplug the units to avoid a possible fire hazard.",
+    "URL": "https://www.cpsc.gov/Recalls/1973/CPSC-Warns-Of-Fire-Hazard-In-Decorative-Fireplace-Units",
+    "Title": "CPSC Warns Of Fire Hazard In Decorative Fireplace Units",
+    "ConsumerContact": null,
+    "LastPublishDate": "2015-02-18T00:00:00",
+    "Products": [
+      {
+        "Name": "",
+        "Description": "",
+        "Model": "",
+        "Type": "Fireplaces & Accessories",
+        "CategoryID": "1943",
+        "NumberOfUnits": ""
+      },
+      {
+        "Name": "Electric Heater Log decorative fireplaces",
+        "Description": "",
+        "Model": "",
+        "Type": "",
+        "CategoryID": "",
+        "NumberOfUnits": ""
+      }
+    ],
+    "Inconjunctions": [],
+    "Images": [],
+    "Injuries": [],
+    "Manufacturers": [
+      {
+        "Name": "JC Penney",
+        "CompanyID": ""
+      },
+      {
+        "Name": "Montgomery Ward",
+        "CompanyID": ""
+      },
+      {
+        "Name": "Dyna Manufacturing",
+        "CompanyID": ""
+      },
+      {
+        "Name": "Sears",
+        "CompanyID": ""
+      }
+    ],
+    "Retailers": [],
+    "Importers": [],
+    "Distributors": [],
+    "SoldAtLabel": null,
+    "ManufacturerCountries": [],
+    "ProductUPCs": [],
+    "Hazards": [
+      {
+        "Name": "Fire & Fire-Related Burn",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [],
+    "RemedyOptions": []
+  },
+  {
+    "RecallID": 50,
+    "RecallNumber": "01005",
+    "RecallDate": "2000-10-10T00:00:00",
+    "Description": "Power Mowers Recalled by Lawn-Boy NEWS from CPSC U.S. Consumer Product Safety Commission Office of Information and Public Affairs Washington, DC 20207 FOR IMMEDIATE RELEASE October 10, 2000 Release # 01-005 Lawn-Boy Recall Hotline: (800) 444-8676 CPSC Consumer Hotline: (800) 638-2772 CPSC Media Contact: Ken Giles, (301) 504-7052 CPSC, Lawn-Boy Inc. Announce Recall of Power Mowers WASHINGTON, D.C. - In cooperation with the U.S. Consumer Product Safety Commission (CPSC), Lawn-Boy Inc., of Bloomington, Minn., is recalling about 102,000 Lawn-Boy power mowers. Due to wear caused by the mulch fan, the mowers' blades can crack and break off. Broken pieces of the blade can be propelled from underneath the mower, possibly injuring the operator or a bystander. Lawn-Boy has received eight reports of blades breaking on these mowers, including a consumer who was struck on the shin by a piece of a broken mower blade, resulting in a laceration. The recalled Lawn-Boy Silver Pro and Gold Pro Series are 2-cycle, walk-behind, 21-inch power mowers. A decal on the right rear of the mower's housing (Silver Pro) or beneath the handle control panel (Gold Pro) has a serial number from 8900001 to 8999999, and one of the following model numbers: 10247 10250 10323 10324 10331 10332 10424 10425 10525 10527 10547 10548 Lawn-Boy dealers, and department and home center stores, including Sears, Lowe's and the Home Depot, sold these mowers from February 1998 through August 2000 for between $400 and $600. Consumers should stop using these recalled mowers immediately. The company will automatically mail free repair kits, which include a new mower blade and modified mulching fan, to consumers who have registered their mowers. Consumers can have the repair performed for free at a local Lawn-Boy service dealer after receiving the repair kit. Consumers who have not been notified should contact their local Lawn-Boy service dealer for assistance. To locate the nearest Lawn-Boy service dealer or for more information, consumers should call Lawn-Boy at (800) 444-8676 between 7:30 a.m. and 4:30 p.m. CT Monday through Friday, or go to their website at http://www.lawnboy.com/recall.htm.",
+    "URL": "https://www.cpsc.gov/Recalls/2001/CPSC-Lawn-Boy-Inc-Announce-Recall-of-Power-Mowers",
+    "Title": "Power Mowers Recalled by Lawn-Boy",
+    "ConsumerContact": null,
+    "LastPublishDate": "2014-05-23T00:00:00",
+    "Products": [
+      {
+        "Name": "Lawn-Boy Gold Pro power mowers",
+        "Description": "",
+        "Model": "",
+        "Type": "",
+        "CategoryID": "",
+        "NumberOfUnits": ""
+      },
+      {
+        "Name": "Lawn-Boy Silver Pro power mowers",
+        "Description": "",
+        "Model": "",
+        "Type": "Lawn Mowers & Accessories",
+        "CategoryID": "2027",
+        "NumberOfUnits": ""
+      }
+    ],
+    "Inconjunctions": [],
+    "Images": [],
+    "Injuries": [],
+    "Manufacturers": [
+      {
+        "Name": "Lawn-Boy",
+        "CompanyID": ""
+      },
+      {
+        "Name": "Sears",
+        "CompanyID": ""
+      },
+      {
+        "Name": "Lowe's",
+        "CompanyID": ""
+      },
+      {
+        "Name": "Home Depot",
+        "CompanyID": ""
+      }
+    ],
+    "Retailers": [],
+    "Importers": [],
+    "Distributors": [],
+    "SoldAtLabel": null,
+    "ManufacturerCountries": [],
+    "ProductUPCs": [],
+    "Hazards": [
+      {
+        "Name": "Laceration",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [],
+    "RemedyOptions": []
+  },
+  {
+    "RecallID": 1245,
+    "RecallNumber": "13040",
+    "RecallDate": "2012-11-15T00:00:00",
+    "Description": "This recall includes Kawasaki FH, FR, FS and FX series engines used in riding and wide area, walk-behind lawnmowers made and sold under the following brand names: Ariens, Bad Boy Mowers, Big Dog, Bob-Cat, Bush Hog, Country Clipper, Cub Cadet, Dixie Chopper, Dixon, DR Power Equipment, Encore, Exmark, Ferris, Gravely, Hustler, Husqvarna, Land Pride, SCAG, Simplicity, Snapper Pro, Tiger Corp, Toro, Worldlawn and Woods. engines may have also have been bought separately and used in other lawn mowers. Recalled engines are 13 to 36 horsepower, air-cooled, v-twin engines. \"Kawasaki\" and the model number are printed on the top of all of the engines. In addition, the spec and serial numbers are printed on a label on one side of the engine. The following model, spec and serial numbers are included: Brand(s) Model Specification Serial Number Range Ariens/Gravely FR691V FR691V FR730V FR730V FS481V FS600V FS691V FX481V FX481V FX600V FX691V FX730V FX730V FX751V FX850V FX921V AS19 CS09 AS15 CS07 BS22 BS18 CS08 DS04 DS04 DS08 DS04 DS04 DS04 DS05 DS07 AS09 FR691VB01958 - FR691VB51951 FR691VB01958 - FR691VB51951 FR730VA19372 - FR730VA61003 FS730VA18873 - FS730VA36464 FS481VA30837 - FS481VA73952 FS600VA08439 - FS600VA55651 FS691VA07498 - FS691VA13372 FX481VA00810 - FX481VA01191 FX481VA00810 - FX481VA01191 FX600VA14634 - FX600VA18373 FX691VA18538 - FX691VA29675 FX730VA13811 - FX730VA48607 FX730VA13811 - FX730VA48607 FX751VA24127 - FX751VA33598 FX850VA32209 - FX850VA42326 FX921VA07267 - FX921VA13450 Bad Boy Mowers FR651V FR651V FR730V FS730V FX850V FX850V AS19 BS17 AS16 AS14 AS15 ES09 FR651VB13474 - FR651VB64183 FR651VB13474 - FR651VB64183 FR730VA19372 - FR730VA61003 FS730VA18873 - FS730VA36464 FX850VA32209 - FX850VA42326 FX850VA32209 - FX850VA42326 Bob-Cat FR651V FR691V FS481V FS541V FS541V FS541V FS600V FS600V FX541V FX600V FX651V FX691V FX730V FX801V FX921V FXT00V FXT00V AS18 AS18 CS04 BS08 CS05 CS08 CS07 CS08 CS05 CS05 CS05 CS06 CS09 DS08 CS08 DS01 ES01 FR651VB13474 - FR651VB64183 FR691VB01958 - FR691VB51951 FS481VA30837 - FS481VA73952 FS541VA40673 - FS541VA74103 FS541VA40673 - FS541VA74103 FS541VA40673 - FS541VA74103 FS600VA08439 - FS600VA55651 FS600VA08439 - FS600VA55651 FX541VA00980 - FX541VA01063 FX600VA14634 - FX600VA18373 FX651VA16250 - FX651VA22022 FX691VA18538 - FX691VA29675 FX730VA13811 - FX730VA48607 FX801VA26410 - FX801VA35509 FX921VA07267 - FX921VA13450 FXT00VA08783 - FXT00VA11119 FXT00VA08783 - FXT00VA11119 Bush Hog FS691V FX730V CS09 BS14 FS691VA07498 - FS691VA13372 FX730VA13811 - FX730VA48607 Bush Hog, Tiger Corp. FX730V BS14 FX730VA13811 - FX730VA48607 Country Clipper FS651V FX730V FX801V FXT00V AS13 CS00 AS09 ES00 FS651VA30654 - FS651VA48562 FX730VA13811 - FX730VA48607 FX801VA26410 - FX801VA35509 FXT00VA08783 - FXT00VA11119 Cub Cadet FR600V FR651V FR651V FR691V FR691V FR730V FX850V FXT00V BS06 CS05 CS08 AS17 DS05 CS05 CS11 CS09 FR600VA28739 - FR600VA47566 FR651VB13474 - FR651VB64183 FR651VB13474 - FR651VB64183 FR691VB01958 - FR691VB51951 FR691VB01958 - FR691VB51951 FR730VA19372 - FR730VA61003 FX850VA32209 - FX850VA42326 FXT00VA08783 - FXT00VA11119 Dixie Chopper FS651V FS730V FX850V FXT00V CS07 BS09 AS14 AS10 FS651VA30654 - FS651VA48562 FS730VA18873 - FS730VA36464 FX850VA32209 - FX850VA42326 FXT00VA08783 - FXT00VA11119 DR Power Equipment FS600V AS19 FS600VA08439 - FS600VA55651 Encore FS541V BS16 FS541VA40673 - FS541VA74103 Exmark FR651V FR651V FR651V FR691V FR691V FS481V FS481V FS541V FS541V FS600V FS651V FS691V FX730V BS13 CS06 CS10 BS13 CS07 AS25 CS06 AS23 CS06 CS15 AS12 BS12 CS13 FR651VB13474 - FR651VB64183 FR651VB13474 - FR651VB64183 FR651VB13474 - FR651VB64183 FR691VB01958 - FR691VB51951 FR691VB01958 - FR691VB51951 FS481VA30837 - FS481VA73952 FS481VA30837 - FS481VA73952 FS541VA40673 - FS541VA74103 FS541VA40673 - FS541VA74103 FS600VA08439 - FS600VA55651 FS651VA30654 - FS651VA48562 FS691VA07498 - FS691VA13372 FX730VA13811 - FX730VA48607 Ferris/Snapper Pro FS541V FS600V FS730V FX600V FX651V FX730V AS25 AS22 AS12 CS06 AS11 AS18 FS541VA40673 - FS541VA74103 FS600VA08439 - FS600VA55651 FS730VA18873 - FS730VA36464 FX600VA14634 - FX600VA18373 FX651VA16250 - FX651VA22022 FX730VA13811 - FX730VA48607 Ferris/Snapper Pro/Simplicity FS691V FX801V AS14 AS09 FS691VA07498 - FS691VA13372 FX801VA26410 - FX801VA35509 Husqvarna FR691V FR691V FR730V FR730V FR730V FX651V FX730V BS15 CS06 AS12 AS13 AS14 DS09 CS15 FR691VB01958 - FR691VB51951 FR691VB01958 - FR691VB51951 FR730VA19372 - FR730VA61003 FR730VA19372 - FR730VA61003 FR730VA19372 - FR730VA61003 FX651VA16250 - FX651VA22022 FX730VA13811 - FX730VA48607 Husqvarna/Dixon FR651V FR730V FX691V FX730V FX801V FX921V CS09 DS04 DS10 CS07 ES00 DS06 FR651VB13474 - FR651VB64183 FR730VA19372 - FR730VA61003 FX691VA18538 - FX691VA29675 FX730VA13811 - FX730VA48607 FX801VA26410 - FX801VA35509 FX921VA07267 - FX921VA13450 Hustler/Big Dog FR541V FR600V FR651V FR691V FR730V FS481V FS541V FS600V FS651V FS691V FX600V FX691V FX730V FX850V FXT00V BS04 BS08 BS11 BS14 BS10 CS19 CS21 BS14 CS11 BS10 BS14 CS18 CS17 CS12 CS08 FR541VA05747 - FR541VA10514 FR600VA28739 - FR600VA47566 FR651VB13474 - FR651VB64183 FR691VB01958 - FR691VB51951 FS730VA18873 - FS730VA36464 FS481VA30837 - FS481VA73952 FS541VA40673 - FS541VA74103 FS600VA08439 - FS600VA55651 FS651VA30654 - FS651VA48562 FS691VA07498 - FS691VA13372 FX600VA14634 - FX600VA18373 FX691VA18538 - FX691VA29675 FX730VA13811 - FX730VA48607 FX850VA32209 - FX850VA42326 FXT00VA08783 - FXT00VA11119 Land Pride FR541V FR600V FS691V FX730V FX850V CS00 CS00 CS04 CS08 ES09 FR541VA05747 - FR541VA10514 FR600VA28739 - FR600VA47566 FS691VA07498 - FS691VA13372 FX730VA13811 - FX730VA48607 FX850VA32209 - FX850VA42326 SCAG FS481V FS541V FS600V FS600V FS651V FS651V FS730V FX600V FX691V FX730V FX801V FX850V FX921V CS18 CS19 BS13 CS12 BS10 CS09 AS11 CS09 DS11 CS06 CS07 DS10 BS07 FS481VA30837 - FS481VA73952 FS541VA40673 - FS541VA74103 FS600VA08439 - FS600VA55651 FS600VA08439 - FS600VA55651 FS651VA30654 - FS651VA48562 FS651VA30654 - FS651VA48562 FS730VA18873 - FS730VA36464 FX600VA14634 - FX600VA18373 FX691VA18538 - FX691VA29675 FX730VA13811 - FX730VA48607 FX801VA26410 - FX801VA35509 FX850VA32209 - FX850VA42326 FX921VA07267 - FX921VA13450 Toro FR651V FR651V FR691V FR730V FS481V FS541V FS541V FS600V FS600V FS691V FS730V FX691V BS12 CS10 CS12 CS09 CS08 CS06 CS11 BS10 CS09 CS05 CS06 DS13 FR651VB13474 - FR651VB64183 FR651VB13474 - FR651VB64183 FR691VB01958 - FR691VB51951 FR730VA19372 - FR730VA61003 FS481VA30837 - FS481VA73952 FS541VA40673 - FS541VA74103 FS541VA40673 - FS541VA74103 FS600VA08439 - FS600VA55651 FS600VA08439 - FS600VA55651 FS691VA07498 - FS691VA13372 FS730VA18873 - FS730VA36464 FX691VA18538 - FX691VA29675 Woo DS FH770D FS04 FH770DA17828 - FH770DA17997 Worldlawn FR651V FR691V FS481V FS481V FS481V FX651V FX691V FX751V ES00 ES00 BS12 BS13 BS24 CS08 CS14 ES00 FR651VB13474 - FR651VB64183 FR691VB01958 - FR691VB51951 FS481VA30837 - FS481VA73952 FS481VA30837 - FS481VA73952 FS481VA30837 - FS481VA73952 FX651VA16250 - FX651VA22022 FX691VA18538 - FX691VA29675 FX751VA24127 - FX751VA33598",
+    "URL": "https://www.cpsc.gov/Recalls/2013/Kawasaki-Motors-Recalls-Lawn-Mower-Engines-Due-to-Fire-Hazard",
+    "Title": "Kawasaki Motors Recalls Lawn Mower Engines Due to Fire Hazard",
+    "ConsumerContact": "Kawasaki Motors; toll-free at (866) 836-4463, from 8 a.m. to 5 p.m. ET, Monday through Friday, or online at www.kawpower.com or e-mail the firm at ffrecall@kmc-usa.com for more information.",
+    "LastPublishDate": "2016-04-14T00:00:00",
+    "Products": [
+      {
+        "Name": "Lawn Mower Engines",
+        "Description": "",
+        "Model": "",
+        "Type": "Engines",
+        "CategoryID": "1929",
+        "NumberOfUnits": "About 210,000"
+      }
+    ],
+    "Inconjunctions": [
+      {
+        "URL": "https://recalls-rappels.canada.ca/en/alert-recall/lawn-mower-engines"
+      }
+    ],
+    "Images": [
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/PageFiles.132147.Kawasaki_Engine_Large.jpg",
+        "Caption": "Kawasaki FH, FR, FS and FX series engines used in riding and wide area, walk-behind lawn lawnmowers"
+      },
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/PageFiles.132149.Utility_Vehicle_Label_With_Pointers_Large.jpg",
+        "Caption": "Label on the side of the Kawasaki engine showing locations of model, spec, and serial numbers"
+      }
+    ],
+    "Injuries": [
+      {
+        "Name": "Kawasaki Motors has received 110 reports of fuel leaks. No injuries reported."
+      }
+    ],
+    "Manufacturers": [
+      {
+        "Name": "Kawasaki Motors Corp. USA of Grand Rapids, Mich.",
+        "CompanyID": ""
+      }
+    ],
+    "Retailers": [
+      {
+        "Name": "Authorized Kawasaki small engine dealers and lawn and garden equipment retailers nationwide. Recalled units were sold between October 2011 and August 2012 for between $2000 and $10,000.",
+        "CompanyID": ""
+      }
+    ],
+    "Importers": [],
+    "Distributors": [],
+    "SoldAtLabel": null,
+    "ManufacturerCountries": [
+      {
+        "Country": "United States"
+      }
+    ],
+    "ProductUPCs": [],
+    "Hazards": [
+      {
+        "Name": "The fuel filter can leak, posing a fire hazard.",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [
+      {
+        "Name": "Consumers should immediately stop using mowers with the recalled engines and fuel filters and contact Kawasaki or a Kawasaki dealer for a free repair."
+      }
+    ],
+    "RemedyOptions": [
+      {
+        "Option": "Repair"
+      }
+    ]
+  },
+  {
+    "RecallID": 166,
+    "RecallNumber": "10169",
+    "RecallDate": "2010-03-17T00:00:00",
+    "Description": "The recalled Mobile Power Pack is a mobile device that receives an AC charge in a compact battery pack that will then give five DC charges to small electronic devices including mobile phones, MP-3 players, Blackberries, and PDAs. The power pack is black and silver and is rectangular in shape. The front of it has a small circular control panel. The front also displays the word \"Tumi\" engraved on a silver button located towards the bottom of the device. Style number 14362 is printed on the power pack packaging.",
+    "URL": "https://www.cpsc.gov/Recalls/2010/Mobile-Power-Packs-Recalled-By-Tumi-Due-to-Fire-Hazard",
+    "Title": "Mobile Power Packs Recalled By Tumi Due to Fire Hazard",
+    "ConsumerContact": "For additional information, contact Tumi customer care at (800) 530-0069 between 8 a.m. and 4:45 p.m. ET Monday through Friday, or visit the firm's Web site at www.Tumi.com, or e-mail the firm at customercare@tumi.com",
+    "LastPublishDate": "2014-05-23T00:00:00",
+    "Products": [
+      {
+        "Name": "Mobile Power Packs",
+        "Description": "",
+        "Model": "",
+        "Type": "Adapter/Power Supply/Charger/Battery",
+        "CategoryID": "1808",
+        "NumberOfUnits": "About 5,000"
+      }
+    ],
+    "Inconjunctions": [],
+    "Images": [
+      {
+        "URL": "https://www.cpsc.gov/~/link/7106e6c7122049428fbae379afed20a9.jpg",
+        "Caption": "Recalled Mobile Power Pack"
+      }
+    ],
+    "Injuries": [
+      {
+        "Name": "There were two reports of consumers experiencing small fires during their initial charge. No injuries were reported."
+      }
+    ],
+    "Manufacturers": [
+      {
+        "Name": "Tumi, of South Plainfield, N.J.",
+        "CompanyID": ""
+      }
+    ],
+    "Retailers": [
+      {
+        "Name": "Tumi retail stores, department and specialty stores nationwide and www.Tumi.com from August 2007 through March 2008 for $135.",
+        "CompanyID": ""
+      }
+    ],
+    "Importers": [],
+    "Distributors": [],
+    "SoldAtLabel": null,
+    "ManufacturerCountries": [
+      {
+        "Country": "China"
+      }
+    ],
+    "ProductUPCs": [],
+    "Hazards": [
+      {
+        "Name": "The lithium-ion cells used in the Mobile Power Pack can ignite or explode while charging, posing a fire hazard. This hazard is only present for units that have not been charged.",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [
+      {
+        "Name": "If the unit has not been used and has never been charged, please do not try to charge. Contact Tumi customer care for instructions on how to return the power pack and receive a free replacement power pack. If you have charged the unit previously without incident, you can continue to use the product."
+      }
+    ],
+    "RemedyOptions": []
+  },
+  {
+    "RecallID": 1,
+    "RecallNumber": "00001",
+    "RecallDate": "1999-10-07T00:00:00",
+    "Description": "Scrub Free Daily Shower Cleaner is sold in a clear plastic, 32- ounce spray bottle. The spray cap is white with a purple screw cap and pull-lever. The front of the bottle shows either a picture of a star fish or an octopus. The Scrub Free Daily Shower Spray is sold in white plastic 32-ounce spray bottles and 64-ounce refill bottles. \"Just Mist for Self-Cleaning Action!\" is written on the label. Scrub Free Daily Shower Cleaner and Scrub Free Daily Shower Spray purchased after October 4, 1999, and Scrub Free Mildew Remover and Scrub Free Soap Scum Remover are not included in this recall.",
+    "URL": "https://www.cpsc.gov/Recalls/2000/CPSC-Benckiser-Announce-Recall-of-Scrub-Free-Daily-Shower-Cleaner-and-Daily-Shower-Spray",
+    "Title": "CPSC, Benckiser Announce Recall of Scrub Free Daily Shower Cleaner and Daily Shower Spray",
+    "ConsumerContact": "Consumers should call Benckiser at (800) 286-9055 between 9 a.m. and 4 p.m. ET Monday through Friday to receive a coupon for a free replacement bottle of any Scrub Free product.",
+    "LastPublishDate": "1999-10-07T00:00:00",
+    "Products": [
+      {
+        "Name": "Scrub Free Daily Shower Cleaner and Scrub Free Daily Shower Spray",
+        "Description": "",
+        "Model": "",
+        "Type": "Cleaners/Cleaning Products",
+        "CategoryID": "1884",
+        "NumberOfUnits": "230,000"
+      }
+    ],
+    "Inconjunctions": [],
+    "Images": [
+      {
+        "URL": "https://www.cpsc.gov/s3fs-public/scrub-free_0.jpeg",
+        "Caption": "Recalled bottles of Scrub Free Daily Shower Cleaner and Scrub Free Daily Shower Spray"
+      }
+    ],
+    "Injuries": [
+      {
+        "Name": "Benckiser has not received any report of injury associated with this bacteria and these products."
+      }
+    ],
+    "Manufacturers": [
+      {
+        "Name": "Benckiser Consumer Products Inc. of Greenwich, Conn.",
+        "CompanyID": ""
+      }
+    ],
+    "Retailers": [
+      {
+        "Name": "Supermarket, drug and discount department stores nationwide sold the affected lots of Scrub Free Daily Shower Cleaner and Scrub Free Daily Shower Spray, from May 1999 through October 4, 1999, for about $2 to $4.",
+        "CompanyID": ""
+      }
+    ],
+    "Importers": [],
+    "Distributors": [],
+    "SoldAtLabel": null,
+    "ManufacturerCountries": [],
+    "ProductUPCs": [],
+    "Hazards": [
+      {
+        "Name": "The bottles can contain a bacteria. The bacteria usually does not affect healthy individuals, but could cause respiratory or other infections in individuals with chronic health problems or in individuals who have impaired immune systems.",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [
+      {
+        "Name": "Consumers should immediately stop using Scrub Free Daily Shower Cleaner and Scrub Free Daily Shower Spray purchased prior to October 5, 1999. Shower enclosures that have been sprayed with these products should be washed with a diluted solution of vinegar (one part vinegar to two parts water)."
+      }
+    ],
+    "RemedyOptions": []
+  },
+  {
+    "RecallID": 4,
+    "RecallNumber": "10002",
+    "RecallDate": "2009-10-01T00:00:00",
+    "Description": "This recall involves Halcyon diving equipment including the Halcyon Explorer, Eclipse, CCR35, Evolve and Pioneer Buoyancy Compensator Devices (BCDs) and Halcyon Surface Marker Buoys (SMBs), Lift Bags, Diver Alert Markers (DAMs) Surf Shuttle and Diver Lift Raft Inflatable Devices. \"Halcyon\" is printed on the diving equipment.",
+    "URL": "https://www.cpsc.gov/Recalls/2010/Diving-Equipment-Recalled-by-Halcyon-Manufacturing-Due-to-Drowning-Hazard",
+    "Title": "Diving Equipment Recalled by Halcyon Manufacturing Due to Drowning Hazard",
+    "ConsumerContact": "For more information, contact Halcyon at (800) 425-2966 between 8 a.m. and 5 p.m. ET Monday through Friday, visit the firm's Web site at www.halcyon.net/opv-recall, or email the firm at techservices@halcyon.net",
+    "LastPublishDate": "2014-05-23T00:00:00",
+    "Products": [
+      {
+        "Name": "Halcyon Diving Equipment",
+        "Description": "",
+        "Model": "",
+        "Type": "Scuba Diving/Water Activity Equipment",
+        "CategoryID": "2118",
+        "NumberOfUnits": "About 20,300"
+      }
+    ],
+    "Inconjunctions": [],
+    "Images": [
+      {
+        "URL": "https://www.cpsc.gov/~/link/3bcf90884ac04c1ca97d0a82627b7fa2.jpg",
+        "Caption": "Picture of Recalled Diving Equipment"
+      },
+      {
+        "URL": "https://www.cpsc.gov/~/link/e7926f71784b4ae59721dc1de05e8914.jpg",
+        "Caption": "Picture of Recalled buoyancy compensator devices (BCD)"
+      },
+      {
+        "URL": "https://www.cpsc.gov/~/link/3f333d3287c04f1884455db6bc5c71ee.jpg",
+        "Caption": "Picture of Recalled over pressure valves (OPVs)"
+      }
+    ],
+    "Injuries": [
+      {
+        "Name": "None reported."
+      }
+    ],
+    "Manufacturers": [
+      {
+        "Name": "Halcyon Manufacturing Inc., of High Springs, Fla.",
+        "CompanyID": ""
+      }
+    ],
+    "Retailers": [
+      {
+        "Name": "Diving equipment retailers and distributors from January 2006 through December 2008 for between $350 and $450 for the buoyancy compensator devices (BCDs) and between $50 and $275 for the inflatable devices.",
+        "CompanyID": ""
+      }
+    ],
+    "Importers": [],
+    "Distributors": [],
+    "SoldAtLabel": null,
+    "ManufacturerCountries": [
+      {
+        "Country": "United States"
+      }
+    ],
+    "ProductUPCs": [],
+    "Hazards": [
+      {
+        "Name": "The over pressure valves (OPVs) in the diving equipment could fail allowing the buoyancy compensator devices (BCDs) and the diver lift inflatable devices to leak, posing a drowning hazard to divers.",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [
+      {
+        "Name": "Consumers should immediately stop using recalled diving equipment and return it to an authorized Halcyon distributor or dealer or to the Halcyon factory to receive a free replacement of the overpressure valve spring."
+      }
+    ],
+    "RemedyOptions": [
+      {
+        "Option": "Replace"
+      }
+    ]
+  },
+  {
+    "RecallID": 20,
+    "RecallNumber": "10018",
+    "RecallDate": "2009-10-22T00:00:00",
+    "Description": "This recall involves the Fiesta Masquerade and the Home Olympic 20- piece flatware sets. The Fiesta Masquerade flatware set is silver-colored and the handles have plastic decorative inserts in red, orange, yellow, green and three different shades of blue. The Home Olympic flatware sets are charcoal and the handles have decorative black inserts.",
+    "URL": "https://www.cpsc.gov/Recalls/2010/Flatware-Recalled-by-Cambridge-Silversmiths-Due-to-Choking-Hazard",
+    "Title": "Flatware Recalled by Cambridge Silversmiths Due to Choking Hazard",
+    "ConsumerContact": "For additional information, contact Cambridge Silversmiths at (800) 890-3366 between 9 a.m. and 5 p.m. ET Monday through Friday, visit the company's Web site at www.cambridgesilversmiths.com or email service@cambridgesilversmiths.com",
+    "LastPublishDate": "2014-05-23T00:00:00",
+    "Products": [
+      {
+        "Name": "Fiesta Masquerade and Home Olympic Flatware",
+        "Description": "",
+        "Model": "",
+        "Type": "Dishes/Glassware/Eating Utensils",
+        "CategoryID": "1911",
+        "NumberOfUnits": "About 13,000"
+      }
+    ],
+    "Inconjunctions": [],
+    "Images": [
+      {
+        "URL": "https://www.cpsc.gov/~/link/47aaaad9431c42ff85caea445f7efabf.jpg",
+        "Caption": "Picture of Recalled Fiesta Masquerade Flatware"
+      },
+      {
+        "URL": "https://www.cpsc.gov/~/link/57863c9038cc4fe193a618343760dcc7.jpg",
+        "Caption": "Picture of Recalled Home Olympic Flatware"
+      }
+    ],
+    "Injuries": [
+      {
+        "Name": "The company has received 28 reports of a plastic insert detaching from the flatware. One incident of injury reported, no specifics provided."
+      }
+    ],
+    "Manufacturers": [],
+    "Retailers": [
+      {
+        "Name": "Fiesta Masquerade at JC Penney, Federated Department Stores, Bealls and Homer Laughlin from November 2008 through May 2009 for about $70 per 20-piece set; Home Olympic at Target from August 2008 through August 2009 for about $30 per 20-piece set.",
+        "CompanyID": ""
+      }
+    ],
+    "Importers": [],
+    "Distributors": [
+      {
+        "Name": "Cambridge Silversmiths Ltd. Inc., of Fairfield, N.J.",
+        "CompanyID": ""
+      }
+    ],
+    "SoldAtLabel": null,
+    "ManufacturerCountries": [
+      {
+        "Country": "China"
+      }
+    ],
+    "ProductUPCs": [],
+    "Hazards": [
+      {
+        "Name": "The plastic decorative inserts on the flatware's handles can detach during dishwashing, posing a choking hazard to children.",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [
+      {
+        "Name": "Consumers should stop using the recalled flatware sets immediately and contact the company to return the product and obtain a free replacement."
+      }
+    ],
+    "RemedyOptions": []
+  }
+]

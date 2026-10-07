@@ -1,0 +1,1 @@
+"""SafeScale AI data pipeline."""
