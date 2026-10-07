@@ -34,7 +34,7 @@ Early development: CS Seminar MVP (Layer 1: Product Hazard Intelligence).
 |---|---|---|
 | data-ingest | [SPEC-data-ingest.md](SPEC-data-ingest.md) | Done: 10,039 recalls in Supabase |
 | hazard-taxonomy | — | Not started |
-| retrieval | — | Not started |
+| retrieval | [SPEC-retrieval.md](SPEC-retrieval.md) | Spec drafted |
 | hazard-analysis | — | Not started |
 | explain | — | Not started |
 | app | — | Not started |
