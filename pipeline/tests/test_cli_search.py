@@ -27,5 +27,5 @@ def test_keyword_search_needs_no_embedder(cli_env, capsys, monkeypatch):
         raise AssertionError("keyword search must not build an embedder")
 
     monkeypatch.setattr(cli, "make_embedder", fail)
-    cli.main(["search", "zzzz-no-such-word", "--method", "keyword"])
+    cli.main(["search", "qqxyzzyq", "--method", "keyword"])
     assert capsys.readouterr().out.strip() == "no matching recalls"
