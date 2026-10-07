@@ -5,6 +5,7 @@ import logging
 from pathlib import Path
 
 from safescale import config, db
+from safescale.ingest import run_ingest
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -31,7 +32,14 @@ def main(argv: list[str] | None = None) -> int:
             applied = db.migrate(conn)
         print(f"applied {len(applied)} migration(s): {', '.join(applied) or 'up to date'}")
     if args.command == "ingest":
-        raise NotImplementedError("ingest is implemented in task 7")
+        with db.connect() as conn:
+            summary = run_ingest(conn, snapshot=args.snapshot, limit=args.limit)
+        r = summary.result
+        print(
+            f"run {summary.run_id}: fetched={summary.fetched} inserted={r.inserted} "
+            f"updated={r.updated} unchanged={r.unchanged} rejected={summary.rejected} "
+            f"snapshot={summary.snapshot}"
+        )
     return 0
 
 
