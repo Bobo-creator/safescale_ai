@@ -42,8 +42,9 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-hazard-taxonomy.md](../SPEC-hazard-taxon
 
 ### Task 6: Supabase run
 **Acceptance:**
-- [ ] 004 applied by the pipeline role; classify < 10 s; re-run identical; advisors: no new warnings
+- [x] 004 applied by the pipeline role; classify < 10 s; re-run identical; advisors: no new warnings
 **Verify:** SQL counts, timings, advisors · **Scope:** S
+**Result (2026-10-19):** 5.8 s; rows identical to local (md5); 0 unlabeled; 0 non-verbatim evidence; advisors INFO only
 
 ### Task 7: `safescale score-hazards` (after your labels are in)
 **Acceptance:**
