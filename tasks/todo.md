@@ -4,8 +4,8 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-explain.md](../SPEC-explain.md)
 
 ### Task 1: Output schema + grounding validator
 **Acceptance:**
-- [ ] Pydantic schema per spec (citations min 1, category enum, size limits)
-- [ ] Catches: unknown id, wrong-category / wrong-area citation, invented number, banned word, unknown area, empty summary; each with a readable reason
+- [x] Pydantic schema per spec (citations min 1, category enum, size limits)
+- [x] Catches: unknown id, wrong-category / wrong-area citation, invented number, banned word, unknown area, empty summary; each with a readable reason
 **Verify:** `uv run pytest tests/explain/test_validate.py`
 **Files:** `explain/schema.py`, `explain/validate.py`, tests · **Scope:** M
 
