@@ -7,7 +7,7 @@ from safescale.retrieval.index import embed_recalls
 from safescale.taxonomy.store import classify_all
 
 LITHIUM_QUERY = "lithium-ion battery pack overheating fire"
-FAKE_FLOOR = 0.1  # the bag-of-words fake gives lower cosines than OpenAI embeddings
+FAKE_FLOOR = 0.0  # explain tests are about the flow, not relevance: count every fixture recall
 
 
 @pytest.fixture

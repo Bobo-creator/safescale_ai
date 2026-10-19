@@ -17,13 +17,13 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-explain.md](../SPEC-explain.md)
 
 ### Task 3: explain() flow (FakeExplainer)
 **Acceptance:**
-- [ ] Valid first try; retry with feedback; fallback template; insufficient evidence → no model call
-- [ ] Explanation carries caveat, disclaimer, validation record, usage; `to_dict()` JSON-ready
+- [x] Valid first try; retry with feedback; fallback template; insufficient evidence → no model call
+- [x] Explanation carries caveat, disclaimer, validation record, usage; `to_dict()` JSON-ready
 **Verify:** `uv run pytest tests/explain/test_explain.py`
-**Files:** `explain/explain.py`, `explain/prompt.py`, `tests/explain/fake_explainer.py`, tests · **Scope:** M
+**Files:** `explain/explain.py`, `explain/prompt.py`, `tests/fake_explainer.py`, tests · **Scope:** M
 
 ### Checkpoint: offline
-- [ ] All tests + lint pass with no network
+- [x] All tests + lint pass with no network
 
 ### Task 4: OpenAIExplainer + live test
 **Acceptance:**
