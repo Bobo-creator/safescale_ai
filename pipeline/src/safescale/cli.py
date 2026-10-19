@@ -12,6 +12,7 @@ from safescale.retrieval.index import embed_recalls
 from safescale.retrieval.search import METHODS, Hit, search
 from safescale.taxonomy.classify import Classification
 from safescale.taxonomy.labeling import gold as gold_file
+from safescale.taxonomy.score import format_score, score
 from safescale.taxonomy.store import classify_all, labels_for
 
 DEFAULT_GOLD_PATH = config.REPO_ROOT / "evaluation" / "hazard_gold" / "gold.json"
@@ -40,6 +41,9 @@ def build_parser() -> argparse.ArgumentParser:
     commands.add_parser("classify", help="(re)label every recall with hazard categories")
     hazards = commands.add_parser("hazards", help="show a recall's hazard labels and evidence")
     hazards.add_argument("recall_id", type=int)
+
+    scorer = commands.add_parser("score-hazards", help="score the classifier against gold labels")
+    scorer.add_argument("--gold", type=Path, default=DEFAULT_GOLD_PATH, help="gold file path")
 
     label = commands.add_parser("label", help="open the local page for labeling the gold sample")
     label.add_argument("--gold", type=Path, default=DEFAULT_GOLD_PATH, help="gold file path")
@@ -120,6 +124,11 @@ def main(argv: list[str] | None = None) -> int:
             print(f"recall {args.recall_id} not found or not classified (run `safescale classify`)")
             return 1
         print(format_classification(found[args.recall_id]))
+    if args.command == "score-hazards":
+        if not args.gold.exists():
+            print(f"no gold file at {args.gold}; run `safescale label` first")
+            return 1
+        print(format_score(score(gold_file.load_gold(args.gold))))
     if args.command == "label":
         run_labeling(args)
     return 0
