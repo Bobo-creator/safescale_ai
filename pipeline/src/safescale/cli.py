@@ -1,12 +1,15 @@
 """`safescale` command-line entry point."""
 
 import argparse
+import json
 import logging
 import time
 from pathlib import Path
 
 from safescale import config, db
+from safescale.analysis.analyze import analyze
 from safescale.analysis.terms import refresh_term_stats
+from safescale.analysis.text import format_report
 from safescale.ingest import run_ingest
 from safescale.retrieval.embedder import Embedder, OpenAIEmbedder
 from safescale.retrieval.index import embed_recalls
@@ -38,6 +41,12 @@ def build_parser() -> argparse.ArgumentParser:
     find.add_argument("query", help="product description, in quotes")
     find.add_argument("--k", type=int, default=10, help="number of results (default 10)")
     find.add_argument("--method", choices=METHODS, default="vector")
+
+    report = commands.add_parser("analyze", help="hazard report for a product description")
+    report.add_argument("query", help="product description, in quotes")
+    report.add_argument("--k", type=int, default=25, help="similar recalls to analyze (default 25)")
+    report.add_argument("--method", choices=METHODS, default="vector")
+    report.add_argument("--json", action="store_true", help="print the report as JSON")
 
     commands.add_parser("classify", help="(re)label every recall with hazard categories")
     hazards = commands.add_parser("hazards", help="show a recall's hazard labels and evidence")
@@ -107,6 +116,12 @@ def main(argv: list[str] | None = None) -> int:
         with db.connect() as conn:
             hits = search(conn, args.query, k=args.k, method=args.method, embedder=embedder)
         print(format_hits(hits))
+    if args.command == "analyze":
+        with db.connect() as conn:
+            result = analyze(
+                conn, args.query, embedder=make_embedder(), k=args.k, method=args.method
+            )
+        print(json.dumps(result.to_dict(), indent=2) if args.json else format_report(result))
     if args.command == "classify":
         started = time.perf_counter()
         with db.connect() as conn:

@@ -4,8 +4,13 @@ import psycopg
 from pgvector import Vector
 from pgvector.psycopg import register_vector
 
-from safescale.analysis.report import RELEVANCE_FLOOR, Match
-from safescale.retrieval.search import Hit
+from safescale.analysis.investigate import cited_standards, investigation_areas
+from safescale.analysis.profile import build_profile, overall_signal
+from safescale.analysis.report import RELEVANCE_FLOOR, HazardReport, Match
+from safescale.analysis.terms import failure_terms, shared_terms
+from safescale.retrieval.embedder import Embedder
+from safescale.retrieval.search import Hit, Method, search
+from safescale.taxonomy.rules import TAXONOMY_VERSION
 from safescale.taxonomy.store import labels_for
 
 _COSINES = """
@@ -61,3 +66,42 @@ def base_rates(conn: psycopg.Connection) -> dict[str, float]:
         "from recall_hazards group by category"
     ).fetchall()
     return dict(rows)
+
+
+def analyze(
+    conn: psycopg.Connection,
+    query: str,
+    *,
+    embedder: Embedder,
+    k: int = 25,
+    method: Method = "vector",
+    relevance_floor: float = RELEVANCE_FLOOR,
+) -> HazardReport:
+    """The hazard report for a product description. The embedder is needed for every method,
+    because relevance is always judged by cosine similarity."""
+    query = " ".join(query.split())
+    if not query:
+        raise ValueError("query is empty")
+    [vector] = embedder.embed([query])
+    hits = search(conn, query, k=k, method=method, embedder=embedder, query_embedding=vector)
+    matches = build_matches(conn, hits, vector, relevance_floor=relevance_floor)
+    relevant = sum(m.relevant for m in matches)
+    profile = build_profile(matches, base_rates(conn))
+    signal, drivers, insufficient = overall_signal(profile, relevant)
+    return HazardReport(
+        query=query,
+        method=method,
+        k=k,
+        matches=matches,
+        relevant=relevant,
+        relevance_floor=relevance_floor,
+        profile=profile,
+        overall_signal=signal,
+        signal_drivers=drivers,
+        insufficient_evidence=insufficient,
+        shared_terms=shared_terms(conn, query, matches),
+        failure_terms=failure_terms(conn, query, matches),
+        investigation_areas=investigation_areas(matches),
+        standards=cited_standards(matches),
+        taxonomy_version=TAXONOMY_VERSION,
+    )

@@ -78,3 +78,97 @@ def test_base_rates(ready):
             "select count(*)::float / 18 from recall_hazards where category = 'fire_overheating'"
         ).fetchone()[0]
     )
+
+
+# --- analyze() end to end -----------------------------------------------------------------------
+
+import json  # noqa: E402
+
+from safescale import cli  # noqa: E402
+from safescale.analysis.analyze import analyze  # noqa: E402
+from safescale.analysis.report import DISCLAIMER  # noqa: E402
+from safescale.analysis.terms import refresh_term_stats  # noqa: E402
+from safescale.analysis.text import format_report  # noqa: E402
+
+
+@pytest.fixture
+def analyzable(ready):
+    refresh_term_stats(ready)
+    return ready
+
+
+def _report_ids(report):
+    data = report.to_dict()
+    ids = set()
+    for section in ("profile", "shared_terms", "failure_terms", "investigation_areas", "standards"):
+        for item in data[section]:
+            ids |= set(item["recall_ids"])
+    return ids
+
+
+@pytest.mark.parametrize("method", METHODS)
+def test_analyze_end_to_end(analyzable, method):
+    report = analyze(
+        analyzable,
+        LITHIUM_QUERY,
+        embedder=FakeEmbedder(),
+        k=10,
+        method=method,
+        relevance_floor=FAKE_FLOOR,
+    )
+    # keyword only returns recalls that share a word with the query (7 of the 18 fixtures here)
+    assert len(report.matches) == (7 if method == "keyword" else 10) and report.relevant >= 1
+    assert report.profile and report.profile[0].count >= 1
+    relevant_ids = {m.recall_id for m in report.matches if m.relevant}
+    assert _report_ids(report) <= relevant_ids
+    assert report.disclaimer == DISCLAIMER
+    data = json.loads(json.dumps(report.to_dict()))
+    assert data["query"] == LITHIUM_QUERY and data["matches"][0]["recall_date"]
+
+
+def test_analyze_embeds_the_query_once(analyzable):
+    class Counting(FakeEmbedder):
+        calls = 0
+
+        def embed(self, texts):
+            Counting.calls += 1
+            return super().embed(texts)
+
+    analyze(analyzable, LITHIUM_QUERY, embedder=Counting(), k=5, method="hybrid")
+    assert Counting.calls == 1
+
+
+def test_no_relevant_matches_gives_insufficient_evidence(analyzable):
+    report = analyze(analyzable, LITHIUM_QUERY, embedder=FakeEmbedder(), k=5, relevance_floor=0.99)
+    assert report.relevant == 0 and report.insufficient_evidence
+    assert report.overall_signal == "LOW" and not report.signal_drivers
+    assert report.profile == [] and report.investigation_areas == [] and report.shared_terms == []
+    assert "not enough historical evidence" in format_report(report)
+
+
+def test_text_report_wording(analyzable):
+    report = analyze(
+        analyzable, LITHIUM_QUERY, embedder=FakeEmbedder(), k=10, relevance_floor=FAKE_FLOOR
+    )
+    text = format_report(report)
+    assert text.startswith("Historical signal: ") and text.endswith(DISCLAIMER)
+    body = text.removesuffix(DISCLAIMER).lower()
+    for banned in (" safe ", "compliant", "certif", "probability"):
+        assert banned not in body
+
+
+def test_analyze_rejects_empty_query(analyzable):
+    with pytest.raises(ValueError, match="empty"):
+        analyze(analyzable, "   ", embedder=FakeEmbedder())
+
+
+def test_cli_analyze_text_and_json(analyzable, monkeypatch, capsys):
+    from tests_support import TEST_DATABASE_URL
+
+    monkeypatch.setenv("DATABASE_URL", TEST_DATABASE_URL)
+    monkeypatch.setattr(cli, "make_embedder", FakeEmbedder)
+    assert cli.main(["analyze", LITHIUM_QUERY, "--k", "5"]) == 0
+    assert capsys.readouterr().out.startswith("Historical signal: ")
+    assert cli.main(["analyze", LITHIUM_QUERY, "--k", "5", "--json"]) == 0
+    data = json.loads(capsys.readouterr().out)
+    assert data["k"] == 5 and data["disclaimer"] == DISCLAIMER

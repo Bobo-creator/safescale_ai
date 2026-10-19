@@ -35,7 +35,7 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-hazard-analysis.md](../SPEC-hazard-analy
 
 ### Task 5: `analyze()` and `safescale analyze [--json]`
 **Acceptance:**
-- [ ] End to end with FakeEmbedder on fixtures; every recall id in the report is a relevant match; JSON round-trips
+- [x] End to end with FakeEmbedder on fixtures; every recall id in the report is a relevant match; JSON round-trips
 **Verify:** `uv run pytest tests/analysis/test_analyze.py`
 **Files:** `analysis/analyze.py`, `cli.py`, tests · **Scope:** M
 
