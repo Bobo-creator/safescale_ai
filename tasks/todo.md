@@ -12,8 +12,8 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-hazard-taxonomy.md](../SPEC-hazard-taxon
 
 ### Task 2: Hazard rules + `classify()`
 **Acceptance:**
-- [ ] ~60 table-driven phrases pass, including the traps ("lead to", "fall out of position", "injury hazard", one-word records, multi-hazard)
-- [ ] Field order hazard+title → description fallback → `other`; evidence is a verbatim fragment ≤ 160 chars
+- [x] ~60 table-driven phrases pass, including the traps ("lead to", "fall out of position", "injury hazard", one-word records, multi-hazard)
+- [x] Field order hazard+title → description fallback → `other`; evidence is a verbatim fragment ≤ 160 chars
 **Verify:** `uv run pytest tests/taxonomy/test_rules.py tests/taxonomy/test_classify.py`
 **Files:** `taxonomy/rules.py`, `taxonomy/classify.py`, tests · **Scope:** M
 
