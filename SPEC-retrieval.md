@@ -193,6 +193,10 @@ pipeline/tests/retrieval/
   trip from a laptop. The first query after the free-tier project has been idle can take seconds
   (cold cache), so warm it up before a live demo.
 - **Full embed:** 10,039 recalls, 2.85 M tokens (≈ $0.06 at $0.02 / 1M), ~2 minutes.
+- **k above 40 (fixed 2026-10-19, `005_vector_search_ef_search.sql`):** HNSW returns at most
+  `hnsw.ef_search` rows (default 40), so vector search silently capped `k` at 40 and hybrid saw only
+  40 of its 100 vector candidates. The function now sets `ef_search = clamp(k, 40, 1000)` for the
+  transaction. Small test graphs don't show the cap, so the test checks the setting itself.
 - `Hit` also carries `recall_date`; `FakeEmbedder` lives in `pipeline/tests/fake_embedder.py`.
 
 ## Open questions

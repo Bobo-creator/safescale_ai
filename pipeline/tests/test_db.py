@@ -13,6 +13,7 @@ def test_migrate_creates_tables(conn):
         "002_retrieval.sql",
         "003_vector_search_plan.sql",
         "004_hazard_taxonomy.sql",
+        "005_vector_search_ef_search.sql",
     ]
     assert {
         "recalls",

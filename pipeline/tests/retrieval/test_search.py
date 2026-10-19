@@ -63,3 +63,16 @@ def test_mismatched_model_is_refused(indexed):
 def test_bad_input(indexed, query, k):
     with pytest.raises(ValueError):
         search(indexed, query, k=k, method="keyword")
+
+
+@pytest.mark.parametrize(("k", "expected"), [(10, "40"), (60, "60"), (5000, "1000")])
+def test_vector_search_raises_hnsw_ef_search_to_k(indexed, k, expected):
+    # HNSW returns at most hnsw.ef_search rows (default 40), which silently capped k at 40 on the
+    # real corpus. Small test graphs don't show the cap, so check the setting the search leaves.
+    vector = FakeEmbedder().embed([LITHIUM_QUERY])[0]
+    with indexed.transaction():
+        indexed.execute(
+            "select count(*) from search_recalls_vector(%s::vector, %s)", (str(vector), k)
+        )
+        assert indexed.execute("show hnsw.ef_search").fetchone()[0] == expected
+    assert indexed.execute("show hnsw.ef_search").fetchone()[0] == "40"  # transaction-local
