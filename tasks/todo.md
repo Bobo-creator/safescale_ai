@@ -27,10 +27,10 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-explain.md](../SPEC-explain.md)
 
 ### Task 4: OpenAIExplainer + live test
 **Acceptance:**
-- [ ] `responses.parse` with the schema; usage (input/output/reasoning tokens) and cost estimate recorded
-- [ ] `-m live`: night-light explanation passes validation
+- [x] `responses.parse` with the schema; usage (input/output/reasoning tokens) and cost estimate recorded
+- [x] `-m live`: night-light explanation passes validation
 **Verify:** `uv run pytest -m live tests/explain`
-**Files:** `explain/explainer.py`, `tests/explain/test_live.py` · **Scope:** S
+**Files:** `explain/explainer.py`, `tests/explain/test_explainer.py`, `tests/explain/test_live.py` · **Scope:** S
 
 ### Task 5: `safescale explain [--json] [--model]`
 **Acceptance:**
