@@ -1,42 +1,42 @@
-# Implementation Plan: explain
+# Implementation Plan: app
 
-Implements [SPEC-explain.md](../SPEC-explain.md). Tasks: [todo.md](todo.md).
+Implements [SPEC-app.md](../SPEC-app.md). Tasks: [todo.md](todo.md).
 Previous modules: [data-ingest](done/data-ingest-plan.md), [retrieval](done/retrieval-plan.md),
-[hazard-taxonomy](done/hazard-taxonomy-plan.md), [hazard-analysis](done/hazard-analysis-plan.md).
+[hazard-taxonomy](done/hazard-taxonomy-plan.md), [hazard-analysis](done/hazard-analysis-plan.md),
+[explain](done/explain-plan.md).
 
 ## Overview
 
-HazardReport → deterministic evidence packet → OpenAI structured output (`gpt-6-luna` default) →
-grounding validator (drop / one retry / deterministic fallback) → `Explanation` with fixed caveat
-and disclaimer; `safescale explain [--json] [--model]`.
+FastAPI inside the `safescale` package (`/api/analyze`, `/api/explain`, `/api/examples`,
+`/api/health`) with rate limits and a least-privilege DB role, plus a Next.js dashboard in `web/`,
+deployed as one Vercel project (services + rewrites, region iad1, daily keep-alive cron).
 
 ## Approved decisions (2026-10-19)
 
-- Default `gpt-6-luna`; benchmark against `gpt-6.1-sol` on 10 queries before finalizing.
-- Never show unvalidated text; no LLM call on insufficient evidence; no caching in v1.
-- Owner reviews 5 explanations (Markdown sheet), target ≥ 95% supported sentences.
+- Same OpenAI key as the pipeline; spend guarded by 300 explanations/day + per-visitor limits.
+- Limits 30 analyses / 10 explanations per visitor-hour; method selector under "Advanced".
+- No streaming in v1 (only validated text is shown); no storage of descriptions.
 
 ## Order and why
 
-The validator is the core and the riskiest logic, and it needs no network, so it comes first
-together with the schema. Then the packet, the flow with a fake explainer, then the real OpenAI
-explainer (first paid calls, tiny), then the CLI, the benchmark and the review sheet.
+Back end first, tested offline (it holds the security-relevant parts: limits, DB role, input
+validation). Then the UI against the local API on Supabase, then e2e, then the two outward-facing
+steps (Supabase role, Vercel project) once everything works locally.
 
 ## Dependency graph
 
 ```
-schema + validator (1) ──┐
-evidence packet (2) ─────┼─► explain() flow with FakeExplainer (3) ─► OpenAIExplainer + live test (4)
-                         │                                                  │
-                         └──────────────────────────────► CLI (5) ─► benchmark + review sheet (6)
+migration 007 + limits (1) ─► FastAPI app (2) ─┬─► Next.js scaffold + API client (3) ─► UI design (4) ─► e2e (5)
+                                               └───────────────────────────────────────────────────────────┐
+                                     safescale_app role on Supabase (6) ─► Vercel deploy + verify (7) ◄─────┘
 ```
 
 ## Risks and mitigations
 
 | Risk | Impact | Mitigation |
 |---|---|---|
-| Model states unsupported claims with real-looking citations | High | Category/area-scoped citation checks, number check, human review of 5 explanations |
-| Validator too strict, most text dropped | Med | Report drop reasons; tune the prompt (bump PROMPT_VERSION), not the checks |
-| Recall text tries to steer the model (prompt injection) | Low | Recall text passed as JSON data; instructions say so; validator catches the effects |
-| Reasoning tokens make cost/latency higher than estimated | Med | Measure per call; effort `low` by default; ask before exceeding $0.01 |
-| New model names change or get deprecated | Low | `EXPLAIN_MODEL` env var; model recorded on each explanation |
+| Public endpoint drains the OpenAI key | High | Daily explanation cap + per-visitor limits, enforced in the DB before any paid call |
+| Transaction pooler + prepared statements break psycopg | Med | `prepare_threshold=None`; tested against the pooler before deploy |
+| Python bundle or build fails on Vercel services | Med | Deploy a preview early in Task 7; keep `excludeFiles` for tests/fixtures |
+| Cold starts (Vercel function + Supabase) exceed 2 s | Med | Measure warm vs cold separately; keep-alive cron; report honestly |
+| Descriptions leak into logs | Med | Never log bodies; test asserts it; no analytics |
