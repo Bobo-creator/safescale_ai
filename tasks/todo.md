@@ -4,9 +4,9 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-app.md](../SPEC-app.md)
 
 ### Task 1: Migration 007 (app role policies, rate-limit table) + limits
 **Acceptance:**
-- [ ] RLS select policies for `safescale_app` on the read tables; `app_rate_limits(bucket, window_start, count)`; grants
-- [ ] `limits.py`: atomic increment per (salted-IP bucket, hour) and global daily explanation cap; env-configurable
-- [ ] Test: app role can read what analysis needs, cannot write recalls or run DDL; anon still locked out
+- [x] RLS select policies for `safescale_app` on the read tables; `app_rate_limits(bucket, window_start, count)`; grants
+- [x] `limits.py`: atomic increment per (salted-IP bucket, hour) and global daily explanation cap; env-configurable
+- [x] Test: app role can read what analysis needs, cannot write recalls or run DDL; anon still locked out
 **Verify:** `uv run pytest tests/api/test_limits.py tests/test_db.py`
 **Files:** `db/migrations/007_app_access.sql`, `api/limits.py`, tests · **Scope:** M
 
