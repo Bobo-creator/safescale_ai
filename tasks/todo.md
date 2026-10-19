@@ -29,8 +29,8 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-app.md](../SPEC-app.md)
 
 ### Task 4: Dashboard UI (frontend-design)
 **Acceptance:**
-- [ ] Input panel (examples, k, Advanced method), signal, profile chart with lift, terms, areas, standards, evidence cards, explanation with citation → card jump, disclaimer + caveat always visible
-- [ ] Loading, error, 429 and insufficient-evidence states; light/dark; phone width; keyboard reachable; `/about` page
+- [x] Input panel (examples, k, Advanced method), signal, profile chart with lift, terms, areas, standards, evidence cards, explanation with citation → card jump, disclaimer + caveat always visible
+- [x] Loading, error, 429 and insufficient-evidence states; light/dark; phone width; keyboard reachable; `/about` page
 **Verify:** build + manual review in the browser (Playwright screenshots)
 **Files:** `web/app/**`, `web/components/**` · **Scope:** L (split into sub-steps while building)
 

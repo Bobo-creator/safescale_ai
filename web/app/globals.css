@@ -1,26 +1,86 @@
 @import "tailwindcss";
 
+/* Drafting paper and blueprint ink. Signal colors always appear with their word. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --paper: #f5f7f9;
+  --sheet: #ffffff;
+  --ink: #1b2533;
+  --graphite: #5a6472;
+  --rule: #d6dbe1;
+  --cobalt: #2546c9;
+  --cobalt-soft: #e6ebfb;
+  --high: #b42318;
+  --high-soft: #fbe9e7;
+  --moderate: #a16207;
+  --moderate-soft: #fbf1df;
+  --low: #4d6b5a;
+  --low-soft: #e8efea;
+  --mark: #fff4bf;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --paper: #0d1727;
+    --sheet: #13203a;
+    --ink: #e6eaf0;
+    --graphite: #9aa6b6;
+    --rule: #26355a;
+    --cobalt: #8aa2ff;
+    --cobalt-soft: #1c2b52;
+    --high: #ff8a7a;
+    --high-soft: #3a1d22;
+    --moderate: #f2b552;
+    --moderate-soft: #33291a;
+    --low: #93c2a5;
+    --low-soft: #1b2e2a;
+    --mark: #3d3a1a;
   }
 }
 
+@theme inline {
+  --color-paper: var(--paper);
+  --color-sheet: var(--sheet);
+  --color-ink: var(--ink);
+  --color-graphite: var(--graphite);
+  --color-rule: var(--rule);
+  --color-cobalt: var(--cobalt);
+  --color-cobalt-soft: var(--cobalt-soft);
+  --color-high: var(--high);
+  --color-high-soft: var(--high-soft);
+  --color-moderate: var(--moderate);
+  --color-moderate-soft: var(--moderate-soft);
+  --color-low: var(--low);
+  --color-low-soft: var(--low-soft);
+  --color-mark: var(--mark);
+  --font-sans: var(--font-public-sans);
+  --font-serif: var(--font-source-serif);
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-feature-settings: "tnum" 1;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cobalt);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* The highlight a citation leaves on its evidence card. */
+@keyframes cite-flash {
+  from { background-color: var(--mark); }
+  to { background-color: transparent; }
+}
+.cite-flash {
+  animation: cite-flash 1.6s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
