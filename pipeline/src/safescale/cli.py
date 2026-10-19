@@ -9,6 +9,9 @@ from safescale.ingest import run_ingest
 from safescale.retrieval.embedder import Embedder, OpenAIEmbedder
 from safescale.retrieval.index import embed_recalls
 from safescale.retrieval.search import METHODS, Hit, search
+from safescale.taxonomy.labeling import gold as gold_file
+
+DEFAULT_GOLD_PATH = config.REPO_ROOT / "evaluation" / "hazard_gold" / "gold.json"
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -30,6 +33,13 @@ def build_parser() -> argparse.ArgumentParser:
     find.add_argument("query", help="product description, in quotes")
     find.add_argument("--k", type=int, default=10, help="number of results (default 10)")
     find.add_argument("--method", choices=METHODS, default="vector")
+
+    label = commands.add_parser("label", help="open the local page for labeling the gold sample")
+    label.add_argument("--gold", type=Path, default=DEFAULT_GOLD_PATH, help="gold file path")
+    label.add_argument("--n", type=int, default=gold_file.DEFAULT_SAMPLE_SIZE, help="sample size")
+    label.add_argument("--seed", type=int, default=gold_file.DEFAULT_SEED, help="sample seed")
+    label.add_argument("--port", type=int, default=8765)
+    label.add_argument("--no-browser", action="store_true", help="don't open a browser tab")
     return parser
 
 
@@ -76,7 +86,43 @@ def main(argv: list[str] | None = None) -> int:
         with db.connect() as conn:
             hits = search(conn, args.query, k=args.k, method=args.method, embedder=embedder)
         print(format_hits(hits))
+    if args.command == "label":
+        run_labeling(args)
     return 0
+
+
+def run_labeling(args: argparse.Namespace) -> None:
+    import webbrowser
+
+    from safescale.taxonomy.labeling.server import LabelingServer
+
+    if args.gold.exists():
+        gold = gold_file.load_gold(args.gold)
+        if (len(gold.items), gold.seed) != (args.n, args.seed):
+            print(
+                f"note: resuming {args.gold} ({len(gold.items)} recalls, seed {gold.seed}); "
+                "--n/--seed only apply to a new gold file"
+            )
+    else:
+        with db.connect() as conn:
+            gold = gold_file.create_gold_set(conn, n=args.n, seed=args.seed)
+        gold_file.save_gold(gold, args.gold)
+        print(f"created {args.gold} with {len(gold.items)} recalls (seed {gold.seed})")
+
+    done = sum(item.is_labeled for item in gold.items)
+    server = LabelingServer(gold, args.gold, port=args.port)
+    print(
+        f"{done}/{len(gold.items)} labeled. Labeling page: {server.url}  (Ctrl+C to stop)",
+        flush=True,
+    )
+    if not args.no_browser:
+        webbrowser.open(server.url)
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\nstopped; labels are saved")
+    finally:
+        server.server_close()
 
 
 if __name__ == "__main__":

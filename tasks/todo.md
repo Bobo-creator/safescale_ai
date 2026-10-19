@@ -4,9 +4,9 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-hazard-taxonomy.md](../SPEC-hazard-taxon
 
 ### Task 1: Gold sample + labeling page (`safescale label`)
 **Acceptance:**
-- [ ] Seeded sample of 50 recall ids is deterministic and written to `evaluation/hazard_gold/gold.json` with empty labels
-- [ ] Page shows title, hazard text, description, CPSC link; 12 category checkboxes + "violates a standard" + notes; never shows predictions
-- [ ] Each change saves immediately; reload resumes; progress + jump-to-unlabeled; server binds to 127.0.0.1
+- [x] Seeded sample of 50 recall ids is deterministic and written to `evaluation/hazard_gold/gold.json` with empty labels
+- [x] Page shows title, hazard text, description, CPSC link; 12 category checkboxes + "violates a standard" + notes; never shows predictions
+- [x] Each change saves immediately; reload resumes; progress + jump-to-unlabeled; server binds to 127.0.0.1
 **Verify:** `uv run pytest tests/taxonomy/test_labeling.py`; Playwright check of render/save/resume
 **Files:** `taxonomy/categories.py`, `taxonomy/labeling/`, `cli.py`, tests · **Scope:** M
 

@@ -17,3 +17,6 @@ __pycache__/
 .DS_Store
 .idea/
 .vscode/
+
+# Playwright MCP output
+.playwright-mcp/
