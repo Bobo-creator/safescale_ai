@@ -36,7 +36,7 @@ Early development: CS Seminar MVP (Layer 1: Product Hazard Intelligence).
 | hazard-taxonomy | [SPEC-hazard-taxonomy.md](SPEC-hazard-taxonomy.md) | Done: 12 hazard categories + standards flag; micro-F1 0.92 on a blind 50-recall gold set |
 | retrieval | [SPEC-retrieval.md](SPEC-retrieval.md) | Done: 10,039 recalls embedded; vector / keyword / hybrid search |
 | hazard-analysis | [SPEC-hazard-analysis.md](SPEC-hazard-analysis.md) | Done: hazard profile with lift, LOW / MODERATE / HIGH signal, shared and failure terms, investigation areas, cited standards |
-| explain | — | Not started |
+| explain | [SPEC-explain.md](SPEC-explain.md) | Built: cited, validated explanations (gpt-6-luna, ~$0.001 each); human review pending |
 | app | — | Not started |
 | evaluation | — | Not started |
 
@@ -69,6 +69,7 @@ uv run safescale embed        # embed new/changed recalls with OpenAI (needs OPE
 uv run safescale hazards 166  # a recall's hazard labels and the phrases behind them
 uv run safescale analyze "rechargeable night light, lithium-ion battery, USB-C"   # hazard report
 uv run safescale analyze "..." --k 50 --method hybrid --json                      # as JSON
+uv run safescale explain "rechargeable night light, lithium-ion battery, USB-C"   # + explanation
 uv run safescale search "rechargeable night light, lithium-ion battery" --method hybrid
 uv run safescale label        # local page for labeling the gold sample
 uv run safescale score-hazards  # classifier vs your gold labels: P / R / F1

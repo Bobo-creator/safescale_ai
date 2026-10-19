@@ -7,7 +7,13 @@ from safescale.explain.schema import (
     MatchReason,
     Sentence,
 )
-from safescale.explain.validate import Grounding, normalize_number, numbers_in, validate
+from safescale.explain.validate import (
+    Grounding,
+    normalize_number,
+    numbers_in,
+    strip_repeated_citations,
+    validate,
+)
 
 G = Grounding(
     match_ids={1, 2, 3, 4},
@@ -186,3 +192,27 @@ def test_needs_retry_when_summary_lost_or_too_much_dropped():
     one_bad = validate(draft(summary=[OK, OK, OK, bad]), G)
     assert not one_bad.needs_retry  # exactly 25% is tolerated
     assert one_bad.feedback() == ["summary[3]: cites recalls that are not in the evidence: [99]"]
+
+
+@pytest.mark.parametrize(
+    ("text", "citations", "expected"),
+    [
+        ("Lamps overheated. [1, 2]", [1, 2], "Lamps overheated."),
+        ("Lamps overheated (#1).", [1], "Lamps overheated."),
+        ("Lamps overheated [2]", [1, 2], "Lamps overheated."),
+        ("Lamps overheated. [1, 99]", [1], "Lamps overheated. [1, 99]"),  # not a pure repeat
+        ("14 of 25 recalls.", [1], "14 of 25 recalls."),
+    ],
+)
+def test_repeated_trailing_citations_are_stripped(text, citations, expected):
+    assert strip_repeated_citations(Sentence(text=text, citations=citations)).text == expected
+
+
+def test_stripping_happens_before_the_number_check():
+    s = Sentence(text="Fire recurs in lamps. [1, 2]", citations=[1, 2])
+    result = validate(draft(summary=[s]), G)
+    assert result.dropped == [] and result.draft.summary[0].text == "Fire recurs in lamps."
+    other = Sentence(text="Fire recurs in lamps. [1, 3]", citations=[1])
+    assert (
+        "numbers not in the evidence: 1, 3" in validate(draft(summary=[other]), G).dropped[0].reason
+    )

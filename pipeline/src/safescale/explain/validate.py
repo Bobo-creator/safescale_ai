@@ -22,6 +22,8 @@ BANNED = re.compile(
     re.IGNORECASE,
 )
 _NUMBER = re.compile(r"\d[\d,]*(?:\.\d+)?")
+# A trailing "[10158, 755]" or "(#61)" that repeats the sentence's own citations.
+_TRAILING_IDS = re.compile(r"\s*[\[(]\s*#?\d+(?:\s*,\s*#?\d+)*\s*[\])]\s*\.?\s*$")
 
 
 def normalize_number(raw: str) -> str:
@@ -67,6 +69,21 @@ class ValidationResult:
         return [f"{d.where}: {d.reason}" for d in self.dropped]
 
 
+def strip_repeated_citations(s: Sentence) -> Sentence:
+    """Drop a trailing id list that only repeats the citations (a formatting habit, not a claim).
+    A list naming other ids is left in place, so the number check still catches it."""
+    match = _TRAILING_IDS.search(s.text)
+    if not match:
+        return s
+    ids = {int(x) for x in re.findall(r"\d+", match.group(0))}
+    if not ids <= set(s.citations):
+        return s
+    text = s.text[: match.start()].rstrip()
+    if text and text[-1] not in ".!?":
+        text += "."
+    return Sentence(text=text, citations=s.citations)
+
+
 def _text_problems(text: str, grounding: Grounding) -> list[str]:
     problems = []
     if match := BANNED.search(text):
@@ -94,6 +111,7 @@ def _sentence_problems(s: Sentence, grounding: Grounding, allowed: set[int] | No
 
 
 def validate(draft: ExplanationDraft, grounding: Grounding) -> ValidationResult:
+    draft = _normalized(draft)
     dropped: list[Dropped] = []
     total = 0
 
@@ -172,3 +190,20 @@ def validate(draft: ExplanationDraft, grounding: Grounding) -> ValidationResult:
         summary=summary, hazards=hazards, match_reasons=reasons, investigation_notes=notes
     )
     return ValidationResult(draft=kept, dropped=dropped, total_items=total)
+
+
+def _normalized(draft: ExplanationDraft) -> ExplanationDraft:
+    return ExplanationDraft(
+        summary=[strip_repeated_citations(s) for s in draft.summary],
+        hazards=[
+            HazardParagraph(
+                category=p.category, sentences=[strip_repeated_citations(s) for s in p.sentences]
+            )
+            for p in draft.hazards
+        ],
+        match_reasons=draft.match_reasons,
+        investigation_notes=[
+            InvestigationNote(area_id=n.area_id, sentence=strip_repeated_citations(n.sentence))
+            for n in draft.investigation_notes
+        ],
+    )

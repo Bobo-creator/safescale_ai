@@ -69,4 +69,4 @@ def test_to_dict_is_json_ready(analyzed):
     explainer = ScriptedExplainer(ungrounded_draft, grounded_draft)
     data = json.loads(json.dumps(explain(conn, report, explainer=explainer).to_dict()))
     assert data["summary"][0]["citations"] and data["validation"]["dropped"][0]["reason"]
-    assert data["disclaimer"] == DISCLAIMER and data["prompt_version"] == 1
+    assert data["disclaimer"] == DISCLAIMER and data["prompt_version"] == 2

@@ -10,6 +10,9 @@ from safescale.explain.prompt import INSTRUCTIONS, build_input
 from safescale.explain.schema import ExplanationDraft
 
 DEFAULT_MODEL = "gpt-6-luna"
+# Benchmarked 2026-10-19 on 10 queries: "none" was as clean as "low" (10/10 vs 9/10 first try),
+# faster (median 8.3 s vs 9.7 s) and cheaper. Values differ per model ("minimal" is not luna's).
+DEFAULT_EFFORT = "none"
 
 # USD per 1M tokens (input, output) from OpenAI's pricing page, checked 2026-10-19.
 PRICES = {
@@ -62,7 +65,7 @@ class OpenAIExplainer:
         self._openai = openai
         self.client = client or openai.OpenAI()
         self.model = model or os.environ.get("EXPLAIN_MODEL", DEFAULT_MODEL)
-        self.effort = effort or os.environ.get("EXPLAIN_REASONING_EFFORT", "low")
+        self.effort = effort or os.environ.get("EXPLAIN_REASONING_EFFORT", DEFAULT_EFFORT)
 
     def draft(
         self, packet: dict, feedback: list[str] | None = None

@@ -239,3 +239,41 @@ evaluation/explain_review/        # your manual review sheet (see Testing)
    stricter than "the LLM is told to cite", and it's the part the seminar can measure.
 3. **No explanation caching in v1** (≈ $0.002 each); revisit in `app` if needed.
 4. **Human review of 5 explanations** (about 15 minutes of your time), as a Markdown sheet.
+
+## Results (2026-10-19, Supabase)
+
+Benchmark: `evaluation/explain_benchmark/run.py`, 10 product descriptions (all rated HIGH, 25 of 25
+relevant matches). Raw rows are in `results_v1.json`, `results_v2_low.json` and `results.json`.
+
+| Run | First try clean | Items dropped | Retries | Fallback | Median (max) | Mean cost |
+|---|---|---|---|---|---|---|
+| luna, prompt v1, effort low | 5/10 | 46 | 4 | 0 | 12.7 s (25.1) | $0.0014 |
+| sol 6.1, prompt v1, effort low | 10/10 | 0 | 0 | 0 | 38.9 s (57.5) | $0.0193 |
+| luna, prompt v2, effort low | 9/10 | 2 | 0 | 0 | 9.7 s (12.3) | $0.0010 |
+| sol 6.1, prompt v2, effort low | 10/10 | 0 | 0 | 0 | 20.1 s (21.9) | $0.0194 |
+| luna, prompt v2, effort none (two runs) | 10/10, 9/10 | 0, 1 | 0 | 0 | 8.3 s, 9.3 s | $0.0009 |
+
+**What changed between runs.**
+- Prompt v1 → v2: 45 of luna's 46 drops were one formatting habit. It repeated its citations as
+  a trailing "[10158, 755]" in the sentence, and the number check read those ids as invented
+  statistics. Prompt v2 says to keep ids out of the text. The validator also strips a trailing id
+  list, but only when it exactly repeats the sentence's citations; any other id list is still caught.
+- Effort low → none: just as clean, faster and cheaper, so `none` is the default.
+- The remaining drops are real catches: a recall cited for a hazard it isn't labeled with.
+
+**Default: `gpt-6-luna`, effort `none`.** sol is fully clean but costs about 20× more and takes
+about 2× longer. With prompt v2, luna is nearly as clean, so the spec's "switch only if clearly more
+faithful" condition isn't met. The human review below is the deciding check.
+
+| # | Criterion | Result |
+|---|---|---|
+| 1 | Night light: validated summary with fire/burn citations; ≥ 3 concrete match reasons | ✅ e.g. "shared: rechargeable lamp; lithium-ion battery · different: portable sleep lamp" |
+| 2 | Unrelated query: no model call, deterministic notice | ✅ 0 calls to the Responses API |
+| 3 | Validator, retry and fallback tests | ✅ (an unsupported `effort` value also showed the error path working: each failed call fell back cleanly) |
+| 4 | Benchmark: shown text 100% validated; fallback ≤ 1 / 10 | ✅ fallback 0 / 10 |
+| 5 | Human review ≥ 95% supported | ⏳ waiting for the owner: `evaluation/explain_review/review.md` (77 items) |
+| 6 | ≤ $0.01 and median < 8 s for the LLM step | ⚠️ $0.0009 ✅; median 8.3–9.3 s ❌ (generation time; the app should stream) |
+| 7 | Tests offline; live test | ✅ 331 tests; `-m live` passes |
+
+Fixed along the way: the chemical-content investigation area no longer fires on battery "chemical
+burns" (which concern ingestion, not material content).

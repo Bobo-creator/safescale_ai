@@ -40,8 +40,9 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-explain.md](../SPEC-explain.md)
 
 ### Task 6: Benchmark + review sheet
 **Acceptance:**
-- [ ] 10 queries × {gpt-6-luna, gpt-6.1-sol}: first-try pass rate, drops, retries, fallback, latency, cost recorded in the spec
-- [ ] `evaluation/explain_review/` sheet with 5 luna explanations for the owner
+- [x] 10 queries × {gpt-6-luna, gpt-6.1-sol}: first-try pass rate, drops, retries, fallback, latency, cost recorded in the spec
+- [x] `evaluation/explain_review/` sheet with 5 luna explanations for the owner
+- [ ] Owner review: ≥ 95% supported
 **Verify:** benchmark run; owner review (target ≥ 95% supported) · **Scope:** M
 
 ### Checkpoint: explain complete

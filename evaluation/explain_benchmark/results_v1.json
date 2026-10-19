@@ -1,0 +1,637 @@
+[
+ {
+  "query_id": 1,
+  "query": "Rechargeable children's night light using a 2000 mAh lithium-ion battery, USB-C charging, ABS plastic housing, and LED lighting.",
+  "model": "gpt-6-luna",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": false,
+  "retries": 1,
+  "fallback_used": false,
+  "dropped": [
+   {
+    "where": "summary[0]",
+    "reason": "numbers not in the evidence: 10158, 1419, 755",
+    "text": "The similar recalls share lighting and LED use with this rechargeable children's night light; some also involve lithium batteries, charging, or night lights. [10158, 755, 1419]"
+   },
+   {
+    "where": "summary[1]",
+    "reason": "numbers not in the evidence: 10158, 755",
+    "text": "Fire/overheating and burn each appeared in 14 of 25 similar recalls (56%); their rates were 1.9× and 3.2× their rates among all recalls, respectively. [10158, 755]"
+   },
+   {
+    "where": "summary[2]",
+    "reason": "numbers not in the evidence: 10708, 61",
+    "text": "Electrical shock appeared in 7 of 25 similar recalls (28%; 4.2× its rate among all recalls), and poisoning appeared in 7 of 25 (28%; 2.5× its rate among all recalls). [61, 10708]"
+   },
+   {
+    "where": "hazards[fire_overheating][0]",
+    "reason": "numbers not in the evidence: 10158, 6448, 755",
+    "text": "Similar recalls involved rechargeable lamps whose lithium-ion batteries overheated while charging, night lights that overheated, smoldered, or melted, and a battery-operated night light whose battery overheated and caused melting. [10158, 755, 6448]"
+   },
+   {
+    "where": "hazards[burn][0]",
+    "reason": "numbers not in the evidence: 10158, 1119, 587",
+    "text": "Reported failure modes included lamps overheating while charging and LED night lights overheating, smoking, smoldering, or melting, with burns cited as a hazard. [10158, 1119, 587]"
+   },
+   {
+    "where": "hazards[electrical_shock][0]",
+    "reason": "numbers not in the evidence: 61, 6480",
+    "text": "In portable night lights, a recharging-base cover broke and exposed electrical components; in another night light, a plastic cover could detach and expose components. [61, 6480]"
+   },
+   {
+    "where": "hazards[poisoning][0]",
+    "reason": "numbers not in the evidence: 10582, 10708",
+    "text": "Several LED light recalls involved lithium coin or button batteries that children could access, creating an ingestion hazard if swallowed. [10708, 10582]"
+   },
+   {
+    "where": "investigation_notes[battery_thermal]",
+    "reason": "numbers not in the evidence: 10158, 6448",
+    "text": "Consider reviewing battery thermal behavior and cell quality in light of recalls involving a lithium-ion battery overheating while charging and a battery-operated night light whose battery overheated and melted the light. [10158, 6448]"
+   },
+   {
+    "where": "investigation_notes[battery_compartment]",
+    "reason": "numbers not in the evidence: 10582, 10708",
+    "text": "Consider reviewing battery access and compartment security against recalls in which children could access lithium coin batteries in LED lights. [10708, 10582]"
+   },
+   {
+    "where": "investigation_notes[enclosure_flammability]",
+    "reason": "numbers not in the evidence: 587, 755",
+    "text": "Consider reviewing enclosure behavior in light of night lights that overheated and melted, or smoldered and melted. [755, 587]"
+   },
+   {
+    "where": "investigation_notes[charging_protection]",
+    "reason": "numbers not in the evidence: 10158, 1419",
+    "text": "Consider reviewing charging behavior in light of a rechargeable lamp whose lithium-ion battery overheated while charging and a lantern whose wall charger plug could fail and pose a fire hazard. [10158, 1419]"
+   },
+   {
+    "where": "investigation_notes[internal_wiring]",
+    "reason": "numbers not in the evidence: 587",
+    "text": "Consider reviewing internal connections in light of a night light recall where an electrical short circuit could cause overheating, smoldering, or melting. [587]"
+   }
+  ],
+  "items_shown": 18,
+  "error": null,
+  "seconds": 25.05,
+  "input_tokens": 10729,
+  "output_tokens": 2432,
+  "reasoning_tokens": 407,
+  "cost_usd": 0.0022889
+ },
+ {
+  "query_id": 1,
+  "query": "Rechargeable children's night light using a 2000 mAh lithium-ion battery, USB-C charging, ABS plastic housing, and LED lighting.",
+  "model": "gpt-6.1-sol",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": true,
+  "retries": 0,
+  "fallback_used": false,
+  "dropped": [],
+  "items_shown": 18,
+  "error": null,
+  "seconds": 57.48,
+  "input_tokens": 5223,
+  "output_tokens": 1150,
+  "reasoning_tokens": 0,
+  "cost_usd": 0.021946
+ },
+ {
+  "query_id": 2,
+  "query": "Wooden baby crib with adjustable mattress height and a drop-down side rail.",
+  "model": "gpt-6-luna",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": false,
+  "retries": 1,
+  "fallback_used": false,
+  "dropped": [
+   {
+    "where": "summary[0]",
+    "reason": "numbers not in the evidence: 489, 515, 678",
+    "text": "Similar recalls commonly involved cribs, drop sides, rails, and mattresses, matching several features of the proposed wooden crib with an adjustable mattress height and drop-down side rail. [515, 678, 489]"
+   },
+   {
+    "where": "summary[1]",
+    "reason": "numbers not in the evidence: 515",
+    "text": "The leading signals are fall and entrapment, each appearing in 20 of 25 similar recalls; each was 4.6× and 12.3× its rate among all recalls, respectively. [515]"
+   },
+   {
+    "where": "summary[2]",
+    "reason": "numbers not in the evidence: 515",
+    "text": "Suffocation/strangulation also appeared in 17 of 25 similar recalls, or 10.6× its rate among all recalls. [515]"
+   },
+   {
+    "where": "hazards[fall][0]",
+    "reason": "numbers not in the evidence: 2387, 515, 849",
+    "text": "Similar crib recalls describe drop-side hardware or rails failing or detaching, creating an opening or allowing a child to fall out; other recalls describe mattress supports or latches failing and the mattress or gate moving. [515, 849, 2387]"
+   },
+   {
+    "where": "hazards[entrapment][0]",
+    "reason": "numbers not in the evidence: 4354, 4566, 515",
+    "text": "In drop-side cribs, a partially detached rail or loosened or broken slats can create a gap where an infant or toddler may become wedged; broken crib slats can also create openings. [515, 4566, 4354]"
+   },
+   {
+    "where": "hazards[suffocation_strangulation][0]",
+    "reason": "numbers not in the evidence: 4354, 515",
+    "text": "Similar drop-side crib recalls link partial rail detachment and resulting gaps with entrapment that can lead to strangulation or suffocation; broken slats creating gaps are also described. [515, 4354]"
+   },
+   {
+    "where": "investigation_notes[infant_sleep]",
+    "reason": "numbers not in the evidence: 4354, 515, 849",
+    "text": "Consider reviewing the infant sleep environment in light of recalls involving detached drop-side rails that created gaps, and crib supports or slats that failed. [515, 849, 4354]"
+   },
+   {
+    "where": "investigation_notes[pinch_points]",
+    "reason": "numbers not in the evidence: 2387, 4566",
+    "text": "Consider reviewing gaps, hinges, and pinch points alongside recalls describing loosened slats and broken hinges on fold-down gates that could pinch fingers. [4566, 2387]"
+   },
+   {
+    "where": "investigation_notes[structural_integrity]",
+    "reason": "numbers not in the evidence: 2387, 849",
+    "text": "Consider reviewing structural integrity and fasteners in light of recalls where crib side rails separated or drop-gate hinges cracked or broke. [849, 2387]"
+   }
+  ],
+  "items_shown": 14,
+  "error": null,
+  "seconds": 20.93,
+  "input_tokens": 12010,
+  "output_tokens": 1717,
+  "reasoning_tokens": 223,
+  "cost_usd": 0.0020594999999999997
+ },
+ {
+  "query_id": 2,
+  "query": "Wooden baby crib with adjustable mattress height and a drop-down side rail.",
+  "model": "gpt-6.1-sol",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": true,
+  "retries": 0,
+  "fallback_used": false,
+  "dropped": [],
+  "items_shown": 17,
+  "error": null,
+  "seconds": 52.97,
+  "input_tokens": 5899,
+  "output_tokens": 1062,
+  "reasoning_tokens": 0,
+  "cost_usd": 0.022418
+ },
+ {
+  "query_id": 3,
+  "query": "Six-drawer wooden dresser for a child's bedroom, 48 inches tall.",
+  "model": "gpt-6-luna",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": true,
+  "retries": 0,
+  "fallback_used": false,
+  "dropped": [],
+  "items_shown": 12,
+  "error": null,
+  "seconds": 10.13,
+  "input_tokens": 5462,
+  "output_tokens": 928,
+  "reasoning_tokens": 213,
+  "cost_usd": 0.0010102
+ },
+ {
+  "query_id": 3,
+  "query": "Six-drawer wooden dresser for a child's bedroom, 48 inches tall.",
+  "model": "gpt-6.1-sol",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": true,
+  "retries": 0,
+  "fallback_used": false,
+  "dropped": [],
+  "items_shown": 12,
+  "error": null,
+  "seconds": 31.36,
+  "input_tokens": 5462,
+  "output_tokens": 679,
+  "reasoning_tokens": 0,
+  "cost_usd": 0.017714
+ },
+ {
+  "query_id": 4,
+  "query": "Folding electric bicycle with a 48 V lithium battery pack and hydraulic disc brakes.",
+  "model": "gpt-6-luna",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": false,
+  "retries": 1,
+  "fallback_used": false,
+  "dropped": [
+   {
+    "where": "summary[0]",
+    "reason": "numbers not in the evidence: 8007, 9322, 9817",
+    "text": "The similar recalls considered share the product’s electric-bicycle, brake, lithium-battery, and folding features; examples include folding e-bikes and bicycles with hydraulic disc brakes. [8007, 9322, 9817]"
+   },
+   {
+    "where": "summary[1]",
+    "reason": "numbers not in the evidence: 8007, 9706",
+    "text": "Crash/loss-of-control and fall hazards dominate: 11 of 25 similar recalls (44%) involved crash/loss of control, 7.5× its rate among all recalls, and 10 of 25 (40%) involved falls, 2.3× its rate among all recalls. [9706, 8007]"
+   },
+   {
+    "where": "summary[2]",
+    "reason": "numbers not in the evidence: 6377",
+    "text": "Fire/overheating appeared in 7 of 25 similar recalls (28%), but at 0.9× its rate among all recalls. [6377]"
+   },
+   {
+    "where": "hazards[crash_loss_of_control][0]",
+    "reason": "numbers not in the evidence: 10174, 8680, 9322, 9706, 9817, 9974",
+    "text": "Recurring failure modes included brake calipers or brake assemblies failing, misaligning, or losing a retaining pin, as well as unexpected acceleration and a front wheel locking; these were reported for electric bicycles, folding e-bikes, and a foldable electric scooter. [9706, 9974, 10174, 9817, 9322, 8680]"
+   },
+   {
+    "where": "hazards[crash_loss_of_control][1]",
+    "reason": "numbers not in the evidence: 9535",
+    "text": "A front fork cracking was also reported on an electric bicycle. [9535]"
+   },
+   {
+    "where": "hazards[fall][0]",
+    "reason": "numbers not in the evidence: 8007, 8680, 9043",
+    "text": "Reported fall-related failures included a front fork rupturing or breaking on an electric bicycle, continued motor assistance when the rider was not pedalling on a folding electric bicycle, and a brake caliper failing on an electric scooter. [8007, 9043, 8680]"
+   },
+   {
+    "where": "hazards[fire_overheating][0]",
+    "reason": "numbers not in the evidence: 10254, 1160, 2219, 6377",
+    "text": "Battery overheating or fire was reported for lithium batteries used with electric bicycles, including a folding Mini E-Bike, and for batteries on electric bicycles. [6377, 2219, 1160, 10254]"
+   },
+   {
+    "where": "hazards[fire_overheating][1]",
+    "reason": "numbers not in the evidence: 9114",
+    "text": "In another battery-pack recall, water entering around a control-pad seal could cause a short circuit and fire. [9114]"
+   },
+   {
+    "where": "investigation_notes[brakes_steering]",
+    "reason": "numbers not in the evidence: 10174, 9706, 9817, 9974",
+    "text": "Consider reviewing brake and control failure modes: recalls describe calipers failing, brake parts misaligning or loosening, and unexpected acceleration. [9706, 9974, 10174, 9817]"
+   },
+   {
+    "where": "investigation_notes[structural_integrity]",
+    "reason": "numbers not in the evidence: 8007, 9535",
+    "text": "Consider reviewing structural failures: one bicycle’s front fork could rupture or break, while another’s could crack. [8007, 9535]"
+   },
+   {
+    "where": "investigation_notes[battery_thermal]",
+    "reason": "numbers not in the evidence: 10254, 1160, 6377",
+    "text": "Consider reviewing battery thermal behavior: recalled lithium batteries or packs could overheat or catch fire. [6377, 1160, 10254]"
+   },
+   {
+    "where": "investigation_notes[internal_wiring]",
+    "reason": "numbers not in the evidence: 9114",
+    "text": "Consider reviewing battery connections and short-circuit failure modes; one recall reported water entering around a battery control-pad seal and causing a short circuit. [9114]"
+   }
+  ],
+  "items_shown": 18,
+  "error": null,
+  "seconds": 23.7,
+  "input_tokens": 10414,
+  "output_tokens": 2031,
+  "reasoning_tokens": 236,
+  "cost_usd": 0.0020569
+ },
+ {
+  "query_id": 4,
+  "query": "Folding electric bicycle with a 48 V lithium battery pack and hydraulic disc brakes.",
+  "model": "gpt-6.1-sol",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": true,
+  "retries": 0,
+  "fallback_used": false,
+  "dropped": [],
+  "items_shown": 18,
+  "error": null,
+  "seconds": 18.26,
+  "input_tokens": 5048,
+  "output_tokens": 1071,
+  "reasoning_tokens": 0,
+  "cost_usd": 0.020806
+ },
+ {
+  "query_id": 5,
+  "query": "Electric space heater, 1500 W ceramic element, tip-over switch, for bedrooms.",
+  "model": "gpt-6-luna",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": true,
+  "retries": 0,
+  "fallback_used": false,
+  "dropped": [],
+  "items_shown": 17,
+  "error": null,
+  "seconds": 13.31,
+  "input_tokens": 4653,
+  "output_tokens": 1079,
+  "reasoning_tokens": 234,
+  "cost_usd": 0.0010048
+ },
+ {
+  "query_id": 5,
+  "query": "Electric space heater, 1500 W ceramic element, tip-over switch, for bedrooms.",
+  "model": "gpt-6.1-sol",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": true,
+  "retries": 0,
+  "fallback_used": false,
+  "dropped": [],
+  "items_shown": 17,
+  "error": null,
+  "seconds": 46.46,
+  "input_tokens": 4653,
+  "output_tokens": 976,
+  "reasoning_tokens": 0,
+  "cost_usd": 0.019066
+ },
+ {
+  "query_id": 6,
+  "query": "Children's hooded sweatshirt with a drawstring, cotton, sizes 2T to 5T.",
+  "model": "gpt-6-luna",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": true,
+  "retries": 0,
+  "fallback_used": false,
+  "dropped": [],
+  "items_shown": 11,
+  "error": null,
+  "seconds": 7.94,
+  "input_tokens": 4217,
+  "output_tokens": 686,
+  "reasoning_tokens": 151,
+  "cost_usd": 0.0007647
+ },
+ {
+  "query_id": 6,
+  "query": "Children's hooded sweatshirt with a drawstring, cotton, sizes 2T to 5T.",
+  "model": "gpt-6.1-sol",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": true,
+  "retries": 0,
+  "fallback_used": false,
+  "dropped": [],
+  "items_shown": 11,
+  "error": null,
+  "seconds": 12.1,
+  "input_tokens": 4217,
+  "output_tokens": 644,
+  "reasoning_tokens": 0,
+  "cost_usd": 0.014874
+ },
+ {
+  "query_id": 7,
+  "query": "Magnetic building tiles toy set for ages 3 and up, with small neodymium magnets.",
+  "model": "gpt-6-luna",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": false,
+  "retries": 0,
+  "fallback_used": false,
+  "dropped": [
+   {
+    "where": "investigation_notes[small_parts]",
+    "reason": "cites recalls that don't support this claim: [10914]",
+    "text": "Consider reviewing small and detachable parts, since supporting recalls describe magnets detaching from toy parts or coming loose from magnetic building products."
+   }
+  ],
+  "items_shown": 15,
+  "error": null,
+  "seconds": 8.83,
+  "input_tokens": 5498,
+  "output_tokens": 752,
+  "reasoning_tokens": 0,
+  "cost_usd": 0.0009258000000000001
+ },
+ {
+  "query_id": 7,
+  "query": "Magnetic building tiles toy set for ages 3 and up, with small neodymium magnets.",
+  "model": "gpt-6.1-sol",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": true,
+  "retries": 0,
+  "fallback_used": false,
+  "dropped": [],
+  "items_shown": 14,
+  "error": null,
+  "seconds": 47.75,
+  "input_tokens": 5498,
+  "output_tokens": 914,
+  "reasoning_tokens": 0,
+  "cost_usd": 0.020136
+ },
+ {
+  "query_id": 8,
+  "query": "Portable butane camping stove with a piezo igniter.",
+  "model": "gpt-6-luna",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": true,
+  "retries": 0,
+  "fallback_used": false,
+  "dropped": [],
+  "items_shown": 16,
+  "error": null,
+  "seconds": 12.09,
+  "input_tokens": 4924,
+  "output_tokens": 1036,
+  "reasoning_tokens": 290,
+  "cost_usd": 0.0010104
+ },
+ {
+  "query_id": 8,
+  "query": "Portable butane camping stove with a piezo igniter.",
+  "model": "gpt-6.1-sol",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": true,
+  "retries": 0,
+  "fallback_used": false,
+  "dropped": [],
+  "items_shown": 17,
+  "error": null,
+  "seconds": 16.84,
+  "input_tokens": 4924,
+  "output_tokens": 936,
+  "reasoning_tokens": 0,
+  "cost_usd": 0.019208
+ },
+ {
+  "query_id": 9,
+  "query": "Self-balancing hoverboard scooter with a lithium-ion battery and LED lights.",
+  "model": "gpt-6-luna",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": true,
+  "retries": 0,
+  "fallback_used": false,
+  "dropped": [],
+  "items_shown": 10,
+  "error": null,
+  "seconds": 5.83,
+  "input_tokens": 4336,
+  "output_tokens": 466,
+  "reasoning_tokens": 0,
+  "cost_usd": 0.0006666
+ },
+ {
+  "query_id": 9,
+  "query": "Self-balancing hoverboard scooter with a lithium-ion battery and LED lights.",
+  "model": "gpt-6.1-sol",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": true,
+  "retries": 0,
+  "fallback_used": false,
+  "dropped": [],
+  "items_shown": 10,
+  "error": null,
+  "seconds": 12.16,
+  "input_tokens": 4336,
+  "output_tokens": 652,
+  "reasoning_tokens": 0,
+  "cost_usd": 0.015192
+ },
+ {
+  "query_id": 10,
+  "query": "Glass French press coffee maker, 1 liter, with a stainless steel plunger.",
+  "model": "gpt-6-luna",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": false,
+  "retries": 1,
+  "fallback_used": false,
+  "dropped": [
+   {
+    "where": "summary[0]",
+    "reason": "numbers not in the evidence: 1608, 618, 8054",
+    "text": "The similar recalls considered share coffee-making use and, in some cases, glass vessels, stainless steel parts, or a plunger with the described press; examples include glass coffee presses and a 1-liter press pot. [1608, 8054, 618]"
+   },
+   {
+    "where": "summary[1]",
+    "reason": "numbers not in the evidence: 1608, 8549, 881",
+    "text": "Burn was the leading signal: 16 similar recalls (64%), at 3.7 times its rate among all recalls, compared with 10 (40%) for fire/overheating and 6 (24%) for laceration. [1608, 881, 8549]"
+   },
+   {
+    "where": "hazards[burn][0]",
+    "reason": "numbers not in the evidence: 10821, 1128, 1608, 516, 618",
+    "text": "Similar recalls involved glass carafes or pots breaking or falling from their supports, handles loosening and spilling hot liquid, and brewing systems releasing hot liquid or steam unexpectedly. [1608, 618, 516, 10821, 1128]"
+   },
+   {
+    "where": "hazards[burn][1]",
+    "reason": "numbers not in the evidence: 1608, 516, 881",
+    "text": "These failures appeared in coffee presses and carafes as well as automatic, single-cup, and espresso coffeemakers. [1608, 516, 881]"
+   },
+   {
+    "where": "hazards[fire_overheating][0]",
+    "reason": "numbers not in the evidence: 1323, 3207, 8541, 881",
+    "text": "Similar recalls described coffeemakers overheating, electrical connections or wiring overheating or eroding, and a stovetop espresso maker handle igniting at a gas-stove flame. [1323, 881, 3207, 8541]"
+   },
+   {
+    "where": "hazards[fire_overheating][1]",
+    "reason": "numbers not in the evidence: 1323, 8541, 881",
+    "text": "The affected product types included one-cup and automatic coffeemakers, espresso machines, and a stovetop espresso maker. [1323, 881, 8541]"
+   },
+   {
+    "where": "hazards[laceration][0]",
+    "reason": "numbers not in the evidence: 1608, 618, 8054, 8549",
+    "text": "Similar coffee-press recalls involved glass beakers breaking during use or under pressure, a carafe breaking after falling from its frame, and a plunger knob breaking to expose a metal rod. [8054, 618, 1608, 8549]"
+   },
+   {
+    "where": "investigation_notes[heating_control]",
+    "reason": "numbers not in the evidence: 10821, 1128",
+    "text": "Consider reviewing heating and temperature-control behavior: similar coffeemakers were associated with hot surfaces or steam and hot liquid released during use. [10821, 1128]"
+   },
+   {
+    "where": "investigation_notes[internal_wiring]",
+    "reason": "numbers not in the evidence: 3462, 881",
+    "text": "Consider reviewing electrical connections and wiring, which overheated and ignited a support or caused overheating, smoking, and melting in similar brewers. [881, 3462]"
+   },
+   {
+    "where": "investigation_notes[structural_integrity]",
+    "reason": "numbers not in the evidence: 1608, 8054, 8549",
+    "text": "Consider reviewing structural retention: similar presses had a plunger knob break and expose a rod, glass break, or a carafe fall from its frame. [8549, 8054, 1608]"
+   },
+   {
+    "where": "investigation_notes[sharp_edges]",
+    "reason": "numbers not in the evidence: 1608, 618, 8054",
+    "text": "Consider reviewing glass breakage and resulting exposure to broken glass, which was cited in similar coffee presses and press pots. [1608, 8054, 618]"
+   },
+   {
+    "where": "investigation_notes[enclosure_flammability]",
+    "reason": "numbers not in the evidence: 3462",
+    "text": "A similar coffee brewer had defective wiring that led to overheating, smoking, burning, and melting; consider reviewing enclosure materials in that context. [3462]"
+   }
+  ],
+  "items_shown": 16,
+  "error": null,
+  "seconds": 23.9,
+  "input_tokens": 10204,
+  "output_tokens": 2238,
+  "reasoning_tokens": 241,
+  "cost_usd": 0.0021394000000000005
+ },
+ {
+  "query_id": 10,
+  "query": "Glass French press coffee maker, 1 liter, with a stainless steel plunger.",
+  "model": "gpt-6.1-sol",
+  "signal": "HIGH",
+  "relevant": 25,
+  "insufficient_evidence": false,
+  "generated": true,
+  "first_try_clean": true,
+  "retries": 0,
+  "fallback_used": false,
+  "dropped": [],
+  "items_shown": 19,
+  "error": null,
+  "seconds": 52.32,
+  "input_tokens": 4941,
+  "output_tokens": 1167,
+  "reasoning_tokens": 0,
+  "cost_usd": 0.021552
+ }
+]

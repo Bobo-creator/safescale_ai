@@ -37,11 +37,12 @@ def client(**kw):
 
 def test_request_shape_and_usage(monkeypatch):
     monkeypatch.delenv("EXPLAIN_MODEL", raising=False)
+    monkeypatch.delenv("EXPLAIN_REASONING_EFFORT", raising=False)
     c = client()
     draft, usage = OpenAIExplainer(client=c).draft({"recalls": []}, feedback=["summary[0]: bad"])
     kw = c.responses.kwargs
     assert kw["model"] == "gpt-6-luna" and kw["text_format"] is ExplanationDraft
-    assert kw["instructions"] == INSTRUCTIONS and kw["reasoning"] == {"effort": "low"}
+    assert kw["instructions"] == INSTRUCTIONS and kw["reasoning"] == {"effort": "none"}
     assert '"recalls": []' in kw["input"] and "summary[0]: bad" in kw["input"]
     assert draft == DRAFT
     assert usage == Usage(6000, 1500, 700, cost("gpt-6-luna", 6000, 1500))

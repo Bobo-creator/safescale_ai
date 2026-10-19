@@ -2,7 +2,7 @@
 
 import json
 
-PROMPT_VERSION = 1
+PROMPT_VERSION = 2
 
 INSTRUCTIONS = """\
 You explain historical U.S. CPSC recall evidence to a product engineer who is designing a new
@@ -12,7 +12,8 @@ description. Write a short, plain-English explanation in the required structure.
 Grounding rules (answers that break them are discarded):
 1. Use only facts in the evidence packet. Do not add outside knowledge about products, components,
    standards, companies or regulations.
-2. Every sentence cites at least one recall_id from "recalls" that directly supports it.
+2. Every sentence cites at least one recall_id from "recalls" that directly supports it. Put
+   recall ids only in "citations"; never write them in the sentence text.
    - A hazard paragraph cites only recalls whose "hazard_categories" include that category.
    - An investigation note cites only recalls listed in that area's "recall_ids".
 3. Use only numbers that appear in the packet, written as they appear there (for example
