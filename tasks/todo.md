@@ -1,52 +1,56 @@
-# Tasks: retrieval
+# Tasks: hazard-taxonomy
 
-Plan: [plan.md](plan.md) · Spec: [SPEC-retrieval.md](../SPEC-retrieval.md)
+Plan: [plan.md](plan.md) · Spec: [SPEC-hazard-taxonomy.md](../SPEC-hazard-taxonomy.md)
 
-### Task 1: Migration 002 (embeddings table, tsvector, indexes, search functions)
+### Task 1: Gold sample + labeling page (`safescale label`)
 **Acceptance:**
-- [x] `safescale migrate` applies `002_retrieval.sql` locally; RLS on `recall_embeddings`
-- [x] The three SQL functions exist; `search_recalls_keyword` returns hits for a long query and 0 rows for a stopword-only query
-**Verify:** `uv run pytest tests/test_db.py tests/retrieval/test_search.py`
-**Files:** `db/migrations/002_retrieval.sql`, tests · **Scope:** M
+- [ ] Seeded sample of 50 recall ids is deterministic and written to `evaluation/hazard_gold/gold.json` with empty labels
+- [ ] Page shows title, hazard text, description, CPSC link; 12 category checkboxes + "violates a standard" + notes; never shows predictions
+- [ ] Each change saves immediately; reload resumes; progress + jump-to-unlabeled; server binds to 127.0.0.1
+**Verify:** `uv run pytest tests/taxonomy/test_labeling.py`; Playwright check of render/save/resume
+**Files:** `taxonomy/categories.py`, `taxonomy/labeling/`, `cli.py`, tests · **Scope:** M
 
-### Task 2: Embedder (OpenAI + fake) with token-budget batching
+### Task 2: Hazard rules + `classify()`
 **Acceptance:**
-- [x] Batches respect ≤ 256 texts and ≤ 250 k estimated tokens; output order matches input
-- [x] Mocked OpenAI client: correct model, inputs and dimension check
-**Verify:** `uv run pytest tests/retrieval/test_embedder.py`
-**Files:** `retrieval/embedder.py`, `tests/retrieval/fake_embedder.py`, `tests/retrieval/test_embedder.py` · **Scope:** S
+- [ ] ~60 table-driven phrases pass, including the traps ("lead to", "fall out of position", "injury hazard", one-word records, multi-hazard)
+- [ ] Field order hazard+title → description fallback → `other`; evidence is a verbatim fragment ≤ 160 chars
+**Verify:** `uv run pytest tests/taxonomy/test_rules.py tests/taxonomy/test_classify.py`
+**Files:** `taxonomy/rules.py`, `taxonomy/classify.py`, tests · **Scope:** M
 
-### Task 3: `search()` over the three SQL functions
+### Task 3: Standards-violation rules
 **Acceptance:**
-- [x] With the fake embedder on the fixtures, a lithium-battery fire query ranks RecallID 166 first for vector, keyword and hybrid
-- [x] Exactly `k` hits (when enough rows exist), ranks 1..k, with title and URL
-**Verify:** `uv run pytest tests/retrieval/test_search.py`
-**Files:** `retrieval/search.py`, `tests/retrieval/test_search.py` · **Scope:** M
+- [ ] Trigger + named standard (ASTM F…, 16 CFR …, named federal standards) extracted; trigger without a name gives `standard=None`
+**Verify:** `uv run pytest tests/taxonomy/test_classify.py`
+**Files:** `taxonomy/rules.py`, `taxonomy/classify.py`, tests · **Scope:** S
 
-### Task 4: `safescale embed` job
+### Checkpoint: classifier
+- [ ] All tests + lint pass; on the full local corpus (gold ids excluded): `other`-only ≤ 10%, ≥ 1,000 violation flags, ≥ half named
+
+### Task 4: Migration 004
 **Acceptance:**
-- [x] Embeds only missing/stale rows (content_hash or model changed); re-run embeds 0
-- [x] Logs batches and total tokens; each batch commits independently; `--limit` works
-**Verify:** `uv run pytest tests/retrieval/test_index.py`
-**Files:** `retrieval/index.py`, `cli.py`, `tests/retrieval/test_index.py` · **Scope:** M
+- [ ] `hazard_categories` (seeded), `recall_hazards`, `recall_standard_violations`, all with RLS
+- [ ] Test: seed matches `categories.py`
+**Verify:** `uv run pytest tests/test_db.py tests/taxonomy/test_store.py`
+**Files:** `db/migrations/004_hazard_taxonomy.sql`, `tests/test_db.py` · **Scope:** S
 
-### Task 5: `safescale search` CLI
+### Task 5: `classify_all`, `labels_for`, `safescale classify` / `hazards`
 **Acceptance:**
-- [x] Prints rank, score, date, title, URL for `--method vector|keyword|hybrid`, `--k`
-**Verify:** CLI test with fake embedder; manual run
-**Files:** `cli.py`, `tests/test_cli_search.py` · **Scope:** S
+- [ ] Full recompute in one transaction; re-run gives identical rows; per-category counts printed
+- [ ] `labels_for` returns 25 ids in one query; `hazards 166` prints `fire_overheating` with evidence
+**Verify:** `uv run pytest tests/taxonomy/test_store.py`; manual CLI run locally
+**Files:** `taxonomy/store.py`, `cli.py`, tests · **Scope:** M
 
-### Checkpoint: local
-- [x] All tests + lint pass offline; one `-m live` OpenAI call succeeds
-
-### Task 6: Supabase — admin setup, migrate, full embed, verify
+### Task 6: Supabase run
 **Acceptance:**
-- [x] pgvector enabled, role granted; `002` applied by the pipeline role
-- [x] 10,039 embeddings; re-run embeds 0; tokens/cost logged
-- [x] Vector top-25 uses HNSW, < 50 ms DB execution; brief's night-light example sanity check (≥ 5/10 battery/charging/fire)
-- [x] Security advisors: no new warnings
-**Verify:** SQL counts, `explain analyze`, `safescale search`, advisors
-**Scope:** S
+- [ ] 004 applied by the pipeline role; classify < 10 s; re-run identical; advisors: no new warnings
+**Verify:** SQL counts, timings, advisors · **Scope:** S
 
-### Checkpoint: retrieval complete
-- [x] Spec success criteria 1–7 met; README updated; committed to main
+### Task 7: `safescale score-hazards` (after your labels are in)
+**Acceptance:**
+- [ ] Per-category + micro P / R / F1 with raw counts, plus violation-flag P / R
+- [ ] Result recorded in the spec; target micro-F1 ≥ 0.85
+**Verify:** `uv run pytest tests/taxonomy/test_score.py`; run on `gold.json`
+**Files:** `taxonomy/score.py`, `cli.py`, tests · **Scope:** S
+
+### Checkpoint: hazard-taxonomy complete
+- [ ] Spec success criteria 1–8 met; README updated; committed to main

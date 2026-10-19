@@ -1,34 +1,43 @@
-# Implementation Plan: retrieval
+# Implementation Plan: hazard-taxonomy
 
-Implements [SPEC-retrieval.md](../SPEC-retrieval.md). Tasks: [todo.md](todo.md).
-Previous module: [done/data-ingest-plan.md](done/data-ingest-plan.md).
+Implements [SPEC-hazard-taxonomy.md](../SPEC-hazard-taxonomy.md). Tasks: [todo.md](todo.md).
+Previous modules: [data-ingest](done/data-ingest-plan.md), [retrieval](done/retrieval-plan.md).
 
 ## Overview
 
-Add embeddings (OpenAI → pgvector), keyword search (Postgres FTS) and hybrid search (RRF) as SQL
-functions, a Python `search()` wrapper, and `safescale embed` / `safescale search` commands.
-Build and test locally with a fake embedder, then embed for real on Supabase.
+Rule-based, multi-label hazard classifier with evidence fragments, plus a standards-violation flag,
+stored by migration 004 and recomputed in full by `safescale classify`. A local labeling page
+produces a blind 50-recall gold set, and `safescale score-hazards` reports P / R / F1 against it.
 
-## Approved decisions (2026-10-07)
+## Approved decisions (2026-10-19)
 
-- OpenAI `text-embedding-3-small` (1536 d); new deps `openai`, `pgvector`.
-- Keyword = Postgres FTS (OR of stemmed terms, `ts_rank_cd`); true BM25 is added offline in `evaluation`.
-- Supabase admin step via the plugin: enable pgvector in `extensions`, grant it to `safescale_pipeline`.
-- HNSW index kept; `evaluation` measures exact vs HNSW latency.
+- 12 categories (brief's 8 + suffocation/strangulation, crash/loss of control, drowning + `other`).
+- `violates_standard` flag with the standard's name, built now.
+- Gold set: 50 recalls, blind, local labeling page (stdlib HTTP server on 127.0.0.1, no new deps).
+- Rules ship; an OpenAI labeler is a challenger in `evaluation`.
+
+## Order and why
+
+1. **Labeling page first.** You can label while I build the classifier, and fixing the 50 gold
+   ids up front lets me exclude them from everything I look at while tuning rules.
+2. Pure `classify()` with table-driven tests (no DB) is the core.
+3. Migration + store + CLI, then a Supabase run, then scoring once your labels are in.
 
 ## Dependency graph
 
 ```
-migration 002 (1) ──► search functions + search() (3) ──► CLI search (5) ──┐
-embedder (2) ──────► embed job (4) ──────────────────────────────────────┴─► Supabase run (6)
+sample + labeling page (1) ─────────────────────────────────────┐
+categories + rules + classify() (2) ──► standards rules (3) ──┐  │
+migration 004 (4) ──────────────────► store + CLI (5) ────────┴─►│─► Supabase run (6) ─► score (7)
+                                                                 └──────────────────────────┘
 ```
 
 ## Risks and mitigations
 
 | Risk | Impact | Mitigation |
 |---|---|---|
-| `vector` type invisible to the pipeline role on Supabase (lives in `extensions`) | High | Admin step sets the role's `search_path`; migration checked on Supabase before embedding |
-| OpenAI rate limits / transient errors mid-run | Med | SDK retries; each batch commits, so re-running resumes |
-| Token estimate off, request over 300 k tokens | Low | Conservative chars/3 estimate with a 250 k budget; longest doc is ~2.7 k tokens |
-| Keyword query with no usable terms (e.g. only stopwords) | Low | Function returns zero rows instead of erroring; tested |
-| Generated `search_tsv` column rewrite on 10k rows | Low | One-off, a few seconds |
+| I unconsciously tune rules on the gold set | High | Gold ids fixed first (seeded sample); dev inspection queries exclude them; never print gold recalls during tuning |
+| 50 recalls is a small gold set; rare categories (drowning) may appear 0–1 times | Med | Report raw counts next to every score; `evaluation` can extend the set |
+| Regex false positives ("lead to", parts that "fall") | Med | Exclude patterns + trap cases in table-driven tests |
+| Labeling server reachable from the network | Low | Bind to 127.0.0.1 only; test asserts it |
+| Recompute in one transaction locks readers on Supabase | Low | 10k small rows, ~1 s; delete+insert in one transaction keeps reads consistent |
