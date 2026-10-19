@@ -1,42 +1,42 @@
-# Implementation Plan: hazard-analysis
+# Implementation Plan: explain
 
-Implements [SPEC-hazard-analysis.md](../SPEC-hazard-analysis.md). Tasks: [todo.md](todo.md).
+Implements [SPEC-explain.md](../SPEC-explain.md). Tasks: [todo.md](todo.md).
 Previous modules: [data-ingest](done/data-ingest-plan.md), [retrieval](done/retrieval-plan.md),
-[hazard-taxonomy](done/hazard-taxonomy-plan.md).
+[hazard-taxonomy](done/hazard-taxonomy-plan.md), [hazard-analysis](done/hazard-analysis-plan.md).
 
 ## Overview
 
-A deterministic report builder: retrieval hits + stored hazard labels + term statistics →
-`HazardReport` (profile with lift, LOW/MODERATE/HIGH signals, shared/failure terms, investigation
-areas, cited standards, disclaimer), exposed as `analyze()` and `safescale analyze [--json]`.
+HazardReport → deterministic evidence packet → OpenAI structured output (`gpt-6-luna` default) →
+grounding validator (drop / one retry / deterministic fallback) → `Explanation` with fixed caveat
+and disclaimer; `safescale explain [--json] [--model]`.
 
 ## Approved decisions (2026-10-19)
 
-- k = 25 default; relevance floor 0.30 (cosine); signal rule v1 frozen before evaluation.
-- Investigation catalog drafted by me, reviewed by the owner in real reports.
-- No LLM in this module; every statement carries recall ids; disclaimer on every report.
+- Default `gpt-6-luna`; benchmark against `gpt-6.1-sol` on 10 queries before finalizing.
+- Never show unvalidated text; no LLM call on insufficient evidence; no caching in v1.
+- Owner reviews 5 explanations (Markdown sheet), target ≥ 95% supported sentences.
 
 ## Order and why
 
-The pure core (profile + signals) comes first: it is the heart of the module and fully testable
-without a database. Then cosine-for-any-method and labels, then terms (needs a migration), then the
-catalog, then the CLI and the Supabase sanity run against the spec's expected outcomes.
+The validator is the core and the riskiest logic, and it needs no network, so it comes first
+together with the schema. Then the packet, the flow with a fake explainer, then the real OpenAI
+explainer (first paid calls, tiny), then the CLI, the benchmark and the review sheet.
 
 ## Dependency graph
 
 ```
-report dataclasses + profile/signals (1) ──┐
-matches: cosine for any method + labels (2) ┼─► analyze() + CLI (5) ─► Supabase sanity (6)
-term stats migration + terms (3) ───────────┤
-investigation catalog (4) ──────────────────┘
+schema + validator (1) ──┐
+evidence packet (2) ─────┼─► explain() flow with FakeExplainer (3) ─► OpenAIExplainer + live test (4)
+                         │                                                  │
+                         └──────────────────────────────► CLI (5) ─► benchmark + review sheet (6)
 ```
 
 ## Risks and mitigations
 
 | Risk | Impact | Mitigation |
 |---|---|---|
-| Report reads as a risk prediction | High | Lift next to every share, fixed disclaimer, wording tests (no "safe"/"compliant"/"certified") |
-| Thresholds tuned to the 4 prototype queries | Med | Frozen as constants now; `evaluation` tests them on held-out recalls |
-| Materialized views exposed through Supabase's Data API (no RLS on views) | Med | Revoke from `anon`/`authenticated` in the migration; test + advisors check |
-| Stemmed lexemes shown to users ("batteri") | Low | Map each lexeme back to its most common surface word |
-| Hybrid/keyword scores aren't cosine | Low | Fetch each hit's cosine from stored embeddings; floor always on cosine |
+| Model states unsupported claims with real-looking citations | High | Category/area-scoped citation checks, number check, human review of 5 explanations |
+| Validator too strict, most text dropped | Med | Report drop reasons; tune the prompt (bump PROMPT_VERSION), not the checks |
+| Recall text tries to steer the model (prompt injection) | Low | Recall text passed as JSON data; instructions say so; validator catches the effects |
+| Reasoning tokens make cost/latency higher than estimated | Med | Measure per call; effort `low` by default; ask before exceeding $0.01 |
+| New model names change or get deprecated | Low | `EXPLAIN_MODEL` env var; model recorded on each explanation |

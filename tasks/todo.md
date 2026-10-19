@@ -1,49 +1,48 @@
-# Tasks: hazard-analysis
+# Tasks: explain
 
-Plan: [plan.md](plan.md) · Spec: [SPEC-hazard-analysis.md](../SPEC-hazard-analysis.md)
+Plan: [plan.md](plan.md) · Spec: [SPEC-explain.md](../SPEC-explain.md)
 
-### Task 1: Report model, hazard profile and signals (pure)
+### Task 1: Output schema + grounding validator
 **Acceptance:**
-- [x] Profile per category: count, share, base rate, lift, recall ids; only relevant matches counted
-- [x] Signal rule at every threshold edge; `other` never drives the overall signal; < 5 relevant → insufficient evidence
-- [x] `to_dict()` is JSON-ready and always includes the disclaimer
-**Verify:** `uv run pytest tests/analysis/test_profile.py`
-**Files:** `analysis/report.py`, `analysis/profile.py`, tests · **Scope:** M
+- [ ] Pydantic schema per spec (citations min 1, category enum, size limits)
+- [ ] Catches: unknown id, wrong-category / wrong-area citation, invented number, banned word, unknown area, empty summary; each with a readable reason
+**Verify:** `uv run pytest tests/explain/test_validate.py`
+**Files:** `explain/schema.py`, `explain/validate.py`, tests · **Scope:** M
 
-### Task 2: Matches for any method (cosine + labels)
+### Task 2: Evidence packet
 **Acceptance:**
-- [x] Each hit gets its cosine from stored embeddings (also for keyword/hybrid), labels and violations; weak matches flagged
-**Verify:** `uv run pytest tests/analysis/test_analyze.py -k matches`
-**Files:** `analysis/analyze.py`, tests · **Scope:** S
+- [ ] Only relevant matches, top 15 by rank; product names + truncated hazard/description text; ids all from the report
+**Verify:** `uv run pytest tests/explain/test_packet.py`
+**Files:** `explain/packet.py`, tests · **Scope:** S
 
-### Task 3: Term statistics + shared / failure terms
+### Task 3: explain() flow (FakeExplainer)
 **Acceptance:**
-- [x] Migration 006: two materialized views, Data API roles revoked; refreshed by `classify`
-- [x] Shared terms (≥ 2 matches) and failure terms (≥ 3 matches, not in query) ranked by share × idf, shown as surface words
-**Verify:** `uv run pytest tests/analysis/test_terms.py tests/test_db.py`
-**Files:** `db/migrations/006_term_stats.sql`, `analysis/terms.py`, `taxonomy/store.py`, tests · **Scope:** M
-
-### Task 4: Investigation catalog
-**Acceptance:**
-- [x] ~20 entries; an area shows only with ≥ 2 supporting matches, with recall ids and trigger terms
-- [x] Standards named by ≥ 2 matches listed; wording test passes on every catalog string
-**Verify:** `uv run pytest tests/analysis/test_investigate.py`
-**Files:** `analysis/investigate.py`, tests · **Scope:** M
+- [ ] Valid first try; retry with feedback; fallback template; insufficient evidence → no model call
+- [ ] Explanation carries caveat, disclaimer, validation record, usage; `to_dict()` JSON-ready
+**Verify:** `uv run pytest tests/explain/test_explain.py`
+**Files:** `explain/explain.py`, `explain/prompt.py`, `tests/explain/fake_explainer.py`, tests · **Scope:** M
 
 ### Checkpoint: offline
-- [x] All tests + lint pass with no network
+- [ ] All tests + lint pass with no network
 
-### Task 5: `analyze()` and `safescale analyze [--json]`
+### Task 4: OpenAIExplainer + live test
 **Acceptance:**
-- [x] End to end with FakeEmbedder on fixtures; every recall id in the report is a relevant match; JSON round-trips
-**Verify:** `uv run pytest tests/analysis/test_analyze.py`
-**Files:** `analysis/analyze.py`, `cli.py`, tests · **Scope:** M
+- [ ] `responses.parse` with the schema; usage (input/output/reasoning tokens) and cost estimate recorded
+- [ ] `-m live`: night-light explanation passes validation
+**Verify:** `uv run pytest -m live tests/explain`
+**Files:** `explain/explainer.py`, `tests/explain/test_live.py` · **Scope:** S
 
-### Task 6: Supabase sanity run
+### Task 5: `safescale explain [--json] [--model]`
 **Acceptance:**
-- [x] 006 applied; night light, dresser and unrelated queries meet spec criteria 2–4; k = 25/50/100 × 3 methods work
-- [x] DB work < 300 ms warm (~58 ms server-side; ~410 ms incl. 8 laptop round trips), CLI 2.1–2.6 s from the laptop (re-measure in `app`); advisors: no new warnings; results recorded in the spec
-**Verify:** CLI runs, timings, advisors · **Scope:** S
+- [ ] Text with [#id] citations + numbered references + caveat + disclaimer; JSON = report + explanation
+**Verify:** CLI test with fakes; manual run on Supabase
+**Files:** `explain/text.py`, `cli.py`, tests · **Scope:** S
 
-### Checkpoint: hazard-analysis complete
-- [x] Spec success criteria 1–7 met; README updated; committed to main
+### Task 6: Benchmark + review sheet
+**Acceptance:**
+- [ ] 10 queries × {gpt-6-luna, gpt-6.1-sol}: first-try pass rate, drops, retries, fallback, latency, cost recorded in the spec
+- [ ] `evaluation/explain_review/` sheet with 5 luna explanations for the owner
+**Verify:** benchmark run; owner review (target ≥ 95% supported) · **Scope:** M
+
+### Checkpoint: explain complete
+- [ ] Spec success criteria 1–7 met; README updated; committed to main
