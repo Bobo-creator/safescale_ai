@@ -40,6 +40,13 @@ class Match:
     labels: list[HazardLabel]
     violations: list[StandardViolation]
     relevant: bool  # cosine >= the relevance floor used for this report
+    hazard_text: str | None = None
+
+    @property
+    def text(self) -> str:
+        """Everything known about the failure, for matching investigation triggers."""
+        parts = [self.title, self.hazard_text or ""] + [lbl.evidence for lbl in self.labels]
+        return " ".join(parts)
 
 
 @dataclass(frozen=True)

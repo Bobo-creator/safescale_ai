@@ -9,7 +9,9 @@ from safescale.retrieval.search import Hit
 from safescale.taxonomy.store import labels_for
 
 _COSINES = """
-select recall_id, 1 - (embedding <=> %s) from recall_embeddings where recall_id = any(%s)
+select r.recall_id, 1 - (e.embedding <=> %s), r.hazard_text
+from recalls r left join recall_embeddings e using (recall_id)
+where r.recall_id = any(%s)
 """
 
 
@@ -26,7 +28,9 @@ def build_matches(
     """
     ids = [hit.recall_id for hit in hits]
     register_vector(conn)
-    cosines = dict(conn.execute(_COSINES, (Vector(query_embedding), ids)).fetchall())
+    rows = conn.execute(_COSINES, (Vector(query_embedding), ids)).fetchall()
+    cosines = {rid: cos for rid, cos, _ in rows if cos is not None}
+    hazard_texts = {rid: text for rid, _, text in rows}
     labels = labels_for(conn, ids)
     matches = []
     for hit in hits:
@@ -44,6 +48,7 @@ def build_matches(
                 labels=classification.labels if classification else [],
                 violations=classification.violations if classification else [],
                 relevant=cosine >= relevance_floor,
+                hazard_text=hazard_texts.get(hit.recall_id),
             )
         )
     return matches

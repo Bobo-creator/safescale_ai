@@ -25,13 +25,13 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-hazard-analysis.md](../SPEC-hazard-analy
 
 ### Task 4: Investigation catalog
 **Acceptance:**
-- [ ] ~20 entries; an area shows only with ≥ 2 supporting matches, with recall ids and trigger terms
-- [ ] Standards named by ≥ 2 matches listed; wording test passes on every catalog string
+- [x] ~20 entries; an area shows only with ≥ 2 supporting matches, with recall ids and trigger terms
+- [x] Standards named by ≥ 2 matches listed; wording test passes on every catalog string
 **Verify:** `uv run pytest tests/analysis/test_investigate.py`
 **Files:** `analysis/investigate.py`, tests · **Scope:** M
 
 ### Checkpoint: offline
-- [ ] All tests + lint pass with no network
+- [x] All tests + lint pass with no network
 
 ### Task 5: `analyze()` and `safescale analyze [--json]`
 **Acceptance:**
