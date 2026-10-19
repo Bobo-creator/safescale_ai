@@ -7,8 +7,7 @@ Previous modules: [data-ingest](done/data-ingest-plan.md), [retrieval](done/retr
 
 ## Overview
 
-FastAPI inside the `safescale` package (`/api/analyze`, `/api/explain`, `/api/examples`,
-`/api/health`) with rate limits and a least-privilege DB role, plus a Next.js dashboard in `web/`,
+FastAPI inside the `safescale` package (`/api/analyze`, `/api/explain`, `/api/health`) with rate limits and a least-privilege DB role, plus a Next.js dashboard in `web/`,
 deployed as one Vercel project (services + rewrites, region iad1, daily keep-alive cron).
 
 ## Approved decisions (2026-10-19)

@@ -9,7 +9,7 @@ from fastapi.testclient import TestClient
 from safescale.analysis.report import DISCLAIMER
 from safescale.analysis.terms import refresh_term_stats
 from safescale.api import deps
-from safescale.api.app import DAILY_LIMIT_NOTICE, EXAMPLES, MODEL_ERROR_MESSAGE, app
+from safescale.api.app import DAILY_LIMIT_NOTICE, MODEL_ERROR_MESSAGE, app
 from safescale.api.limits import Limits
 from safescale.retrieval.index import embed_recalls
 from safescale.taxonomy.store import classify_all
@@ -202,8 +202,7 @@ def test_descriptions_never_reach_the_logs(client, caplog):
     assert "Confidential" not in caplog.text
 
 
-def test_examples_and_health(client):
-    assert client.get("/api/examples").json() == EXAMPLES
+def test_health(client):
     health = client.get("/api/health").json()
     assert health["ok"] is True and health["db_ms"] >= 0 and health["pruned"] == 0
 

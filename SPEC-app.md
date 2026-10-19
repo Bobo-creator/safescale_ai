@@ -42,6 +42,9 @@ the production data, on desktop and phone.
 
 ## Design
 
+(Example descriptions live in the frontend as a static list, so they render instantly; there is
+no `/api/examples` endpoint.)
+
 ### Architecture
 
 ```
@@ -59,7 +62,6 @@ Browser ──► Vercel (iad1)
 |---|---|---|---|
 | `POST /api/analyze` | `{query, k, method}` | `HazardReport.to_dict()` | the fast path |
 | `POST /api/explain` | `{query, k, method}` | `{report, explanation}` | recomputes the analysis server-side, so the explanation is always grounded in a report the server built (~0.6 s extra) |
-| `GET /api/examples` | — | example descriptions | the brief's night light and others from the benchmark |
 | `GET /api/health` | — | `{ok, db_ms}` | `select 1`; also the daily keep-alive (Vercel cron) |
 
 - **Input validation:** `query` 10–1,000 characters after trimming; `k` ∈ {25, 50, 100};

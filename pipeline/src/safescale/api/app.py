@@ -1,4 +1,4 @@
-"""FastAPI app for the dashboard: /api/analyze, /api/explain, /api/examples, /api/health.
+"""FastAPI app for the dashboard: /api/analyze, /api/explain, /api/health.
 
 Request bodies (product descriptions) are never logged or stored.
 """
@@ -23,34 +23,6 @@ from safescale.retrieval.embedder import Embedder
 
 log = logging.getLogger(__name__)
 
-EXAMPLES = [
-    {
-        "label": "Children's night light",
-        "text": "Rechargeable children's night light using a "
-        "2000 mAh lithium-ion battery, USB-C charging, ABS plastic housing, and LED lighting.",
-    },
-    {
-        "label": "Baby crib",
-        "text": "Wooden baby crib with adjustable mattress height and a drop-down side rail.",
-    },
-    {
-        "label": "Child's dresser",
-        "text": "Six-drawer wooden dresser for a child's bedroom, 48 inches tall.",
-    },
-    {
-        "label": "Folding e-bike",
-        "text": "Folding electric bicycle with a 48 V lithium battery "
-        "pack and hydraulic disc brakes.",
-    },
-    {
-        "label": "Space heater",
-        "text": "Electric space heater, 1500 W ceramic element, tip-over switch, for bedrooms.",
-    },
-    {
-        "label": "Magnetic tiles",
-        "text": "Magnetic building tiles toy set for ages 3 and up, with small neodymium magnets.",
-    },
-]
 DAILY_LIMIT_NOTICE = (
     "Today's limit for explanations has been reached. The hazard analysis above is complete; "
     "please come back tomorrow for the written explanation."
@@ -185,11 +157,6 @@ def post_explain(
         # Upstream error text can include request details; it stays in the server log.
         explanation["validation"]["error"] = MODEL_ERROR_MESSAGE
     return {"report": report.to_dict(), "explanation": explanation, "notice": None}
-
-
-@app.get("/api/examples")
-def get_examples() -> list[dict]:
-    return EXAMPLES
 
 
 @app.get("/api/health")

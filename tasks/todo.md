@@ -12,7 +12,7 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-app.md](../SPEC-app.md)
 
 ### Task 2: FastAPI app
 **Acceptance:**
-- [x] `/api/analyze`, `/api/explain`, `/api/examples`, `/api/health`; input validation (422); 429 with retry-after; daily cap skips explanation only
+- [x] `/api/analyze`, `/api/explain`, `/api/health` (examples moved to the frontend); input validation (422); 429 with retry-after; daily cap skips explanation only
 - [x] OpenAI failure → report + fallback summary; DB failure → 503 without stack traces; request bodies never logged
 **Verify:** `uv run pytest tests/api`
 **Files:** `api/app.py`, `api/deps.py`, `pyproject.toml`, tests · **Scope:** M
@@ -22,8 +22,8 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-app.md](../SPEC-app.md)
 
 ### Task 3: Next.js scaffold + typed API client
 **Acceptance:**
-- [ ] `web/` (App Router, TypeScript strict, Tailwind); dev proxy `/api` → :8000; types mirror the API JSON
-- [ ] Minimal page runs the night-light query end to end locally
+- [x] `web/` (App Router, TypeScript strict, Tailwind); dev proxy `/api` → :8000; types mirror the API JSON
+- [x] Minimal page runs the night-light query end to end locally
 **Verify:** `npm run lint && npm run build`; manual run
 **Files:** `web/**` · **Scope:** M
 
