@@ -1,0 +1,22 @@
+# Never upload secrets.
+.env
+.env.*
+!.env.example
+
+# Local builds, caches and environments.
+**/.venv
+**/node_modules
+**/.next
+**/__pycache__
+**/.pytest_cache
+**/.ruff_cache
+.playwright-mcp
+web/test-results
+web/playwright-report
+
+# Not needed at runtime.
+data
+evaluation
+tasks
+db
+pipeline/tests

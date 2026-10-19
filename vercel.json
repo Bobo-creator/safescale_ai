@@ -1,0 +1,21 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "regions": ["iad1"],
+  "services": {
+    "web": {
+      "root": "web/",
+      "framework": "nextjs"
+    },
+    "api": {
+      "root": "pipeline/",
+      "framework": "fastapi",
+      "entrypoint": "safescale.api.app:app",
+      "excludeFiles": ["tests/**", ".venv/**", "**/__pycache__/**", ".pytest_cache/**", ".ruff_cache/**"]
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": { "service": "api" } },
+    { "source": "/(.*)", "destination": { "service": "web" } }
+  ],
+  "crons": [{ "path": "/api/health", "schedule": "0 12 * * *" }]
+}
