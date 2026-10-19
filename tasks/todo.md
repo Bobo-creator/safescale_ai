@@ -11,7 +11,7 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-explain.md](../SPEC-explain.md)
 
 ### Task 2: Evidence packet
 **Acceptance:**
-- [ ] Only relevant matches, top 15 by rank; product names + truncated hazard/description text; ids all from the report
+- [x] Only relevant matches, top 15 by rank; product names + truncated hazard/description text; ids all from the report
 **Verify:** `uv run pytest tests/explain/test_packet.py`
 **Files:** `explain/packet.py`, tests · **Scope:** S
 
