@@ -4,6 +4,7 @@ Request bodies (product descriptions) are never logged or stored.
 """
 
 import logging
+import os
 import time
 from typing import Annotated, Literal
 
@@ -55,7 +56,18 @@ DAILY_LIMIT_NOTICE = (
     "please come back tomorrow for the written explanation."
 )
 
-app = FastAPI(title="SafeScale AI", docs_url="/api/docs", openapi_url="/api/openapi.json")
+ON_VERCEL = bool(os.environ.get("VERCEL"))
+MODEL_ERROR_MESSAGE = (
+    "The explanation model was unavailable; showing a summary built from the data."
+)
+
+# Interactive API docs only outside production.
+app = FastAPI(
+    title="SafeScale AI",
+    docs_url=None if ON_VERCEL else "/api/docs",
+    redoc_url=None,
+    openapi_url=None if ON_VERCEL else "/api/openapi.json",
+)
 
 Query = Annotated[str, StringConstraints(strip_whitespace=True, min_length=10, max_length=1000)]
 
@@ -103,11 +115,24 @@ def _unexpected(_: Request, exc: Exception) -> JSONResponse:
     return JSONResponse(status_code=500, content={"detail": "Something went wrong on our side."})
 
 
+def client_ip(request: Request) -> str:
+    """The client's IP address, from a source the client can't forge.
+
+    On Vercel the platform overwrites X-Forwarded-For (and sets x-vercel-forwarded-for) with the
+    real client IP, so those headers are trusted there only. Anywhere else they are ignored and the
+    socket's peer address is used, so a client can't pick a fresh rate-limit bucket per request.
+    """
+    if deps.trust_proxy_headers():
+        for header in ("x-vercel-forwarded-for", "x-forwarded-for", "x-real-ip"):
+            value = request.headers.get(header, "").split(",")[0].strip()
+            if value:
+                return value
+    return request.client.host if request.client else "unknown"
+
+
 def visitor(request: Request, salt: Annotated[str, Depends(deps.get_salt)]) -> str:
-    """Salted hash of the client IP (Vercel puts the real client first in X-Forwarded-For)."""
-    forwarded = request.headers.get("x-forwarded-for", "")
-    ip = forwarded.split(",")[0].strip() or (request.client.host if request.client else "unknown")
-    return hash_visitor(ip, salt)
+    """Salted hash of the client IP; the IP itself is never stored."""
+    return hash_visitor(client_ip(request), salt)
 
 
 Conn = Annotated[psycopg.Connection, Depends(deps.get_conn)]
@@ -155,8 +180,11 @@ def post_explain(
     )
     if not everyone.allowed:
         return {"report": report.to_dict(), "explanation": None, "notice": DAILY_LIMIT_NOTICE}
-    explanation = explain(conn, report, explainer=explainer)
-    return {"report": report.to_dict(), "explanation": explanation.to_dict(), "notice": None}
+    explanation = explain(conn, report, explainer=explainer).to_dict()
+    if explanation["validation"]["error"]:
+        # Upstream error text can include request details; it stays in the server log.
+        explanation["validation"]["error"] = MODEL_ERROR_MESSAGE
+    return {"report": report.to_dict(), "explanation": explanation, "notice": None}
 
 
 @app.get("/api/examples")

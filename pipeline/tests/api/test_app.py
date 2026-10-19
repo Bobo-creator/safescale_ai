@@ -9,7 +9,7 @@ from fastapi.testclient import TestClient
 from safescale.analysis.report import DISCLAIMER
 from safescale.analysis.terms import refresh_term_stats
 from safescale.api import deps
-from safescale.api.app import DAILY_LIMIT_NOTICE, EXAMPLES, app
+from safescale.api.app import DAILY_LIMIT_NOTICE, EXAMPLES, MODEL_ERROR_MESSAGE, app
 from safescale.api.limits import Limits
 from safescale.retrieval.index import embed_recalls
 from safescale.taxonomy.store import classify_all
@@ -100,7 +100,12 @@ def test_analysis_rate_limit_gives_429_with_retry_after(client):
     assert int(r.headers["Retry-After"]) > 0 and "Try again in" in r.json()["detail"]
 
 
-def test_visitors_are_limited_separately(client):
+@pytest.fixture
+def on_vercel(monkeypatch):
+    monkeypatch.setenv("VERCEL", "1")
+
+
+def test_visitors_are_limited_separately(client, on_vercel):
     app.dependency_overrides[deps.get_limits] = lambda: Limits(analyses_per_hour=1)
     a = {"x-forwarded-for": "203.0.113.1, 10.0.0.1"}
     b = {"x-forwarded-for": "203.0.113.2"}
@@ -109,7 +114,30 @@ def test_visitors_are_limited_separately(client):
     assert client.post("/api/analyze", json={"query": QUERY}, headers=b).status_code == 200
 
 
-def test_explanation_limits(client):
+def test_forged_forwarded_for_is_ignored_outside_vercel(client, monkeypatch):
+    monkeypatch.delenv("VERCEL", raising=False)
+    monkeypatch.delenv("TRUST_PROXY_HEADERS", raising=False)
+    app.dependency_overrides[deps.get_limits] = lambda: Limits(analyses_per_hour=1)
+    codes = [
+        client.post(
+            "/api/analyze", json={"query": QUERY}, headers={"x-forwarded-for": f"10.0.0.{i}"}
+        ).status_code
+        for i in range(3)
+    ]
+    assert codes == [200, 429, 429]  # a new fake IP per request doesn't buy a new bucket
+
+
+def test_vercel_header_is_preferred_on_vercel(client, on_vercel):
+    from safescale.api.app import client_ip
+
+    class Req:
+        headers = {"x-vercel-forwarded-for": "203.0.113.5", "x-forwarded-for": "198.51.100.1"}
+        client = None
+
+    assert client_ip(Req()) == "203.0.113.5"
+
+
+def test_explanation_limits(client, on_vercel):
     app.dependency_overrides[deps.get_limits] = lambda: Limits(
         explanations_per_hour=1, explanations_per_day=1
     )
@@ -129,7 +157,7 @@ def test_explanation_limits(client):
     assert other.json()["report"]["matches"]
 
 
-def test_rate_limit_table_holds_no_ips_or_descriptions(client, ready):
+def test_rate_limit_table_holds_no_ips_or_descriptions(client, ready, on_vercel):
     client.post(
         "/api/explain", json={"query": SECRET_QUERY}, headers={"x-forwarded-for": "198.51.100.9"}
     )
@@ -144,7 +172,9 @@ def test_openai_failure_still_returns_report_and_fallback(client):
     data = client.post("/api/explain", json={"query": QUERY}).json()
     assert data["report"]["matches"] and data["explanation"]["summary"]
     assert data["explanation"]["generated"] is False
-    assert data["explanation"]["validation"]["error"] == "upstream timeout"
+    # The upstream error text never reaches the browser.
+    assert data["explanation"]["validation"]["error"] == MODEL_ERROR_MESSAGE
+    assert "upstream timeout" not in str(data)
 
 
 def test_database_failure_is_a_503_without_details(client):
@@ -176,3 +206,19 @@ def test_examples_and_health(client):
     assert client.get("/api/examples").json() == EXAMPLES
     health = client.get("/api/health").json()
     assert health["ok"] is True and health["db_ms"] >= 0 and health["pruned"] == 0
+
+
+def test_api_docs_are_off_on_vercel(monkeypatch):
+    import importlib
+
+    import safescale.api.app as module
+
+    monkeypatch.setenv("VERCEL", "1")
+    prod = importlib.reload(module)
+    try:
+        with TestClient(prod.app) as c:
+            assert c.get("/api/docs").status_code == 404
+            assert c.get("/api/openapi.json").status_code == 404
+    finally:
+        monkeypatch.delenv("VERCEL")
+        importlib.reload(module)

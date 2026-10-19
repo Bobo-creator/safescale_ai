@@ -56,6 +56,11 @@ def get_explainer() -> Explainer:
     return OpenAIExplainer()
 
 
+def trust_proxy_headers() -> bool:
+    """Only Vercel guarantees the client-IP headers; elsewhere they could be forged."""
+    return bool(os.environ.get("VERCEL")) or os.environ.get("TRUST_PROXY_HEADERS") == "1"
+
+
 def get_relevance_floor() -> float:
     return RELEVANCE_FLOOR  # overridden in tests, where the fake embedder scores lower
 
