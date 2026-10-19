@@ -36,12 +36,12 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-app.md](../SPEC-app.md)
 
 ### Task 5: Playwright e2e (local)
 **Acceptance:**
-- [ ] Night-light flow, citation jump, k/method switch, unrelated-query notice, phone layout, keyboard path
+- [x] Night-light flow, citation jump, k/method switch, unrelated-query notice, phone layout, keyboard path
 **Verify:** `npx playwright test`
-**Files:** `e2e/**`, `playwright.config.ts` · **Scope:** S
+**Files:** `web/e2e/**`, `web/playwright.config.ts` · **Scope:** S
 
 ### Checkpoint: local
-- [ ] Full flow works locally against Supabase; all tests pass
+- [x] Full flow works locally against Supabase; all tests pass
 
 ### Task 6: `safescale_app` role on Supabase (outward-facing)
 **Acceptance:**
