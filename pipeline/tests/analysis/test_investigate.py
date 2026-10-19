@@ -91,3 +91,11 @@ def test_cited_standards_need_two_relevant_matches():
     assert [(s.standard, s.count, s.recall_ids) for s in stats] == [
         ("STURDY Act (furniture tip-over)", 2, [1, 2])
     ]
+
+
+def test_chemical_burns_do_not_trigger_chemical_content():
+    text = "Swallowed coin batteries can cause internal chemical burns."
+    matches = [match(i, ["poisoning"], hazard_text=text) for i in range(3)]
+    assert "chemical_content" not in {a.id for a in investigation_areas(matches)}
+    lead = [match(i, ["poisoning"], hazard_text="The paint contains a chemical.") for i in range(2)]
+    assert "chemical_content" in {a.id for a in investigation_areas(lead)}

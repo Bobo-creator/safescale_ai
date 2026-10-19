@@ -34,7 +34,7 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-explain.md](../SPEC-explain.md)
 
 ### Task 5: `safescale explain [--json] [--model]`
 **Acceptance:**
-- [ ] Text with [#id] citations + numbered references + caveat + disclaimer; JSON = report + explanation
+- [x] Text with [#id] citations + numbered references + caveat + disclaimer; JSON = report + explanation
 **Verify:** CLI test with fakes; manual run on Supabase
 **Files:** `explain/text.py`, `cli.py`, tests · **Scope:** S
 

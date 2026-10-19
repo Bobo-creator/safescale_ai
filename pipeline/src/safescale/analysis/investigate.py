@@ -176,7 +176,7 @@ CATALOG: tuple[CatalogEntry, ...] = (
         {"poisoning"},
         {
             "lead": r"\blead\b(?!\s+to)",
-            "chemical": r"chemical",
+            "chemical": r"chemical(?!s?\s+burn)",  # not battery "chemical burns"
             "phthalate": r"phthalat",
             "paint": r"\bpaint",
             "toxic": r"\btoxic",

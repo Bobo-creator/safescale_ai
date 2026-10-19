@@ -10,6 +10,9 @@ from safescale import config, db
 from safescale.analysis.analyze import analyze
 from safescale.analysis.terms import refresh_term_stats
 from safescale.analysis.text import format_report
+from safescale.explain.explain import explain
+from safescale.explain.explainer import Explainer, OpenAIExplainer
+from safescale.explain.text import format_explanation
 from safescale.ingest import run_ingest
 from safescale.retrieval.embedder import Embedder, OpenAIEmbedder
 from safescale.retrieval.index import embed_recalls
@@ -48,6 +51,15 @@ def build_parser() -> argparse.ArgumentParser:
     report.add_argument("--method", choices=METHODS, default="vector")
     report.add_argument("--json", action="store_true", help="print the report as JSON")
 
+    why = commands.add_parser(
+        "explain", help="hazard report plus a cited, plain-language explanation"
+    )
+    why.add_argument("query", help="product description, in quotes")
+    why.add_argument("--k", type=int, default=25, help="similar recalls to analyze (default 25)")
+    why.add_argument("--method", choices=METHODS, default="vector")
+    why.add_argument("--model", help="explanation model (default: EXPLAIN_MODEL or gpt-6-luna)")
+    why.add_argument("--json", action="store_true", help="print report and explanation as JSON")
+
     commands.add_parser("classify", help="(re)label every recall with hazard categories")
     hazards = commands.add_parser("hazards", help="show a recall's hazard labels and evidence")
     hazards.add_argument("recall_id", type=int)
@@ -66,6 +78,10 @@ def build_parser() -> argparse.ArgumentParser:
 
 def make_embedder() -> Embedder:
     return OpenAIEmbedder()
+
+
+def make_explainer(model: str | None = None) -> Explainer:
+    return OpenAIExplainer(model=model)
 
 
 def format_hits(hits: list[Hit]) -> str:
@@ -122,6 +138,17 @@ def main(argv: list[str] | None = None) -> int:
                 conn, args.query, embedder=make_embedder(), k=args.k, method=args.method
             )
         print(json.dumps(result.to_dict(), indent=2) if args.json else format_report(result))
+    if args.command == "explain":
+        with db.connect() as conn:
+            report = analyze(
+                conn, args.query, embedder=make_embedder(), k=args.k, method=args.method
+            )
+            explanation = explain(conn, report, explainer=make_explainer(args.model))
+        if args.json:
+            body = {"report": report.to_dict(), "explanation": explanation.to_dict()}
+            print(json.dumps(body, indent=2))
+        else:
+            print(format_explanation(report, explanation))
     if args.command == "classify":
         started = time.perf_counter()
         with db.connect() as conn:
