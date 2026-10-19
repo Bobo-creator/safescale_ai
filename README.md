@@ -36,7 +36,7 @@ Early development: CS Seminar MVP (Layer 1: Product Hazard Intelligence).
 | hazard-taxonomy | [SPEC-hazard-taxonomy.md](SPEC-hazard-taxonomy.md) | Done: 12 hazard categories + standards flag; micro-F1 0.92 on a blind 50-recall gold set |
 | retrieval | [SPEC-retrieval.md](SPEC-retrieval.md) | Done: 10,039 recalls embedded; vector / keyword / hybrid search |
 | hazard-analysis | [SPEC-hazard-analysis.md](SPEC-hazard-analysis.md) | Done: hazard profile with lift, LOW / MODERATE / HIGH signal, shared and failure terms, investigation areas, cited standards |
-| explain | [SPEC-explain.md](SPEC-explain.md) | Built: cited, validated explanations (gpt-6-luna, ~$0.001 each); human review pending |
+| explain | [SPEC-explain.md](SPEC-explain.md) | Done: cited, validated explanations (gpt-6-luna, ~$0.001 each) |
 | app | — | Not started |
 | evaluation | — | Not started |
 

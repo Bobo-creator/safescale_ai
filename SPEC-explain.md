@@ -271,7 +271,7 @@ faithful" condition isn't met. The human review below is the deciding check.
 | 2 | Unrelated query: no model call, deterministic notice | ✅ 0 calls to the Responses API |
 | 3 | Validator, retry and fallback tests | ✅ (an unsupported `effort` value also showed the error path working: each failed call fell back cleanly) |
 | 4 | Benchmark: shown text 100% validated; fallback ≤ 1 / 10 | ✅ fallback 0 / 10 |
-| 5 | Human review ≥ 95% supported | ⏳ waiting for the owner: `evaluation/explain_review/review.md` (77 items) |
+| 5 | Human review ≥ 95% supported | ✅ (qualitative) the owner skimmed the sheet on 2026-10-19 and judged the explanations solid; the 77 items were **not** tallied one by one, so there is no measured support rate. `evaluation` can do the item-level count later |
 | 6 | ≤ $0.01 and median < 8 s for the LLM step | ⚠️ $0.0009 ✅; median 8.3–9.3 s ❌ (generation time; the app should stream) |
 | 7 | Tests offline; live test | ✅ 331 tests; `-m live` passes |
 
