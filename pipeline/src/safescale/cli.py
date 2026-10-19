@@ -6,6 +6,7 @@ import time
 from pathlib import Path
 
 from safescale import config, db
+from safescale.analysis.terms import refresh_term_stats
 from safescale.ingest import run_ingest
 from safescale.retrieval.embedder import Embedder, OpenAIEmbedder
 from safescale.retrieval.index import embed_recalls
@@ -110,6 +111,7 @@ def main(argv: list[str] | None = None) -> int:
         started = time.perf_counter()
         with db.connect() as conn:
             result = classify_all(conn)
+            refresh_term_stats(conn)  # term frequencies used by `analyze`
         elapsed = time.perf_counter() - started
         print(
             f"classified {result.recalls} recalls in {elapsed:.1f}s: {result.labels} labels, "

@@ -18,8 +18,8 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-hazard-analysis.md](../SPEC-hazard-analy
 
 ### Task 3: Term statistics + shared / failure terms
 **Acceptance:**
-- [ ] Migration 006: two materialized views, Data API roles revoked; refreshed by `classify`
-- [ ] Shared terms (≥ 2 matches) and failure terms (≥ 3 matches, not in query) ranked by share × idf, shown as surface words
+- [x] Migration 006: two materialized views, Data API roles revoked; refreshed by `classify`
+- [x] Shared terms (≥ 2 matches) and failure terms (≥ 3 matches, not in query) ranked by share × idf, shown as surface words
 **Verify:** `uv run pytest tests/analysis/test_terms.py tests/test_db.py`
 **Files:** `db/migrations/006_term_stats.sql`, `analysis/terms.py`, `taxonomy/store.py`, tests · **Scope:** M
 
