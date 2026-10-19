@@ -268,3 +268,35 @@ evaluation/hazard_gold/
 - `violates_standard` flag with the standard's name, built now.
 - Gold set: 50 recalls, labeled blind in a local labeling page.
 - Rules are the shipped classifier; an OpenAI labeler is a challenger in `evaluation`.
+
+## Results (2026-10-19)
+
+Scored on the blind 50-recall gold set (`evaluation/hazard_gold/gold.json`, seed 2026), labeled by
+the project owner through `safescale label`. Rules were tuned only on the other 9,989 recalls.
+
+| Metric | Value |
+|---|---|
+| Micro precision / recall / **F1** | 0.89 / 0.95 / **0.92** (target ≥ 0.85) |
+| Exact match (whole label set) | 44 / 50 |
+| "Violates a standard" flag P / R / F1 | 0.89 / 1.00 / 0.94 (gold 8, predicted 9) |
+
+Per category (gold count in brackets): fire_overheating 0.92 (12), burn 1.00 (8), electrical_shock
+0.91 (5), choking 0.91 (5), suffocation_strangulation 1.00 (2), laceration 1.00 (4), fall 0.94 (8),
+entrapment 0.83 (6), poisoning 1.00 (3), drowning 1.00 (2), other 0.75 (5); crash_loss_of_control
+had no gold examples (1 false positive). With 50 recalls, single errors move small categories a lot.
+
+The 6 disagreements fall into three groups:
+
+1. **Description fallback picks up boilerplate** (2): old records without hazard text fall back to
+   press-release descriptions ("products *fall* within the Commission's jurisdiction", the brand
+   "Quadra *Fire*"). One of these also missed entrapment ("lid slams shut on fingers").
+2. **"Overheat" counts as fire** (1): "can overheat, posing a burn hazard" was labeled burn only.
+   This is a definition question (the category is fire *or* overheating), not a rule bug.
+3. **Word used in another sense** (3): a "pinched" vent line, a "small parts cylinder" in a magnet
+   test, and "during a crash" describing when a seatbelt fails.
+
+Other measurements: `other` is the only label for 6.7% of recalls; 1,487 recalls are flagged for a
+standards violation and 90% of those name the standard; `classify` takes 5.8 s on Supabase.
+
+**Note for evaluation:** this score is the honest, blind v1 number. Any rule change made after
+seeing these 6 errors should be measured on a *fresh* gold sample (a different seed), not this one.

@@ -1,0 +1,717 @@
+{
+  "seed": 2026,
+  "items": [
+    {
+      "recall_id": 43,
+      "title": "Fire and Burn Hazards Prompt Recall of Gas Grills Sold at Lowe's Stores",
+      "hazard_text": "The burners can deteriorate causing irregular flames and the lids of some models can catch fire, posing fire and burn hazards to the consumer.",
+      "description": "The recalled grills are SLG series \"Perfect Flame\" brand outdoor propane or natural gas grills. The grills are stainless steel and painted black or gray metal. The model numbers affected by this recall are listed below. The model number can be found in the compartment under the cooking chamber. No other Perfect Flame model numbers are included in this recall. Model Replacement Burners Replacement Lid SLG2006B Yes No SLG2006BN Yes No SLG2006C Yes No SLG2006CN Yes No SLG2007A Yes Yes SLG2007B Yes Yes SLG2007BN Yes Yes SLG2007D Yes No SLG2007DN Yes No SLG2008A Yes Yes",
+      "url": "https://www.cpsc.gov/Recalls/2010/Fire-and-Burn-Hazards-Prompt-Recall-of-Gas-Grills-Sold-at-Lowes-Stores",
+      "recall_date": "2009-11-18",
+      "labels": [
+        "fire_overheating",
+        "burn"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T19:59:39+00:00"
+    },
+    {
+      "recall_id": 191,
+      "title": "Children's Hooded Jackets with Drawstrings Recalled by 5 Star Apparel Due to Strangulation Hazard",
+      "hazard_text": "The jackets have drawstrings through the hood which can pose a strangulation hazard to young children.",
+      "description": "This recall involves girls' and boys' hooded jackets with drawstrings. Girl's Pink Short-Sleeve Lightweight Jacket Style No. Sizes MIG108105 12M, 18M, 24M MLG108105 4 - 6X MTG108105 2T - 4T \"Mecca\" is printed on the inside of jacket below the neck. Boy's Black or Brown Heavy Jacket Style No. Sizes MLK908602 4 - 7 MT908602 2T - 4T \"Mecca\" is printed on the outside back of the jacket.",
+      "url": "https://www.cpsc.gov/Recalls/2010/Childrens-Hooded-Jackets-with-Drawstrings-Recalled-by-5-Star-Apparel-Due-to-Strangulation-Hazard",
+      "recall_date": "2010-04-08",
+      "labels": [
+        "suffocation_strangulation"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:00:19+00:00"
+    },
+    {
+      "recall_id": 408,
+      "title": "Sportime Recalls Children's Floor Hockey Sets Due to Lead Paint Hazard",
+      "hazard_text": "The surface coating on the boards, which are assembled together to form the floor hockey playing-field, contain excessive levels of lead, violating the federal lead paint standard.",
+      "description": "This recall involves all sets of BigBox Hockey, each consisting of six boards, measuring 6' long by 10\" tall. The boards come in six colors: red, orange, yellow, green, blue and violet. The boards can be assembled together to create a contained playing area for children's floor hockey.",
+      "url": "https://www.cpsc.gov/Recalls/2010/Sportime-Recalls-Childrens-Floor-Hockey-Sets-Due-to-Lead-Paint-Hazard",
+      "recall_date": "2010-02-25",
+      "labels": [
+        "poisoning"
+      ],
+      "violates_standard": true,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:01:44+00:00"
+    },
+    {
+      "recall_id": 1257,
+      "title": "Sportspower Recalls Children’s Waterslides Due to Injury Hazard; Sold Exclusively at Menards",
+      "hazard_text": "The warning labels on the children's waterslide are inadequate for weight limit and fail to tell consumers never to slide head first. This poses a risk of serious injuries to consumers, including neck injuries.",
+      "description": "This recall involves Sportspower Liquid Motion waterslides. Consumers inflate the waterslide with air and spray it with water for sliding. They are used on the ground, not at the pool. The waterslides are blue and yellow and measure about 18 feet long by 9 feet high by 5 feet wide. A \"Liquid Motion by Sportspower\" logo is printed on the side. Recalled waterslides have item number INF-1375 and UPC 687064031340 located on the packaging.",
+      "url": "https://www.cpsc.gov/Recalls/2013/Sportspower-Recalls-Childrens-Waterslides-Due-to-Injury-Hazard-Sold-Exclusively-at-Menards",
+      "recall_date": "2012-11-28",
+      "labels": [
+        "other"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:09:38+00:00"
+    },
+    {
+      "recall_id": 1329,
+      "title": "U.S. Divers and Aqua Lung Sport Brand Youth Snorkeling Masks Recalled Due to Laceration Hazard",
+      "hazard_text": "Notches in the tempered glass can cause the lens to break under certain water pressure, posing a laceration hazard to the user.",
+      "description": "This recall involves Santa Cruz Jr. single paned, tempered glass youth snorkeling masks sold under the U.S. Divers and Aqua Lung Sport brands. The masks were sold individually, with a snorkel or as a set with snorkel and fins. The U.S. Divers logo or Aqua Lung Sport logo is on the top of the mask as well as inset on the tempered glass lens. The tempered glass lens is also labeled as tempered. This recall affects all Santa Cruz Jr. Youth Masks manufactured before October 2011. Masks manufactured before October 2011 do not have a production code on the edge of the frame, near the nose pocket.",
+      "url": "https://www.cpsc.gov/Recalls/2013/US-Divers-and-Aqua-Lung-Sport-Brand-Youth-Snorkeling-Masks-Recalled",
+      "recall_date": "2013-03-07",
+      "labels": [
+        "laceration"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:11:12+00:00"
+    },
+    {
+      "recall_id": 1476,
+      "title": "Excel Industries Recalls Hustler and BigDog Lawn Mowers Due to Fire Hazard",
+      "hazard_text": "The fuel tank vent valve fitting can fail to seal and cause a fuel leak, posing a fire hazard.",
+      "description": "The Hustler and BigDog brand riding or walk-behind lawn mowers were sold in the following colors: Hustler models in yellow; BigDog models in red. They have large mowing decks ranging from 36 to 72 inches. Model name and serial numbers can be found on a tag located on the left side of the frame in the front of the mower's fender. The following model names, serial numbers and types of lawn mower are included in this recall: BrandModel NameTypeSerial Numbers Hustler 1500 Riding Greens Riding 10062845 through 11081604 FasTrak Zero Turn riding 10121082 through 11120946 FasTrak Super Duty Zero Turn riding 10091717 through 12054999 Sport Zero Turn riding 10120377 through 12054999 Super Z Zero Turn riding 10109017 through 12054999 TrimStar Walk-behind 11033546 through 12054999 X-ONE Zero Turn riding 10090765 through 12022041 BigDog A Series Zero Turn riding 11100596 through 12054999 C Series Zero Turn riding 11031908 through 12054999 R Diablo Zero Turn riding 12020696 through 12054999 R PowerBar Zero Turn riding 12020892 through 12054999 R Series Zero Turn riding 11021137 through 12054999 T Series Walk-behind 11050815 through 12054999 X Series Zero Turn riding 11039001 through 12054999 X Diablo Zero Turn riding 11090151 through 12054999",
+      "url": "https://www.cpsc.gov/Recalls/2012/Excel-Industries-Recalls-Hustler-and-BigDog-Lawn-Mowers-Due-to-Fire-Hazard",
+      "recall_date": "2012-11-01",
+      "labels": [
+        "fire_overheating"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:11:22+00:00"
+    },
+    {
+      "recall_id": 1492,
+      "title": "Siemens Recalls Temperature and Humidity Sensors for Schools, Hospitals and Other Buildings Due to Fire Hazard",
+      "hazard_text": "The sensors can overheat, posing a fire hazard.",
+      "description": "This recall involves wall-mounted Q-series sensors that control heat, air conditioning and humidity inside commercial buildings, hospitals and schools. The sensors come in three designs: a blank cover, a cover with a digital display screen or a cover with a digital display screen and door. The sensors are either white or beige and have a Siemens, Talon, Staefa Control System, Staefa Control System/Talon logo or no logo. The recalled model numbers begin with QAA and QFA, and one with SB1. They are: QAA 2060, QAA 2063, QAA 2072, QAA 2073, QFA 2000, QFA 2001, QFA 2060, QFA 2071, QFA2072, QFA 3000, QFA 3001, QFA 3060, QFA 3071, and SB1-0834. The model number is located on the sensor's circuit board inside the unit.",
+      "url": "https://www.cpsc.gov/Recalls/2013/Siemens-Recalls-Temperature-and-Humidity-Sensors-for-Schools-Hospitals-and-Other-Buildings-Due-to-Fire-Hazard",
+      "recall_date": "2013-01-22",
+      "labels": [
+        "fire_overheating"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:12:06+00:00"
+    },
+    {
+      "recall_id": 1613,
+      "title": "Fred & Friends Recalls Infant Pacifiers Due to Choking Hazard",
+      "hazard_text": "The pacifiers fail to meet federal safety standards. The beard on the Artiste and the knob on the Volume pacifiers can detach, posing a choking hazard to young children. In addition, the ventilation holes on the Volume and Panic pacifier guards are too small.",
+      "description": "This recall involves three styles of Fred and Friends Chill Baby pacifiers, including the Artiste with a black plastic beard and mustache, Volume with a black volume control knob and Panic with a red panic button. The pacifier's name and UPC are printed on the packaging. The Artiste's UPC is 728987021282, the Volume style's UPC is 728987020599 and the Panic style's UPC is 728987020605. The pacifiers are plastic and silicone rubber and measure about 2 inches wide and 1½ inches tall.",
+      "url": "https://www.cpsc.gov/Recalls/2014/Fred-and-Friends-Recalls-Infant-Pacifiers",
+      "recall_date": "2014-01-30",
+      "labels": [
+        "choking"
+      ],
+      "violates_standard": true,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:13:05+00:00"
+    },
+    {
+      "recall_id": 1688,
+      "title": "Adult Portable Bed Handles Recalled by Bed Handles Inc. Due to Entrapment and Strangulation Hazards; Three Deaths Reported",
+      "hazard_text": "When attached to an adult's bed without the use of safety retention straps, the handle can shift out of place, creating a dangerous gap between the bed handle and the side of the mattress. This poses a serious risk of entrapment, strangulation and death.",
+      "description": "The recall involves adult portable bed handles that do not have safety retention straps to secure the bed handle to the bed frame to keep the bed handle from shifting out of place and creating a dangerous gap. Recalled models include the Original Bedside Assistant® (BA10W), the Travel Handles™ (BA11W) which is sold as a set of two bed handles, and the Adjustable Bedside Assistant® (AJ1). The L-shaped bed handles are made out of ¾ inch tubular steel, measure 20 inches wide, 16 to 20 inches tall and have 3 ft. poles that extend under the mattress. The Original Bedside Assistant® (BA10W) and the Travel Handles™ (BA11W) have a white handle with white poles that go under the mattress. The Adjustable Bedside Assistant® (AJ1) is gold in color and has a black cushioned foam handle. The bed handles are intended to assist adults with getting in and out of bed by giving them a bar to grip. Bed Handles Inc. and the model number are printed on a white label on the bed handles.",
+      "url": "https://www.cpsc.gov/Recalls/2014/Adult-Portable-Bed-Handles-Recalled-by-Bed-Handles-Inc",
+      "recall_date": "2014-05-20",
+      "labels": [
+        "suffocation_strangulation",
+        "entrapment"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:13:45+00:00"
+    },
+    {
+      "recall_id": 1822,
+      "title": "Snowmobiles Recalled by Arctic Cat Due to Fuel Leak and Fire Hazard (Recall Alert)",
+      "hazard_text": "Fuel can leak from the fuel line assembly, posing a fire hazard.",
+      "description": "This recall involves model year 2014 Arctic Cat XF 7000 and ZR 7000 and model year 2015 XF 7000 and ZR 7000 snowmobiles. They were sold in a variety of green, black, orange and white color combinations. All XF and ZR 2014 models are included in this recall. Recalled 2015 model vehicles have the last six digits of the vehicle identification number (VIN) in the following ranges: 100920 through 100993 for the XF 7000 models and 100792 through 100919 for the ZR 7000. The fourth and fifth digits of the VIN, \"14\" or \"15,\" correspond to the model year. The VIN appears on a sticker attached to the chassis near the rider's right foot rest. The model name appears on the front sides of the snowmobile.",
+      "url": "https://www.cpsc.gov/Recalls/2014/Snowmobiles-Recalled-by-Arctic-Cat",
+      "recall_date": "2014-08-14",
+      "labels": [
+        "fire_overheating"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:14:10+00:00"
+    },
+    {
+      "recall_id": 1959,
+      "title": "CPSC, Vaid Enterprises Announce Recall of \"BIC\" Cigarette Lighters",
+      "hazard_text": "The lighters do not have child-resistant mechanisms, as required by federal law. Young children could ignite the lighters, presenting fire and burn hazards.",
+      "description": "The disposable cigarette lighters being recalled are oval-tube- shaped \"BIC\" and mini- \"BIC\" brand lighters. The lighters have a green, red, blue, black or yellow body and a metal top. \"BIC\" and \"made in France\" is imprinted into the metal top of the lighter. A label on the lighter reads, \"WARNING KEEP AWAY FROM CHILDREN.\" The standard size lighters have the UPC number 3 086120 600020 and the mini-lighters have the UPC number 3 086120 600051.",
+      "url": "https://www.cpsc.gov/Recalls/2000/CPSC-Vaid-Enterprises-Announce-Recall-of-BIC-Cigarette-Lighters",
+      "recall_date": "2000-09-14",
+      "labels": [
+        "fire_overheating",
+        "burn"
+      ],
+      "violates_standard": true,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:14:34+00:00"
+    },
+    {
+      "recall_id": 2317,
+      "title": "CPSC, Stihl Inc. Announce Recall of Chain Saws",
+      "hazard_text": "Fuel can leak out of the chain saw's tank, which could cause a fire or injury hazard to consumers.",
+      "description": "The recalled Stihl chain saws include model number MS 170 and MS 180 C with serial numbers 255120848 through 255122797 and 255739074 through 255741150. The name \"Stihl\" and the model numbers are located on the starter housing. The serial number is printed on the housing near the bumper spikes.",
+      "url": "https://www.cpsc.gov/Recalls/2003/CPSC-Stihl-Inc-Announce-Recall-of-Chain-Saws-",
+      "recall_date": "2002-11-13",
+      "labels": [
+        "fire_overheating"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:14:42+00:00"
+    },
+    {
+      "recall_id": 3456,
+      "title": "CPSC & Midland Consumer Radio Recall Weather Radios",
+      "hazard_text": "The radio contains a programming error, which can cause the device to fail to recognize certain signals broadcast by the National Weather Service. Consumers could fail to receive some National Weather Service notices advising of a severe weather threat putting lives and property at risk.",
+      "description": "Only model 74-200 radios that have a serial number beginning with 904 or 905 are being recalled. The model and serial numbers are found on the bottom of the unit. The digital radio measures about 7.75 inches long, 5 inches wide and 2 inches high, and is made of black plastic. \"MIDLAND SAME DIGITAL WEATHER/HAZARD ALERT MONITOR\" is written on the top of the radio. This radio has a specific area message encoder (SAME) to sound alerts for an entire weather service broadcast area or for up to 15 selected areas. The radio has a battery backup, antenna, built-in alarm clock, digital message display for 56 types of watches or warnings, and alert status lights for statement, watch, or warning. Other Midland weather radios are not involved in this recall.",
+      "url": "https://www.cpsc.gov/Recalls/2005/CPSC--Midland-Consumer-Radio-Recall-Weather-Radios",
+      "recall_date": "1999-10-20",
+      "labels": [
+        "other"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:15:43+00:00"
+    },
+    {
+      "recall_id": 3670,
+      "title": "New Easy-Bake Oven Recall Following Partial Finger Amputation; Consumers Urged to Return Toy Ovens",
+      "hazard_text": "Young children can insert their hands into the oven's front opening, and get their hands or fingers caught, posing entrapment and burn hazards.",
+      "description": "The Easy-Bake Oven is a purple and pink plastic oven that resembles a kitchen range with four burners on top and a front-loading oven. \"Easy Bake\" is printed on the front of the oven. Model number 65805 and \"Hasbro\" are stamped into the plastic on the back of the oven. This recall includes all units with the retrofit kit. The Easy-Bake Oven is an electric toy and is not recommended for children under eight years of age. Ovens sold before May 2006 are not included in this recall.",
+      "url": "https://www.cpsc.gov/Recalls/2007/New-Easy-Bake-Oven-Recall-Following-Partial-Finger-Amputation-Consumers-Urged-to-Return-Toy-Ovens",
+      "recall_date": "2007-07-19",
+      "labels": [
+        "burn",
+        "entrapment"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:15:57+00:00"
+    },
+    {
+      "recall_id": 3943,
+      "title": "Black And Decker Cord Adapters Recalled",
+      "hazard_text": "Electrocution/Electric Shock",
+      "description": "August 2, 1978 Release # 78-070 Black And Decker Cord Adapters Recalled WASHINGTON, D.C. (Aug. 2) -- The Black and Decker Manufacturing Co., Towson, Md., in cooperation with the U.S. Consumer Product Safety Commission (CPSC), today announced a voluntary recall of its no. 86-210 extension-cord adapters because of a potential shock hazard. The adapters were packaged with Black and Decker electric hedge trimmers during the spring and summer of 1978, and distributed nationwide. According to the company, less than 1,000 of the more than 200,000 adapters produced could have exposed brass electrical contacts protruding through the molded material, a condition which could cause a serious electrical shock. The adapters are orange and can be identified by the number \"86-210\" molded on the outside surface. The adapters are supplied as standard equipment with hedge trimmers, along with instructions for attaching the adapter to an extension cord. Consumers should immediately stop using the adapters and closely examine them for any metal showing through the outside surf ace. Adapters showing metal should be returned for free replacement to any Black and Decker Service Center, or a Black and Decker-authorized service center listed in the yellow pages. The company, which informed CPSC of the potential safety hazard on July 11,1978, sent letters providing recall instructions to all consumers who mailed in the registration card packed with the hedge trimmers. Consumers who have questions about the condition of their adapters or who need additional information can call Black and Decker collect at 301/828-2955 from 8 a.m. - 5 p.m., Eastern Daylight Time. To verify the model number, call CPSC's toll-free Hotline at 800/638-2772",
+      "url": "https://www.cpsc.gov/Recalls/1978/Black-And-Decker-Cord-Adapters-Recalled",
+      "recall_date": "1978-08-02",
+      "labels": [
+        "electrical_shock"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:16:13+00:00"
+    },
+    {
+      "recall_id": 4132,
+      "title": "General Electric Recalls Microwave Combo Wall Ovens Due to Fire Hazard",
+      "hazard_text": "The door switch in the microwave oven can overheat and ignite plastic components in the control area, posing a fire hazard to consumers. The lower thermal oven does not pose a hazard.",
+      "description": "The recall includes GE combination microwave and conventional built-in wall ovens sold under the following brand names: GE, GE Profile® and Kenmore. The ovens were sold in white, black, bisque and stainless steel. The brand name is printed on the lower left corner on the front of the microwave door. The following model and serial numbers can be found inside the microwave oven on the left interior wall. Recalled Models Serial number begins with: GE / GE Profile JKP85B0A3BB, JKP85B0D1BB, JKP85W0A3WW, JKP85W0D1WW, JKP86B0F1BB, JKP86C0F1CC, JKP86S0F1SS, JKP86W0F1WW, JT965B0F1BB, JT965C0F1CC, JT965S0F1SS, JT965W0F1WW, JTP85B0A2BB, JTP85B0A3BB, JTP85B0A4BB, JTP85B0A5BB, JTP85B0D1BB, JTP85W0A2WW, JTP85W0A3WW, JTP85W0A4WW, JTP85W0A5WW, JTP85W0D1WW, JTP86B0F1BB, JTP86C0F1CC, JTP86S0F1SS, JTP86W0F1WW, JTP95B0A2BB, JTP95B0A3BB, JTP95B0A4BB, JTP95B0A5BB, JTP95B0D1BB, JTP95W0A2WW, JTP95W0A3WW, JTP95W0A4WW, JTP95W0A5WW, JTP95W0D1WW AZ, DZ, FZ, GZ, HZ, LZ, MZ, RZ, SZ, TZ, VZ, ZZ, AA, DA, FA, GA, HA, LA, MA, RA, SA, TA, VA, ZA, AD, DD, FD, GD, HD, LD, MD, RD, SD, TD, VD, ZD, AF, DF, FF, GF, HF, LF, MF, RF, SF, TF, VF, ZF Kenmore (All model numbers start with 911) 41485991, 41485992, 41485993, 41485994, 41489991, 41489992, 41489993, 41489994, 49485992, 49489992, 47692100, 47699100, 47862100, 47869100, 47812200, 47813200, 47814200, 47819200, 47792200, 47793200, 47794200, 47799200 0, 1, 2, 3",
+      "url": "https://www.cpsc.gov/Recalls/2008/General-Electric-Recalls-Microwave-Combo-Wall-Ovens-Due-to-Fire-Hazard",
+      "recall_date": "2007-12-05",
+      "labels": [
+        "fire_overheating"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:17:28+00:00"
+    },
+    {
+      "recall_id": 4719,
+      "title": "Grass/Weed String Trimmers Recalled by Black And Decker",
+      "hazard_text": "Electrocution/Electric Shock",
+      "description": "Grass/Weed String Trimmers Recalled by Black And Decker NEWS from CPSC U.S. Consumer Product Safety Commission Office of Information and Public Affairs Washington, DC 20207 FOR IMMEDIATE RELEASE November 24, 1987 Release # 87-070 500,000 Black And Decker Grass/Weed String Trimmers Recalled WASHINGTON, DC -- In cooperation with the U.S. Consumer Product Safety Commission, Black and Decker (U.S.) Inc., Towson, Maryland has announced a voluntary recall of approximately 500,000 of its Model 82209 (Type 1 and 2) and Model 82210 (Type 1 and 2) Bump-Feed Grass/Weed String Trimmers. Due to improper assembly, the wiring in some of these units may be cut by the end of the handle tube, resulting in an electric shock hazard. This hazard can occur while the units are being operated or when they are simply plugged in but not in use. Four consumers were reportedly shocked in separate incidents in 1986 and 1987, when they grabbed the metal handle tube of their string trimmers. Though none of these incidents were fatal, the Commission staff believes that a defective trimmer would present a severe electric shock or an electrocution hazard. These Black and Decker brand string trimmers have been sold since October, 1985 by a variety of retailers for about $24.00 to $29.00. The affected trimmers can be identified by a label decal located near the top of the handle, which states \"No. 82209 Grass/Weed Trimmer, Type 1 or Type 2\" or \"No. 82210 Grass/Weed Trimmer, Type 1 or Type 2\" and \"Black & Decker (U.S.) Inc., Easton, MD 21601 USA\" Also, the motor housings of the 82209 and 82210 units are labeled 9\" cut and 10\" cut, respectively. Owners who identify their heater as recalled should immediately discontinue use and return it to the nearest True Value Hardware store for a full refund. Owners who are unable to return their heater should contact the nearest True Value Hardware store for further instructions. To report and unsafe consumer product or to receive safety information, consumers may call the CPSC toll-free hotline number at 800-638-CPSC. A teletypewriter number for the hearing impaired is (301) 595-7054.",
+      "url": "https://www.cpsc.gov/Recalls/1987/500000-Black-And-Decker-GrassWeed-String-Trimmers-Recalled",
+      "recall_date": "1987-11-24",
+      "labels": [
+        "electrical_shock"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:17:41+00:00"
+    },
+    {
+      "recall_id": 4725,
+      "title": "Probe VI Battery-Powered Riding Toy Repair by Hedstrom",
+      "hazard_text": "Fire & Fire-Related Burn",
+      "description": "Probe VI Battery-Powered Riding Toy Repair by Hedstrom NEWS from CPSC U.S. Consumer Product Safety Commission Office of Information and Public Affairs Washington, DC 20207 FOR IMMEDIATE RELEASE Originally issued December 2, 1987, Revised October 22, 2004 Release # 87-078 Note: Firm out of business. Consumers should discard or destroy the products to prevent injuries. Hedstrom Offers Fuse Protector Kit For \"Probe VI\" Battery-Powered Riding Toy WASHINGTON, DC -- In cooperation with the U.S. Consumer Product Safety Commission, Hedstrom Corporation, Bedford, Pennsylvania, voluntarily repaired the wiring harness in approximately 30,000 Hedstrom Probe VI battery-powered riding toys manufactured prior to June 1985 without fuses. The Commission and Hedstrom are aware of eight reported incidents in which these vehicles have caught fire. One of these incidents resulted in a serious fire in a mobile home. Fire can occur either while the toy is being stored or while it is being ridden by a child. The Probe VI is a 6-wheeled, 2-speed toy all terrain vehicle with two motors powered by two 6-volt gel-type lead acid batteries. A separate charger is supplied with each vehicle. The manufacturer recommends this toy for children from 3 to 7 years of age. Probe VI toys without fuses were manufactured from 1983 to June 1985 and distributed nationally. The affected units can be identified by the model identification label located on the front underside of the plastic body (see attached diagram). Hedstrom began using wiring harnesses with fuses at the batteries in June 1985. Units with fuses are not affected. Models affected are: 67-3890, 67-3891, 67-3892, 67-38921, 67-3893 and 67-38931 with dates of manufacture prior to June 1985, as shown on the model identification label. Consumers should stop using the vehicles immediately and discard or destroy the product. The firm is out of business and the repair program is no longer available.",
+      "url": "https://www.cpsc.gov/Recalls/1987/Hedstrom-Offers-Fuse-Protector-Kit-For-Probe-VI-Battery-Powered-Riding-Toy",
+      "recall_date": "1987-12-02",
+      "labels": [
+        "fire_overheating",
+        "burn"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:17:57+00:00"
+    },
+    {
+      "recall_id": 4799,
+      "title": "E-Z Go Strollers Recalled By Century",
+      "hazard_text": "Fall",
+      "description": "E-Z Go Strollers Recalled By Century NEWS from CPSC U.S. Consumer Product Safety Commission Office of Information and Public Affairs Washington, DC 20207 Note: Return program no longer available. Do not use these products. Please discard or destroy these products. FOR IMMEDIATE RELEASE Originally issued December 16, 1988; Revised August 27, 2001 Release # 88-111 Century Recalling E-Z Go Strollers WASHINGTON -- Century Products Company, of Macedonia, Ohio voluntarily recalled some 14,600 umbrella strollers to correct mechanical problems. Undertaken in cooperation with the U.S. Consumer Product Safety Commission, the recall involves three strollers sold nationally: model numbers 11-066DI and 11-077SA sold under the E-Z Go brand name, and model number 11-074SR sold by Sears as an \"Infant Umbrella-Style Stroller. Model numbers are found on the instruction sheet and on the stroller's legs. All strollers were distributed between January and May, 1988. Century Products Company said seat backs and a rear locking brace may not perform properly. When a toddler strapped in the stroller leans too far forward, or if the stroller comes to an abrupt stop, the child may fall forward and strike his head. Also, when the person pushing the stroller accidentally kicks the rear locking brace, the stroller will fold on the child whose fingers could be pinched as the adult attempts to re-open the stroller. Consumers having the stroller should stop using the product and discard or destroy the product. The return program is no longer available. For more information, consumers may also write Century Products Company, 9600 Valley View Road, Macedonia, Ohio or call the company's customer service number at 800-345-4109..",
+      "url": "https://www.cpsc.gov/Recalls/1988/Century-Recalling-E-Z-Go-Strollers",
+      "recall_date": "1988-12-16",
+      "labels": [
+        "fall"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:18:48+00:00"
+    },
+    {
+      "recall_id": 5076,
+      "title": "Check Your Woods Wire Plug-In Ground Fault Circuit Interrupter",
+      "hazard_text": null,
+      "description": "April 9, 1991 Release # 91-057 Check Your Woods Wire Plug-In Ground Fault Circuit Interrupter WASHINGTON, DC - Woods Wire Products, Inc. of Carmel, IN, in cooperation with the U.S. Consumer Product Safety Commission (CPSC), is urging consumers to check their Woods Wire Model #1651, plug-in ground fault circuit interrupters (GFCI) before each use to assure that they are working properly. The Woods Wire GFCI model #1651 was sold nationwide. GFCIs are devices that provide a degree of protection against electric shocks. They can be permanently installed as part of an electric circuit in a house, or consumers can purchase portable GFCIs that plug into an electric socket. Although no device can provide complete protection against the hazard of electric shock, a GFCI can provide a degree of protection by shutting off the electricity in a circuit if it detects a current leakage. Both the CPSC and Woods Wire Products urge consumers to purchase and use GFCIs. Woods Wire Products is aware of two instances in which Model #1651, Plug-In Woods Wire Guardian brand GFCI, custom manufactured and labeled by Goldstar Electric Machinery Co., Ltd., failed to operate. There were no injuries. While failure to operate does not in and of itself present a hazard, the consumer does not have the electric shock protection provided by a functioning GFCI if there is a leakage of electrical current in the circuit. Consumers are urged to check their GFCI by pressing the test button before each use. If the GFCI fails to operate as intended when the test button is depressed, consumers should immediately discontinue using the GFCI and replace it. The instructions for testing the GFCI are permanently affixed on the face of the product. It is the policy of Woods Wire Products, Inc., to replace non- functioning GFCIs. For further information, consumers can contact Woods Wire Products at 1-800-447-4364 between the hours of 8:00 a.m. and 5:00 p.m. Eastern Time (Monday through Friday). The CPSC is issuing this warning as part of its mission to protect the public from unreasonable risks of injury and death associated with consumer products. The CPSC is the Federal agency responsible for product safety. Some 15,000 types of consumer products fall within the Commission's jurisdiction and each year these products are involved in an estimated 30 million injuries and 22,000 deaths",
+      "url": "https://www.cpsc.gov/Recalls/1991/Check-Your-Woods-Wire-Plug-In-Ground-Fault-Circuit-Interrupter",
+      "recall_date": "1991-04-09",
+      "labels": [
+        "other"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:19:45+00:00"
+    },
+    {
+      "recall_id": 5162,
+      "title": "State Farm® Recalls Good Neigh Bears® Due to Choking Hazard",
+      "hazard_text": "The eyes on these bears can come off, posing a choking hazard to young children.",
+      "description": "This recall involves the 11-inch (28 cm) and 18-inch (46 cm) State Farm Good Neigh Bears with plastic eyes. The bears are brown and wear a white and red State Farm shirt.",
+      "url": "https://www.cpsc.gov/Recalls/2009/State-Farm-Recalls-Good-Neigh-Bears-Due-to-Choking-Hazard",
+      "recall_date": "2009-03-17",
+      "labels": [
+        "choking"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:20:07+00:00"
+    },
+    {
+      "recall_id": 5249,
+      "title": "Nutone Replacement Of Defective Ceiling Fan Socket Hanger Brackets",
+      "hazard_text": "Fall",
+      "description": "March 5, 1992 Release # 92-059 WASHINGTON, DC -- In cooperation with the U.S. Consumer Product Safety Commission (CPSC), NuTone, Inc. of Cincinnati, OH, is announcing a voluntary corrective action plan to replace the die cast socket hangers on approximately 310,000 \"NuTone\" brand paddle fans. The paddle fans involved have a ball and die cast socket ceiling-mounted device. In some cases the die cast mounting bracket may crack, allowing the fan to fall. The fans were manufactured from the Spring of 1983 through the Fall of 1984. They may include the Verandah, Hacienda, Sea Island, Decorator, and Slimline model 36\" and 52\" fans. The paddle fans sold nationwide through NuTone Electrical Distributors. The CPSC was informed of these potentially unsafe fans by NuTone, Inc., which discovered the problem after receiving a broken socket hanger from a NuTone service station. NuTone reported five incidents of the die cast socket hanger breaking. No injuries were reported. Consumers with the paddle fans are urged to discontinue use. Consumers should not attempt to disconnect or dismantle the fans themselves. NuTone will replace the die cast socket with a sheet metal bracket, free of charge. This bracket will insure that the fan will not fall. Consumers in the continental United States with NuTone paddle fans installed prior to 1986 should call 1-513-527-5100 to receive a safety notice providing instructions and information on the identification and correction of the affected paddle fans. Consumers can also write: NuTone, Madison and Red Bank Roads, Cincinnati, OH 45227, Attention: Paddle Fans. Consumers should specify their name, address and telephone number plus the words \"Paddle Fan Corrective Action\" in the letter. NuTone will provide a safety notice instruction and the name of a local service organization which will install the replacement bracket free of charge. The U.S. Consumer Product Safety Commission is announcing this repair program as part of its mission to protect the public from unreasonable risks of injury and death associated with consumer products. The Commission's objective is to reduce the estimated 28.5 million injuries and 21,600 deaths associated each year with the 15,000 different types of consumer products under CPSC's jurisdiction",
+      "url": "https://www.cpsc.gov/Recalls/1992/Nutone-Replacement-Of-Defective-Ceiling-Fan-Socket-Hanger-Brackets",
+      "recall_date": "1992-03-05",
+      "labels": [
+        "fall"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:20:31+00:00"
+    },
+    {
+      "recall_id": 5593,
+      "title": "CPSC And Colgate-Palmolive Recall Fab Color-Plus Detergent In Certain Regions",
+      "hazard_text": "Laceration",
+      "description": "November 3, 1994 Release # 95-019 WASHINGTON, D.C. - CPSC, Colgate-Palmolive of New York, N.Y., is voluntarily recalling approximately 25,000 containers, a portion of one day's production, of 50-ounce size FAB liquid Color-Plus laundry detergent sold for $3.99, marked with the date code 4213. The recall affects only certain geographical areas.Colgate is recalling the FAB detergent that contains high levels of a chemical known as sodium hydroxide, which can cause a skin irritation or injure consumers if ingested or when coming in contact with the eyes. While other household products contain similar or higher levels of sodium hydroxide, they are marked with stronger cautionary warnings than FAB. Colgate shipped the recalled products beginning in August to stores in the following states: New York, New Jersey, Pennsylvania, Maryland, West Virginia, Ohio, Delaware, Iowa, Nebraska, Missouri, Kansas, Indiana, Kentucky, Tennessee, and Arkansas. Some products may also be found in the following metropolitan areas: Washington, D.C., Richmond, Va., Detroit, and Chicago.Colgate has not received any reports of injuries from FAB; CPSC and Colgate are conducting this recall to prevent the possibility of injury. Consumers can determine whether they have purchased the recalled FAB by checking the bottom center of the back panel for a rectangular box with an eight-digit number that begins with 4213. Consumers can return the product to the store where it was purchased for a full refund or exchange. For more information, consumers should call Colgate's toll-free number, (800) 327-7044",
+      "url": "https://www.cpsc.gov/Recalls/1995/CPSC-And-Colgate-Palmolive-Recall-Fab-Color-Plus-Detergent-In-Certain-Regions",
+      "recall_date": "1994-11-03",
+      "labels": [
+        "laceration"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:20:39+00:00"
+    },
+    {
+      "recall_id": 5712,
+      "title": "CPSC, Winner Products, Inc. Announce Emergency Light Recall",
+      "hazard_text": "Electrocution/Electric Shock",
+      "description": "October 17, 1995 Release # 96-009 WASHINGTON, D.C. - In cooperation with the U.S. Consumer Product Safety Commission (CPSC), Winner Products, Inc. of Santa Ana, Calif., is recalling approximately 3,200 Emergency Lite 3-in-1 automatic night-lights, model number 334N. The unit can break away from the back cover while it is still plugged in, exposing live conductors, which could seriously or fatally shock consumers.The white plastic nightlight measures 5.5 inches high by 3.25 inches wide. The front of the light is an opaque half-cylinder with the words \"EMERGENCY LITE 3-IN-1 ... HomeSafe\" at the bottom. There is an on/off/auto switch on the side of the light. The light can be plugged into an outlet or used as a hand-held flashlight. The light has a rechargeable battery and automatically turns itself on at dusk and off at dawn.The lights were sold for between $10 and $15 through home supply stores such as Fedco and Home Depot. The lights were sold nationwide from January through May 5, 1995.Winner Products, Inc. is aware of one complaint regarding this night-light. CPSC and Winner Products, Inc. are not aware of any injuries involving this product.Consumers who purchased the Emergency Lite 3-in-1 should stop using it immediately and call (800) 669-0415. Winner Products, Inc., will send consumers packaging with postage pre-paid to ship the product back to the company. Winner Products, Inc., will replace returned lights free of charge",
+      "url": "https://www.cpsc.gov/Recalls/1996/CPSC-Winner-Products-Inc-Announce-Emergency-Light-Recall",
+      "recall_date": "1995-10-17",
+      "labels": [
+        "electrical_shock"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:20:53+00:00"
+    },
+    {
+      "recall_id": 5859,
+      "title": "Lighter Recalled by NBO Group",
+      "hazard_text": "Fire & Fire-Related Burn",
+      "description": "Lighter Recalled by NBO Group NEWS from CPSC U.S. Consumer Product Safety Commission Office of Information and Public Affairs Washington, DC 20207 FOR IMMEDIATE RELEASE CONTACT: Ken Giles October 29,1996 (301) 504-7052 Release # 97-013 CPSC and NBO Group Inc. Announce Lighter Recall WASHINGTON, D.C. In cooperation with the U.S. Consumer Product Safety Commission (CPSC), NBO Group Inc. of Santa Fe Springs, Calif., is recalling approximately 110,000 refillable novelty and disposable cigarette lighters that do not comply with CPSC safety standards. The lighters, which operate with push-button electronic ignition mechanisms to produce the flame, do not have safety devices that prevent young children from igniting the lighters. CPSC and NBO are not aware of any injuries involving these lighters. This recall is being conducted to prevent the possibility of injury. Most of the lighters are silver-, copper-, or gold-tone metal with relief figures of birds, dragons, crocodiles, or other animals on the casing. Other styles include lighters that resemble revolvers and dragons. The lighters were sold individually or from display trays nationwide from September 1994 to March 1996 for $5 to $10 by small retailers of every type. Consumers should stop using the lighters immediately and return them to the place where purchased for a full refund. For more information about this recall, consumers can contact Patty Pany of NBO Group toll-free at (800) 716-0100. U.S. Customs alerted CPSC to this hazard.",
+      "url": "https://www.cpsc.gov/Recalls/1997/CPSC-and-NBO-Group-Inc-Announce-Lighter-Recall",
+      "recall_date": "1996-10-29",
+      "labels": [
+        "fire_overheating",
+        "burn"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:21:02+00:00"
+    },
+    {
+      "recall_id": 5972,
+      "title": "Cycling Shoes Recall by Cannondale",
+      "hazard_text": "Laceration",
+      "description": "Cycling Shoes Recall by Cannondale NEWS from CPSC U.S. Consumer Product Safety Commission Office of Information and Public Affairs Washington, DC 20207 FOR IMMEDIATE RELEASE CONTACT:Nychelle White June 9, 1997 (301) 504-7063 Release # 97-139 CPSC and Cannondale Announce Recall of Cycling Shoes WASHINGTON, D.C. - In cooperation with the U.S. Consumer Product Safety Commission (CPSC), Cannondale of Georgetown, Conn., is recalling 15,000 pairs of C-Soles cycling shoes because the cleats could pull out of the sole. This could cause a cyclist's foot to slip off the pedal, leading to an injury. Cannondale has received about 35 reports of cleats pulling out of the soles of the shoes. Some minor injuries have been reported. The C-Soles cycling shoes are multi-color, adult-sizes only. The cleats are selected by the consumer depending upon their bicycle pedal system. The cleats are fitted to the shoe by the dealer. The cycling shoes were sold at Cannondale dealers nationwide from early 1997 through April 1997 for between $59.99 and $79.99 a pair. Cannondale dealer for a free upgrade. Cannondale dealers will install a thin metal backing plate inside the shoe, under the insole. The backing plate provides a firmer attachment for the cleat, with only a minimal increase in the sole's stiffness. Consumers can call Cannondale toll-free at 800-BIKE-USA with any questions or for the name of the nearest Cannondale dealer.",
+      "url": "https://www.cpsc.gov/Recalls/1997/CPSC-and-Cannondale-Announce-Recall-of-Cycling-Shoes",
+      "recall_date": "1997-06-09",
+      "labels": [
+        "laceration"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:21:12+00:00"
+    },
+    {
+      "recall_id": 6059,
+      "title": "Elliptical Exercise Gliders Recalled by Thane Due to Fall Hazard; New Instructions to Be Provided",
+      "hazard_text": "The written instructions incorrectly identify the proper location of the spring washer. An incorrectly installed spring washer can put undue stress on bolts, causing them to loosen, which poses a fall hazard to consumers.",
+      "description": "This recall involves Orbitrek Elite (\"OE\") and Orbitrek Elite Magnetic (\"OEM\") elliptical gliders with model numbers BK2080 (OE) and BK2280 (OEM). The recalled gliders have a blue and gray plastic cover. The model name can be located on the side of the machine. No other models of Orbitrek-branded elliptical gliders are included in this recall.",
+      "url": "https://www.cpsc.gov/Recalls/2009/Elliptical-Exercise-Gliders-Recalled-by-Thane-Due-to-Fall-Hazard-New-Instructions-to-Be-Provided",
+      "recall_date": "2009-07-21",
+      "labels": [
+        "fall"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:21:28+00:00"
+    },
+    {
+      "recall_id": 6182,
+      "title": "Jet Fighter & Animal Squeak Toys Recalled by In-Mar Trading",
+      "hazard_text": "Choking",
+      "description": "Jet Fighter & Animal Squeak Toys Recalled by In-Mar Trading NEWS from CPSC U.S. Consumer Product Safety Commission Office of Information and Public Affairs Washington, DC 20207 FOR IMMEDIATE RELEASE July 9, 1998 Release # 98-140 Company Phone Number: (787) 796-1560 CPSC Consumer Hotline: (800) 638-2772 CPSC Media Contact: Nychelle Fleming, (301) 504-7063 CPSC, In-Mar Trading Inc. Announce Recall of Jet Fighter Toy and Various Squeak Toys WASHINGTON, D.C. - In cooperation with the U.S. Consumer Product Safety Commission (CPSC), In-Mar Trading Inc., of Dorado, Puerto Rico, is recalling more than 10,000 various plastic toys. The squeeze toys that are part of this recall each contain a squeaker, and the jet fighter toy contains small parts, all of which can become separated from the toy. These small parts present a choking hazard to young children, and in some cases, an aspiration hazard which could result in death. CPSC and In-Mar are not aware of any injuries involving these toys. This recall is being conducted to prevent the possibility of injury. The six different squeeze toys involved in this recall are each approximately 4 inches in height, made of pliable plastic and contain a squeaker element located at the base of each toy. Each squeeze toy depicts a different animal including a gopher, penguin, rabbit, tiger, bear and mouse. The squeaker toys are sold packaged in a clear plastic bag with cardboard header reading: \"ANIMAL TOYS With Sound***828-6***MADE IN CHINA.\" The jet fighter toy is nearly 8 inches long, is mostly black with a green tail, and the driver wears a blue helmet. Writing on the jet's labels include, \"Marlboro***USAF- 28***DL\". The jet is packaged in a clear plastic bag with a cardboard header that reads, \"TOYS***MADE IN CHINA***Ages 3 And Up.\" The toys were sold in various discount stores in Puerto Rico. The squeeze toys were sold from January 1997 through June 1998, and the jet fighter toys were sold from December 1996 through June 1998. All the toys sold for about $1. Consumers should take these toys away from young children immediately and return the toy to the store where purchased for a refund. For more information about this recall, consumers should call In-Mar at (787) 796-1560 between 9:00 a.m. and 5 p.m. Monday through Friday. The firm will accept collect calls from consumers calling outside the Dorado area. Inquiries in Spanish can be directed to Jésus Chaírez, CPSC, at (214) 827-6239.",
+      "url": "https://www.cpsc.gov/Recalls/1998/CPSC-In-Mar-Trading-Inc-Announce-Recall-of-Jet-Fighter-Toy-and-Various-Squeak-Toys",
+      "recall_date": "1998-07-09",
+      "labels": [
+        "choking"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:21:40+00:00"
+    },
+    {
+      "recall_id": 6537,
+      "title": "Polaris Recalls RZR Recreational Off-Highway Vehicles Due to Fire Hazard (Recall Alert)",
+      "hazard_text": "The vehicles' fuel tank vent line can be misrouted, causing it to become pinched. This can cause the fuel tank to pressurize and leak fuel, posing a fire hazard.",
+      "description": "This recall involves the following model year 2015 Polaris RZR recreational off-highway vehicles (ROV): RZR 900, RZR S 900, RZR 900 XC, RZR 4 900, RZR XP 1000 and RZR XP4 1000 recreational off-highway vehicles. RZR 900s were sold in black, camouflage, red and white color schemes. RZR 900s have a \"900\" decal on the right and left front fenders and a \"RZR\" decal on the right and left rear fenders. RZR 1000s were sold in black, blue, green, orange, red and white color schemes. RZR 1000s have a \"1000 HO\" decal on the right and left front fenders and a \"RZR\" decal on the right and left rear fenders. RZR 900 and 1000 vehicles with the following model names and Vehicle Identification Numbers (VINs) are being recalled: Model Year 2015 RZR 900 Model Name VIN Range(s) RZR 900 4XAVBE874FB201435 through 4XAVAA878FB961699 and 3NSVBE870FF361395 through 3NSVBE875FF444241 VINs are not sequential and not all VINs in the ranges are included in the recall. RZR S 900 RZR 4 900 RZR 900 XC Model Year 2015 RZR 1000 Model Name VIN Range RZR XP 1000 4XAVFE993FB207778 through 4XAVFE991FB962847 VINs are not sequential and not all VINs in the range are included in the recall. RZR XP 1000 Mudder RZR XP4 1000 The VIN is on the driver's side rear frame tube, behind the PVT cover. Not all VINs in the ranges are included in this recall. A complete list of recalled vehicles including VINs is available at www.polaris.com.",
+      "url": "https://www.cpsc.gov/Recalls/2016/Polaris-Recalls-RZR-Recreational-Off-Highway-Vehicles-2016",
+      "recall_date": "2015-10-06",
+      "labels": [
+        "fire_overheating"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:22:15+00:00"
+    },
+    {
+      "recall_id": 6562,
+      "title": "T3 Recalls Twirl 360 Curling Irons Due to Burn Hazard",
+      "hazard_text": "The clamp can detach while in use, posing a burn hazard to consumers.",
+      "description": "This recall involves T3 Twirl 360 Motion-Sensing Auto-Rotating 1.25-inch Curling Irons. The curling irons have a white plastic handle, a white metal rotating heat barrel and clamp, and a rose-gold colored grip. Model number 76570 is printed on the label that is placed on the handle of the tool and T3 is printed on the curling iron's barrel.",
+      "url": "https://www.cpsc.gov/Recalls/2016/T3-Recalls-Twirl-360-Curling-Irons",
+      "recall_date": "2015-11-05",
+      "labels": [
+        "burn"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:22:42+00:00"
+    },
+    {
+      "recall_id": 7863,
+      "title": "Walmart Recalls Tripod Stools Due to Fall Hazard",
+      "hazard_text": "The plastic collar that connects the three legs can break, posing a fall hazard to consumers.",
+      "description": "This recall involves Mahco Inc. tripod stools with three steel legs and a REALTREE logo pattern camouflage polyester fabric seat. The steel legs have plastic caps on both ends and a round plastic hub that connects the three legs. The stools measure about 17 inches high by 13 inches wide. There is a black polyester carry strap attached to the bottom of the stool seat. Mahco Inc. is printed on an orange and black hang tag attached to the stools.",
+      "url": "https://www.cpsc.gov/Recalls/2016/Walmart-Recalls-Tripod-Stools",
+      "recall_date": "2016-09-29",
+      "labels": [
+        "fall"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:22:53+00:00"
+    },
+    {
+      "recall_id": 7889,
+      "title": "Hearth & Home Technologies Recalls Wood Stoves Due to Injury Hazard (Recall Alert)",
+      "hazard_text": "When the top load lid of the stove is being used, the handle can become disengaged from the locked position, allowing the lid to unexpectedly slam shut on the consumer's fingers.",
+      "description": "This recall involves Quadra Fire® wood burning stoves, model Explorer III, with serial number range 00706300001-00706300941. The model name and serial numbers are found on the rating plate on the back of the stove. The Explorer III is a cast iron wood stove with a top loading lid feature and comes in black, mahogany, dark blue and frost colors.",
+      "url": "https://www.cpsc.gov/Recalls/2017/Hearth-and-Home-Technologies-Recalls-Wood-Stoves",
+      "recall_date": "2016-10-26",
+      "labels": [
+        "entrapment"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:23:33+00:00"
+    },
+    {
+      "recall_id": 8198,
+      "title": "Netgear Recalls Power Adapters for Outdoor Cameras Due to Fire Hazard",
+      "hazard_text": "Water can leak into the weatherproof connector on the power adapter and cause a short circuit, melting, and overheating, posing a fire hazard.",
+      "description": "This recall involves all model VMA4700 NETGEAR Arlo outdoor power adapters that were sold separately as aftermarket accessories for the Arlo, Arlo Pro and Arlo Go wire-free outdoor cameras.. This recall only involves the VMA4700 aftermarket model sold separately. The model number \"VMA4700\" can be found on the packaging. The part number, 332-10985-01, is marked on the back of the adapter. The black adapter comes with a weatherproof connector on one end and an adapter on the other end. \"Arlo\" is printed on the front of the adapter. The cord measures about eight feet long.",
+      "url": "https://www.cpsc.gov/Recalls/2018/Netgear-Recalls-Power-Adapters-for-Outdoor-Cameras-Due-to-Fire-Hazard",
+      "recall_date": "2017-12-05",
+      "labels": [
+        "fire_overheating"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:23:49+00:00"
+    },
+    {
+      "recall_id": 8339,
+      "title": "GE Lighting Recalls LED Tube Lamps Due to Shock and Electrocution Hazards; Sold Exclusively at Lowe's Stores",
+      "hazard_text": "The pins on one end of the lamp can be energized during installation/removal, posing electric shock and electrocution hazards.",
+      "description": "This recall involves GE Lighting's 31243 LED13T8U840 LED two pack tube lamps. These units are most often used in garages, basements, workshops and utility rooms. The GE logo and model information are printed on a label near the tube's base. Brand Model Product Code and Description GE Lighting 31243 LED13T8U840/2PKL",
+      "url": "https://www.cpsc.gov/Recalls/2018/GE-Lighting-Recalls-LED-Tube-Lamps-Due-to-Shock-and-Electrocution-Hazards-Sold-Exclusively-at-Lowes-Stores",
+      "recall_date": "2018-06-06",
+      "labels": [
+        "electrical_shock"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:25:12+00:00"
+    },
+    {
+      "recall_id": 8466,
+      "title": "Meijer Recalls Children's Hooded Jackets Due to Choking Hazard",
+      "hazard_text": "The zipper slider can detach from the hoodie, posing a choking hazard to young children.",
+      "description": "This recall involves Falls Creek Kids branded children's zip up hoodies sold in five color styles in sizes 12M,18M, 24M, 2T,3T 4T and 5T. \"Falls Creek Kids\" and \"Made in China\" are printed on the inner collar. The tracking number is printed on a sewn-in label on the inner side seam. Product Sizes Tracking Number Color/Style Falls Creek Kids zip up hoodies 12M, 18M, 24M, 2T, 3T, 4T and 5T \"MAY 2018 17677,\" \"MAY 2018 17506,\" or \"AUGUST 2018 17932\" navy with white and orange striped sleeves teal with white and navy striped sleeves gray with a football play graphic olive green with a bear graphic gray girl's hoodie with ruffled trim",
+      "url": "https://www.cpsc.gov/Recalls/2019/Meijer-Recalls-Childrens-Hooded-Jackets-Due-to-Choking-Hazard",
+      "recall_date": "2018-12-06",
+      "labels": [
+        "choking"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:25:29+00:00"
+    },
+    {
+      "recall_id": 8526,
+      "title": "Matco Tools Wireless Chargers Recalled by Professional Tool Products Due to Burn Hazard",
+      "hazard_text": "The wireless chargers can overheat, posing a burn hazard.",
+      "description": "This recall involves Matco Tools brand wireless chargers. The recalled chargers are round and have \"MATCO TOOLS\" and the Matco logo printed on a black background in the center. They measure about 4 inches in diameter and ½ an inch in height and were sold with a USB connector cable.",
+      "url": "https://www.cpsc.gov/Recalls/2019/Matco-Tools-Wireless-Chargers-Recalled-by-Professional-Tool-Products-Due-to-Burn-Hazard",
+      "recall_date": "2019-04-03",
+      "labels": [
+        "burn"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:25:34+00:00"
+    },
+    {
+      "recall_id": 9004,
+      "title": "Northern Tool & Equipment Recalls Powerhorse Portable Generators Due to Shock Hazard",
+      "hazard_text": "The portable generators have a wiring error which can result in an electrical shock to users.",
+      "description": "This recall involves Northern Tool & Equipment Powerhorse 13000ES Portable Generator Model #799215. The gasoline generator is blue with white Powerhorse logos, a black frame and two wheels. Powerhorse 13000ES is printed in white on the top front. Serial numbers for the recalled generators are listed in the chart below. The serial number is located on the lower left of the frame. Model Number Model Description Serial Number Range 799215 Powerhorse 13,000-Watt Generator 2016 Units: 205160001 - 211160248 2017 Units: 210170001 - 211170248 2018 Units: 206180001 - 211180124 2019 Units: 208190001 - 211190124 2020 Units: 203020001 - 208200124",
+      "url": "https://www.cpsc.gov/Recalls/2021/Northern-Tool-and-Equipment-Recalls-Powerhorse-Portable-Generators-Due-to-Shock-Hazard",
+      "recall_date": "2021-02-24",
+      "labels": [
+        "electrical_shock"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:25:42+00:00"
+    },
+    {
+      "recall_id": 9014,
+      "title": "Hillsdale Furniture Recalls Jennings Counter and Bar Stools Due to Fall Hazard",
+      "hazard_text": "The stool seat can break off the base, posing a fall hazard.",
+      "description": "This recall involves Hillsdale Furniture's Jennings counter and bar stools with date codes between 08/2020 and 01/06/2021. The date code is on the bottom of the seat. The recalled counter and bar stools have a tan wooden seat, a wooden back and a metal base and were sold in counter and bar heights.",
+      "url": "https://www.cpsc.gov/Recalls/2021/Hillsdale-Furniture-Recalls-Jennings-Counter-and-Bar-Stools-Due-to-Fall-Hazard",
+      "recall_date": "2021-03-10",
+      "labels": [
+        "fall"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:25:51+00:00"
+    },
+    {
+      "recall_id": 9205,
+      "title": "Residential Elevators Recalled by Savaria Corporation Due to Child Entrapment Hazard; Risk of Serious Injury or Death to Young Children",
+      "hazard_text": "Young children can become entrapped in the space between the exterior landing (hoistway) door and the interior elevator car door or gate due to a hazardous gap, and suffer serious injuries or death when the elevator is called to another floor.",
+      "description": "This recall involves Savaria and Garaventa branded residential elevators manufactured from 1999 through 2021. Models include: Eclipse, Infinity, Kwiklift, MR and HR. Model names are located on the elevators' controllers. The elevators are used in consumers' homes.",
+      "url": "https://www.cpsc.gov/Recalls/2022/Residential-Elevators-Recalled-by-Savaria-Corporation-Due-to-Child-Entrapment-Hazard-Risk-of-Serious-Injury-or-Death-to-Young-Children",
+      "recall_date": "2022-01-11",
+      "labels": [
+        "entrapment"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:26:04+00:00"
+    },
+    {
+      "recall_id": 9357,
+      "title": "Vichy Laboratoires Recalls LiftActiv Peptide-C Ampoules Due to Laceration Hazard (Recall Alert)",
+      "hazard_text": "The glass packaging of the small, sealed vials (ampoules) can weaken over time and break when opened, posing a laceration hazard to fingers and hands.",
+      "description": "This recall involves Liftactiv Peptide-C Ampoules 1.8ml (10 pack) and Liftactiv Peptide-C Ampoules 1.8ml (30 pack) which are facial serums. The serum is packaged in amber-colored glass ampoules with the following batch numbers: 54T61Q, 54T91Q, 54TD1Q, 54TD2Q, 54TN1Q, 54TN2Q, 54TN3Q, 54TO1Q, 54U11Q, 54U12Q, 54U21Q, 54U31Q, 54U32Q, 54U41S, 54U42S, 54U51S, 54U52S, 54U53S, 54U54S, 54U61S, 54U72S, 54U91S, 54U62S, 54U92S, 54UD1S, 54UO1S, 54W11S, 54W12S, 54W13S, 54W21S. The batch number is printed on the bottom or side of the pack.",
+      "url": "https://www.cpsc.gov/Recalls/2022/Vichy-Laboratoires-Recalls-LiftActiv-Peptide-C-Ampoules-Due-to-Laceration-Hazard-Recall-Alert",
+      "recall_date": "2022-07-21",
+      "labels": [
+        "laceration"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:26:28+00:00"
+    },
+    {
+      "recall_id": 9386,
+      "title": "Yuboloo Recalls Infant Bath Seats Due to Drowning Hazard; Sold Exclusively on Amazon.com (Recall Alert)",
+      "hazard_text": "The bath seats fail to meet the federal safety standard for infant bath seats, including requirements for stability and leg openings, and can tip over while in use, posing a drowning hazard to babies.",
+      "description": "The bath seats are made of molded plastic in a navy blue and orange color combination. The infant bath seats have suction cups on the bottom. The bath seats have a plastic seat back, flat base, and t-shaped handle. \"Baby Bath Seat, X002TS8NDN and Made in China\" is printed on the packaging.",
+      "url": "https://www.cpsc.gov/Recalls/2022/Yuboloo-Recalls-Infant-Bath-Seats-Due-to-Drowning-Hazard-Sold-Exclusively-on-Amazon-com-Recall-Alert",
+      "recall_date": "2022-09-01",
+      "labels": [
+        "fall",
+        "drowning"
+      ],
+      "violates_standard": true,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:27:31+00:00"
+    },
+    {
+      "recall_id": 9787,
+      "title": "XpressGoods Recalls High-Powered Magnetic Balls Due to Ingestion Hazard; Failure to Meet Federal Safety Regulation for Toy Magnet Sets",
+      "hazard_text": "CPSC testing determined the magnetic ball sets do not comply with the requirements of the mandatory federal toy regulation because they contain one or more magnets that fit within CPSC's small parts cylinder and the magnets are stronger than permitted. When high-powered magnets are swallowed, the ingested magnets can attract each other, or another metal object, and become lodged in the digestive system. This can result in perforations, twisting and/or blockage of the intestines, infection, blood poisoning and death.",
+      "description": "This recall involves 5mm Neodymium Magnetic Balls which are small, spherical, loose, and separable neodymium rare-earth magnets with a strong magnetic flux. The 5mm diameter magnets are sold in a set of multi-colored magnetic balls. The recalled Neodymium Magic Magnetic Balls were sold encased in a clear, plastic case and a tin storage box.",
+      "url": "https://www.cpsc.gov/Recalls/2024/XpressGoods-Recalls-High-Powered-Magnetic-Balls-Due-to-Ingestion-Hazard-Failure-to-Meet-Federal-Safety-Regulation-for-Toy-Magnet-Sets",
+      "recall_date": "2023-12-07",
+      "labels": [
+        "poisoning"
+      ],
+      "violates_standard": true,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:52:30+00:00"
+    },
+    {
+      "recall_id": 9947,
+      "title": "Cotton On USA Recalls Toy Pinwheels Due to Choking Hazard",
+      "hazard_text": "The pinwheel's fastener cap can come loose and detach, posing a choking hazard to young children.",
+      "description": "This recall involves plastic toy pinwheels that were given away as a promotional item for free at Cotton On stores. The toy pinwheels are multi-colored and have \"KIDS\" and \"COTTON ON\" in white letters on the pinwheels.",
+      "url": "https://www.cpsc.gov/Recalls/2024/Cotton-On-USA-Recalls-Toy-Pinwheels-Due-to-Choking-Hazard",
+      "recall_date": "2024-05-09",
+      "labels": [
+        "choking"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:53:02+00:00"
+    },
+    {
+      "recall_id": 10090,
+      "title": "Outdoor Essentials Recalls Cultivar Planter Boxes Due to Injury Hazard; Sold Exclusively at Tractor Supply Company",
+      "hazard_text": "The recalled planter box frame can break, posing an injury hazard.",
+      "description": "This recall involves Outdoor Essentials Cultivar planter boxes, intended to be used for gardening. The recalled 9.5 cu. ft. composite elevated planter boxes are black and measure about 6 feet long by 2.5 feet wide. The model name appears on the product packaging and \"70INX27IN Comp Elevated Planter\" on the purchase receipt.",
+      "url": "https://www.cpsc.gov/Recalls/2025/Outdoor-Essentials-Recalls-Cultivar-Planter-Boxes-Due-to-Injury-Hazard-Sold-Exclusively-at-Tractor-Supply-Company",
+      "recall_date": "2024-11-14",
+      "labels": [
+        "other"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:53:29+00:00"
+    },
+    {
+      "recall_id": 10105,
+      "title": "Polaris Recalls Ranger Recreational Off-Road Vehicles and ProXD and Bobcat Utility Task Vehicles Due to Injury Hazard (Recall Alert)",
+      "hazard_text": "The vehicles' passenger side seat belt anchor point can separate from the frame due to a defective weld on the bracket, posing an injury hazard to passengers from impact with a loose bracket or failure of the seatbelt during a crash.",
+      "description": "This recall involves certain VINs of Model Year 2024 Ranger 1000 / Crew 1000, Ranger XP 1000 / Crew XP 1000 and Ranger XP Kinetic ROVs; and ProXD Full Size/Full Size Crew and Bobcat UV34/UV34 XL UTVs. The Ranger vehicles were sold in blue, bronze, camouflage, gray, green, tan and white and in three and six seat configurations. The ProXD vehicles have gray plastic body panels with black frame/accents. The Bobcat vehicles have black side panels with white and orange accents. All UTVs have two or four seats. The Ranger and ProXD vehicles have \"POLARIS\" stamped on the front grille and the Bobcat vehicles have the Bobcat logo on the front grille. The Vehicle Identification Number (VIN) for the Ranger, ProXD and Bobcat vehicles is located on a portion of the left rear frame on the driver's side of the vehicle, under the cargo box.",
+      "url": "https://www.cpsc.gov/Recalls/2025/Polaris-Recalls-Ranger-Recreational-Off-Road-Vehicles-and-ProXD-and-Bobcat-Utility-Task-Vehicles-Due-to-Injury-Hazard-Recall-Alert",
+      "recall_date": "2024-12-05",
+      "labels": [
+        "other"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:53:53+00:00"
+    },
+    {
+      "recall_id": 10352,
+      "title": "Curtis International Recalls Frigidaire-brand Minifridges Due to Fire and Burn Hazards; More Than $700,000 Reported in Property Damage",
+      "hazard_text": "The minifridges' internal electrical components can short circuit and ignite the surrounding plastic housing, posing fire and burn hazards.",
+      "description": "This recall involves Curtis International minifridges. \"Frigidaire\" is printed on the front of the units. The model and serial numbers are on a label on the back of the minifridge. The model numbers of the affected units are: EFMIS129, EFMIS137, EFMIS149 and EFMIS175. The minifridges were sold in 6- and 9-Can sizes. Recalled minifridges include only the serial numbers identified below. The minifridges were sold in a variety of colors, including black, blue, green, white, yellow, red, pink and silver. Model Number Serial Number EFMIS129 Between A2001 to A2308 - if model number is \"EFMIS129-B\" or EFMIS129-C\", it is not included in this recall. EFMIS137 Between A2001 to A2312 EFMIS149 Between A2001 to A2308 EFMIS175 Between A2001 to A2310",
+      "url": "https://www.cpsc.gov/Recalls/2025/Curtis-International-Recalls-Frigidaire-brand-Minifridges-Due-to-Fire-and-Burn-Hazards-More-Than-700-000-Reported-in-Property-Damage",
+      "recall_date": "2025-07-24",
+      "labels": [
+        "fire_overheating",
+        "burn"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:54:07+00:00"
+    },
+    {
+      "recall_id": 10432,
+      "title": "WLIVE Fabric 12-Drawer Dressers Recalled Due to Risk of Serious Injury or Death from Tip-Over and Entrapment; Violates Mandatory Standard for Clothing Storage Units; Sold on Amazon by WLIVE",
+      "hazard_text": "The recalled dressers are unstable if they are not anchored to the wall, posing serious tip-over and entrapment hazards that can result in injuries or death to children. The dressers violate the mandatory standard as required by the STURDY Act.",
+      "description": "This recall involves WLIVE Fabric 12-drawer dressers. The recalled dressers were sold in charcoal black, charcoal black wood grain, black rustic brown, dark grey, light grey, rustic brown wood grain print, and white and have a metal frame and wooden top and 12 collapsable fabric drawers. The dressers measure about 39 inches by 12 inches by 48 inches and weigh 35 pounds. \"ASNG092\" is printed on the product packaging.",
+      "url": "https://www.cpsc.gov/Recalls/2026/WLIVE-Fabric-12-Drawer-Dressers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Violates-Mandatory-Standard-for-Clothing-Storage-Units-Sold-on-Amazon-by-WLIVE",
+      "recall_date": "2025-10-16",
+      "labels": [
+        "fall",
+        "entrapment"
+      ],
+      "violates_standard": true,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:54:53+00:00"
+    },
+    {
+      "recall_id": 10568,
+      "title": "Academy Sports + Outdoors Recalls Magellan Odyssey Rocker Chairs Due to Injury and Fall Hazards",
+      "hazard_text": "The recalled chairs' legs can break, posing injury and fall hazards to consumers.",
+      "description": "This recall involves Academy Sports + Outdoors' Magellan-branded Odyssey Rocker Chairs with date codes 07/2025 or 08/2025 sold from September 2025 to October 2025. The recalled folding chairs were sold in charcoal, navy, olive green and teal and measure about 25.2\" long by 5.5\" deep by 37.4\" high when folded or 25.4\" long by 25.2\" deep by 37.4\" high when opened. They have a metal frame with a mesh backrest, a carrying handle and a drink holder on the side. The Magellan Outdoors logo is printed on the front of the backrest. Only chairs manufactured between July 2025 through August 2025 are included in this recall. \"ACADEMY, LTD,\" \"177296\" and the manufacture date in MM/YYYY format are printed on the tracking label sewn onto the seat of the chair.",
+      "url": "https://www.cpsc.gov/Recalls/2026/Academy-Sports-Outdoors-Recalls-Magellan-Odyssey-Rocker-Chairs-Due-to-Injury-and-Fall-Hazards",
+      "recall_date": "2026-01-22",
+      "labels": [
+        "fall"
+      ],
+      "violates_standard": false,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:55:23+00:00"
+    },
+    {
+      "recall_id": 10581,
+      "title": "Mindbodygreen Recalls Ultimate Multivitamin+ Dietary Supplement Bottles Due to Risk of Serious Injury or Death from Child Poisoning; Violates Mandatory Standard for Child-Resistant Packaging",
+      "hazard_text": "The bottles are filled with dietary supplements containing iron, which must be in child-resistant packaging, as required by the Poison Prevention Packaging Act. The packaging is not child-resistant, posing a risk of serious injury or death from poisoning if the contents are swallowed by young children.",
+      "description": "This recall involves Mindbodygreen Ultimate Multivitamin+ dietary supplement bottles with the following UPC, lot numbers and manufacturing dates (Month/Year format). The dietary supplements come in eight-ounce amber glass bottles with black caps, each containing 60 capsules. The UPC, lot numbers and manufacturing dates are printed on the bottle. UPC Lot Number Manufacturing Date 850027975177 0515I1 09/2021 0130B2 01/2022 0187I2 08/2022 0324J2 10/2022 0309A3 12/2022 0368L2 12/2022 0272B3 02/2023 850027975429 0408H3 06/2023 0143A4 12/2023 0179C4 02/2024 4021131 05/2024 4033211 07/2024 4080841 10/2024 A010611 03/2025 A021211 03/2025",
+      "url": "https://www.cpsc.gov/Recalls/2026/Mindbodygreen-Recalls-Ultimate-Multivitamin-Dietary-Supplement-Bottles-Due-to-Risk-of-Serious-Injury-or-Death-from-Child-Poisoning-Violates-Mandatory-Standard-for-Child-Resistant-Packaging",
+      "recall_date": "2026-01-29",
+      "labels": [
+        "poisoning"
+      ],
+      "violates_standard": true,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:55:47+00:00"
+    },
+    {
+      "recall_id": 10819,
+      "title": "Houoto 642-2150V Pool Drain Covers Recalled Due to Risk of Serious Injury or Death from Entrapment and Drowning Hazards; Violate Virginia Graeme Baker Pool & Spa Safety Act; Sold on Amazon by Prosperity goes straight up",
+      "hazard_text": "The drain covers do not bear the required product markings, in violation of the mandatory safety standard under the Virginia Graeme Baker Pool and Spa Safety Act (VGBA), posing risk of serious injury or death from entrapment and drowning hazards. The drain covers also fail to meet safety requirements because they are missing statements regarding the service life of the covers and installation and maintenance instructions.",
+      "description": "This recall involves Houoto 642-2150V Pool Drain Covers that are sold for use in swimming pools. The drain covers measure 7-5/8 inches in diameter and the screw hole spacing is 7 inches. They are white and made of ABS plastic. The brand and model number can be found on the product's order receipt.",
+      "url": "https://www.cpsc.gov/Recalls/2026/Houoto-642-2150V-Pool-Drain-Covers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Entrapment-and-Drowning-Hazards-Violate-Virginia-Graeme-Baker-Pool-Spa-Safety-Act-Sold-on-Amazon-by-Prosperity-goe-straight-up",
+      "recall_date": "2026-06-11",
+      "labels": [
+        "entrapment",
+        "drowning"
+      ],
+      "violates_standard": true,
+      "notes": "",
+      "labeled_at": "2026-10-19T20:57:22+00:00"
+    }
+  ],
+  "created_at": "2026-10-19T19:59:00+00:00",
+  "format_version": 1
+}

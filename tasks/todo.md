@@ -48,10 +48,10 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-hazard-taxonomy.md](../SPEC-hazard-taxon
 
 ### Task 7: `safescale score-hazards` (after your labels are in)
 **Acceptance:**
-- [ ] Per-category + micro P / R / F1 with raw counts, plus violation-flag P / R
-- [ ] Result recorded in the spec; target micro-F1 ≥ 0.85
+- [x] Per-category + micro P / R / F1 with raw counts, plus violation-flag P / R
+- [x] Result recorded in the spec; target micro-F1 ≥ 0.85 (measured: 0.92)
 **Verify:** `uv run pytest tests/taxonomy/test_score.py`; run on `gold.json`
 **Files:** `taxonomy/score.py`, `cli.py`, tests · **Scope:** S
 
 ### Checkpoint: hazard-taxonomy complete
-- [ ] Spec success criteria 1–8 met; README updated; committed to main
+- [x] Spec success criteria 1–8 met; README updated; committed to main
