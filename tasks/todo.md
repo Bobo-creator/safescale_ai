@@ -28,15 +28,15 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-hazard-taxonomy.md](../SPEC-hazard-taxon
 
 ### Task 4: Migration 004
 **Acceptance:**
-- [ ] `hazard_categories` (seeded), `recall_hazards`, `recall_standard_violations`, all with RLS
-- [ ] Test: seed matches `categories.py`
+- [x] `hazard_categories` (seeded), `recall_hazards`, `recall_standard_violations`, all with RLS
+- [x] Test: seed matches `categories.py`
 **Verify:** `uv run pytest tests/test_db.py tests/taxonomy/test_store.py`
 **Files:** `db/migrations/004_hazard_taxonomy.sql`, `tests/test_db.py` · **Scope:** S
 
 ### Task 5: `classify_all`, `labels_for`, `safescale classify` / `hazards`
 **Acceptance:**
-- [ ] Full recompute in one transaction; re-run gives identical rows; per-category counts printed
-- [ ] `labels_for` returns 25 ids in one query; `hazards 166` prints `fire_overheating` with evidence
+- [x] Full recompute in one transaction; re-run gives identical rows; per-category counts printed
+- [x] `labels_for` returns 25 ids in one query; `hazards 166` prints `fire_overheating` with evidence
 **Verify:** `uv run pytest tests/taxonomy/test_store.py`; manual CLI run locally
 **Files:** `taxonomy/store.py`, `cli.py`, tests · **Scope:** M
 

@@ -2,6 +2,7 @@
 
 import argparse
 import logging
+import time
 from pathlib import Path
 
 from safescale import config, db
@@ -9,7 +10,9 @@ from safescale.ingest import run_ingest
 from safescale.retrieval.embedder import Embedder, OpenAIEmbedder
 from safescale.retrieval.index import embed_recalls
 from safescale.retrieval.search import METHODS, Hit, search
+from safescale.taxonomy.classify import Classification
 from safescale.taxonomy.labeling import gold as gold_file
+from safescale.taxonomy.store import classify_all, labels_for
 
 DEFAULT_GOLD_PATH = config.REPO_ROOT / "evaluation" / "hazard_gold" / "gold.json"
 
@@ -34,6 +37,10 @@ def build_parser() -> argparse.ArgumentParser:
     find.add_argument("--k", type=int, default=10, help="number of results (default 10)")
     find.add_argument("--method", choices=METHODS, default="vector")
 
+    commands.add_parser("classify", help="(re)label every recall with hazard categories")
+    hazards = commands.add_parser("hazards", help="show a recall's hazard labels and evidence")
+    hazards.add_argument("recall_id", type=int)
+
     label = commands.add_parser("label", help="open the local page for labeling the gold sample")
     label.add_argument("--gold", type=Path, default=DEFAULT_GOLD_PATH, help="gold file path")
     label.add_argument("--n", type=int, default=gold_file.DEFAULT_SAMPLE_SIZE, help="sample size")
@@ -54,6 +61,15 @@ def format_hits(hits: list[Hit]) -> str:
     for hit in hits:
         lines.append(f"{hit.rank:>3}. [{hit.score:.3f}] {hit.recall_date}  {hit.title}")
         lines.append(f"     {hit.url}")
+    return "\n".join(lines)
+
+
+def format_classification(result: Classification) -> str:
+    lines = [f'{lbl.category:<26} <- "{lbl.evidence}" ({lbl.source})' for lbl in result.labels]
+    for v in result.violations:
+        lines.append(
+            f'violates {v.standard or "a standard (unnamed)"} <- "{v.evidence}" ({v.source})'
+        )
     return "\n".join(lines)
 
 
@@ -86,6 +102,24 @@ def main(argv: list[str] | None = None) -> int:
         with db.connect() as conn:
             hits = search(conn, args.query, k=args.k, method=args.method, embedder=embedder)
         print(format_hits(hits))
+    if args.command == "classify":
+        started = time.perf_counter()
+        with db.connect() as conn:
+            result = classify_all(conn)
+        elapsed = time.perf_counter() - started
+        print(
+            f"classified {result.recalls} recalls in {elapsed:.1f}s: {result.labels} labels, "
+            f"{result.other_only} 'other' only, {result.flagged} with a standards violation"
+        )
+        for category, count in result.by_category.items():
+            print(f"  {category:<26} {count:>6}")
+    if args.command == "hazards":
+        with db.connect() as conn:
+            found = labels_for(conn, [args.recall_id])
+        if args.recall_id not in found:
+            print(f"recall {args.recall_id} not found or not classified (run `safescale classify`)")
+            return 1
+        print(format_classification(found[args.recall_id]))
     if args.command == "label":
         run_labeling(args)
     return 0
