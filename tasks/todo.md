@@ -12,13 +12,13 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-app.md](../SPEC-app.md)
 
 ### Task 2: FastAPI app
 **Acceptance:**
-- [ ] `/api/analyze`, `/api/explain`, `/api/examples`, `/api/health`; input validation (422); 429 with retry-after; daily cap skips explanation only
-- [ ] OpenAI failure → report + fallback summary; DB failure → 503 without stack traces; request bodies never logged
+- [x] `/api/analyze`, `/api/explain`, `/api/examples`, `/api/health`; input validation (422); 429 with retry-after; daily cap skips explanation only
+- [x] OpenAI failure → report + fallback summary; DB failure → 503 without stack traces; request bodies never logged
 **Verify:** `uv run pytest tests/api`
 **Files:** `api/app.py`, `api/deps.py`, `pyproject.toml`, tests · **Scope:** M
 
 ### Checkpoint: back end
-- [ ] All tests + lint pass offline; `uvicorn` against Supabase answers the night-light query
+- [x] All tests + lint pass offline; `uvicorn` against Supabase answers the night-light query
 
 ### Task 3: Next.js scaffold + typed API client
 **Acceptance:**
@@ -45,8 +45,9 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-app.md](../SPEC-app.md)
 
 ### Task 6: `safescale_app` role on Supabase (outward-facing)
 **Acceptance:**
-- [ ] Role created with a locally generated password (verifier only sent to Supabase; plaintext in `.env`); 007 applied; access test passes against Supabase; advisors clean
+- [x] Role created with a locally generated password (verifier only sent to Supabase; plaintext in `.env`); 007 applied; access test passes against Supabase; advisors clean
 **Verify:** connection test as the app role via the transaction pooler · **Scope:** S
+**Done early (2026-10-19):** needed before the back-end checkpoint, since 007 requires the role. Role is login-only (no superuser/createrole/createdb/bypassrls); reads 7 tables/views; writes, DDL and pipeline tables denied; advisors INFO only.
 
 ### Task 7: Vercel deploy + verification (outward-facing)
 **Acceptance:**
