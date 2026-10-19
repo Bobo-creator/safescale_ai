@@ -1,57 +1,49 @@
-# Tasks: hazard-taxonomy
+# Tasks: hazard-analysis
 
-Plan: [plan.md](plan.md) · Spec: [SPEC-hazard-taxonomy.md](../SPEC-hazard-taxonomy.md)
+Plan: [plan.md](plan.md) · Spec: [SPEC-hazard-analysis.md](../SPEC-hazard-analysis.md)
 
-### Task 1: Gold sample + labeling page (`safescale label`)
+### Task 1: Report model, hazard profile and signals (pure)
 **Acceptance:**
-- [x] Seeded sample of 50 recall ids is deterministic and written to `evaluation/hazard_gold/gold.json` with empty labels
-- [x] Page shows title, hazard text, description, CPSC link; 12 category checkboxes + "violates a standard" + notes; never shows predictions
-- [x] Each change saves immediately; reload resumes; progress + jump-to-unlabeled; server binds to 127.0.0.1
-**Verify:** `uv run pytest tests/taxonomy/test_labeling.py`; Playwright check of render/save/resume
-**Files:** `taxonomy/categories.py`, `taxonomy/labeling/`, `cli.py`, tests · **Scope:** M
+- [ ] Profile per category: count, share, base rate, lift, recall ids; only relevant matches counted
+- [ ] Signal rule at every threshold edge; `other` never drives the overall signal; < 5 relevant → insufficient evidence
+- [ ] `to_dict()` is JSON-ready and always includes the disclaimer
+**Verify:** `uv run pytest tests/analysis/test_profile.py`
+**Files:** `analysis/report.py`, `analysis/profile.py`, tests · **Scope:** M
 
-### Task 2: Hazard rules + `classify()`
+### Task 2: Matches for any method (cosine + labels)
 **Acceptance:**
-- [x] ~60 table-driven phrases pass, including the traps ("lead to", "fall out of position", "injury hazard", one-word records, multi-hazard)
-- [x] Field order hazard+title → description fallback → `other`; evidence is a verbatim fragment ≤ 160 chars
-**Verify:** `uv run pytest tests/taxonomy/test_rules.py tests/taxonomy/test_classify.py`
-**Files:** `taxonomy/rules.py`, `taxonomy/classify.py`, tests · **Scope:** M
+- [ ] Each hit gets its cosine from stored embeddings (also for keyword/hybrid), labels and violations; weak matches flagged
+**Verify:** `uv run pytest tests/analysis/test_analyze.py -k matches`
+**Files:** `analysis/analyze.py`, tests · **Scope:** S
 
-### Task 3: Standards-violation rules
+### Task 3: Term statistics + shared / failure terms
 **Acceptance:**
-- [x] Trigger + named standard (ASTM F…, 16 CFR …, named federal standards) extracted; trigger without a name gives `standard=None`
-**Verify:** `uv run pytest tests/taxonomy/test_classify.py`
-**Files:** `taxonomy/rules.py`, `taxonomy/classify.py`, tests · **Scope:** S
+- [ ] Migration 006: two materialized views, Data API roles revoked; refreshed by `classify`
+- [ ] Shared terms (≥ 2 matches) and failure terms (≥ 3 matches, not in query) ranked by share × idf, shown as surface words
+**Verify:** `uv run pytest tests/analysis/test_terms.py tests/test_db.py`
+**Files:** `db/migrations/006_term_stats.sql`, `analysis/terms.py`, `taxonomy/store.py`, tests · **Scope:** M
 
-### Checkpoint: classifier
-- [x] All tests + lint pass; on the full local corpus (gold ids excluded): `other`-only ≤ 10%, ≥ 1,000 violation flags, ≥ half named
-
-### Task 4: Migration 004
+### Task 4: Investigation catalog
 **Acceptance:**
-- [x] `hazard_categories` (seeded), `recall_hazards`, `recall_standard_violations`, all with RLS
-- [x] Test: seed matches `categories.py`
-**Verify:** `uv run pytest tests/test_db.py tests/taxonomy/test_store.py`
-**Files:** `db/migrations/004_hazard_taxonomy.sql`, `tests/test_db.py` · **Scope:** S
+- [ ] ~20 entries; an area shows only with ≥ 2 supporting matches, with recall ids and trigger terms
+- [ ] Standards named by ≥ 2 matches listed; wording test passes on every catalog string
+**Verify:** `uv run pytest tests/analysis/test_investigate.py`
+**Files:** `analysis/investigate.py`, tests · **Scope:** M
 
-### Task 5: `classify_all`, `labels_for`, `safescale classify` / `hazards`
+### Checkpoint: offline
+- [ ] All tests + lint pass with no network
+
+### Task 5: `analyze()` and `safescale analyze [--json]`
 **Acceptance:**
-- [x] Full recompute in one transaction; re-run gives identical rows; per-category counts printed
-- [x] `labels_for` returns 25 ids in one query; `hazards 166` prints `fire_overheating` with evidence
-**Verify:** `uv run pytest tests/taxonomy/test_store.py`; manual CLI run locally
-**Files:** `taxonomy/store.py`, `cli.py`, tests · **Scope:** M
+- [ ] End to end with FakeEmbedder on fixtures; every recall id in the report is a relevant match; JSON round-trips
+**Verify:** `uv run pytest tests/analysis/test_analyze.py`
+**Files:** `analysis/analyze.py`, `cli.py`, tests · **Scope:** M
 
-### Task 6: Supabase run
+### Task 6: Supabase sanity run
 **Acceptance:**
-- [x] 004 applied by the pipeline role; classify < 10 s; re-run identical; advisors: no new warnings
-**Verify:** SQL counts, timings, advisors · **Scope:** S
-**Result (2026-10-19):** 5.8 s; rows identical to local (md5); 0 unlabeled; 0 non-verbatim evidence; advisors INFO only
+- [ ] 006 applied; night light, dresser and unrelated queries meet spec criteria 2–4; k = 25/50/100 × 3 methods work
+- [ ] DB work < 300 ms warm, CLI < 2 s; advisors: no new warnings; results recorded in the spec
+**Verify:** CLI runs, timings, advisors · **Scope:** S
 
-### Task 7: `safescale score-hazards` (after your labels are in)
-**Acceptance:**
-- [x] Per-category + micro P / R / F1 with raw counts, plus violation-flag P / R
-- [x] Result recorded in the spec; target micro-F1 ≥ 0.85 (measured: 0.92)
-**Verify:** `uv run pytest tests/taxonomy/test_score.py`; run on `gold.json`
-**Files:** `taxonomy/score.py`, `cli.py`, tests · **Scope:** S
-
-### Checkpoint: hazard-taxonomy complete
-- [x] Spec success criteria 1–8 met; README updated; committed to main
+### Checkpoint: hazard-analysis complete
+- [ ] Spec success criteria 1–7 met; README updated; committed to main
