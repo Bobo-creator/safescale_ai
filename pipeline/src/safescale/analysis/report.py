@@ -39,10 +39,7 @@ class Match:
     recall_date: date
     labels: list[HazardLabel]
     violations: list[StandardViolation]
-
-    @property
-    def relevant(self) -> bool:
-        return self.cosine >= RELEVANCE_FLOOR
+    relevant: bool  # cosine >= the relevance floor used for this report
 
 
 @dataclass(frozen=True)
@@ -88,6 +85,7 @@ class HazardReport:
     k: int
     matches: list[Match]
     relevant: int
+    relevance_floor: float
     profile: list[CategoryStat]
     overall_signal: Signal
     signal_drivers: list[str]
@@ -101,9 +99,8 @@ class HazardReport:
     disclaimer: str = DISCLAIMER
 
     def to_dict(self) -> dict:
-        """JSON-ready (dates as ISO strings); `relevant` is added to each match."""
+        """JSON-ready (dates as ISO strings)."""
         data = dataclasses.asdict(self)
         for match, raw in zip(self.matches, data["matches"], strict=True):
             raw["recall_date"] = match.recall_date.isoformat() if match.recall_date else None
-            raw["relevant"] = match.relevant
         return data

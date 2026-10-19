@@ -22,6 +22,7 @@ def match(recall_id, *categories, cosine=0.5):
         date(2020, 1, 1),
         labels,
         [],
+        cosine >= RELEVANCE_FLOOR,
     )
 
 
@@ -94,6 +95,7 @@ def test_report_to_dict_is_json_ready_with_disclaimer():
         k=1,
         matches=[m],
         relevant=1,
+        relevance_floor=0.3,
         profile=build_profile([m], BASE),
         overall_signal="LOW",
         signal_drivers=[],

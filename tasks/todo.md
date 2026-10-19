@@ -12,7 +12,7 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-hazard-analysis.md](../SPEC-hazard-analy
 
 ### Task 2: Matches for any method (cosine + labels)
 **Acceptance:**
-- [ ] Each hit gets its cosine from stored embeddings (also for keyword/hybrid), labels and violations; weak matches flagged
+- [x] Each hit gets its cosine from stored embeddings (also for keyword/hybrid), labels and violations; weak matches flagged
 **Verify:** `uv run pytest tests/analysis/test_analyze.py -k matches`
 **Files:** `analysis/analyze.py`, tests · **Scope:** S
 

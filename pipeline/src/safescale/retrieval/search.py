@@ -37,7 +37,10 @@ def search(
     k: int = 25,
     method: Method = "vector",
     embedder: Embedder | None = None,
+    query_embedding: list[float] | None = None,
 ) -> list[Hit]:
+    """Top-k recalls for a description. Pass `query_embedding` (made by `embedder`) to reuse a
+    vector the caller already has instead of embedding the query again."""
     query = " ".join(query.split())
     if not query:
         raise ValueError("query is empty")
@@ -52,7 +55,7 @@ def search(
             raise ValueError(f"method {method!r} needs an embedder")
         register_vector(conn)
         _check_model(conn, embedder.model)
-        [vector] = embedder.embed([query])
+        [vector] = [query_embedding] if query_embedding is not None else embedder.embed([query])
         params["embedding"] = Vector(vector)
 
     rows = conn.execute(
