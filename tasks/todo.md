@@ -4,9 +4,9 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-hazard-analysis.md](../SPEC-hazard-analy
 
 ### Task 1: Report model, hazard profile and signals (pure)
 **Acceptance:**
-- [ ] Profile per category: count, share, base rate, lift, recall ids; only relevant matches counted
-- [ ] Signal rule at every threshold edge; `other` never drives the overall signal; < 5 relevant → insufficient evidence
-- [ ] `to_dict()` is JSON-ready and always includes the disclaimer
+- [x] Profile per category: count, share, base rate, lift, recall ids; only relevant matches counted
+- [x] Signal rule at every threshold edge; `other` never drives the overall signal; < 5 relevant → insufficient evidence
+- [x] `to_dict()` is JSON-ready and always includes the disclaimer
 **Verify:** `uv run pytest tests/analysis/test_profile.py`
 **Files:** `analysis/report.py`, `analysis/profile.py`, tests · **Scope:** M
 
