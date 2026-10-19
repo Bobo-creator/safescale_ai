@@ -168,3 +168,100 @@ HAZARD_RULES: dict[Category, Rule] = {
     ),
     "drowning": Rule(include=[r"\bdrown"]),
 }
+
+
+# --- Standards violations -------------------------------------------------------------------
+# A violation needs a trigger phrase. Its name is the first reference found in the same sentence:
+# a code (ASTM / 16 CFR), then a named act or rule, then "mandatory standard for <product>".
+
+STANDARD_TRIGGERS = [
+    re.compile(p, re.IGNORECASE)
+    for p in [
+        r"\bviolat(e|es|ed|ing|ion|ions)\b",
+        r"\bfail(s|ed)? to (meet|comply)",
+        r"\b(does|do|did) not (meet|comply|conform)",
+        r"\bnot in compliance\b",
+        r"\bnon-?complian",
+        r"\bmust be in child[- ]resistant packaging\b",
+        r"\b(lack|lacks|missing|without|not have)\b[^.;]{0,80}\b(as )?required by\b",
+    ]
+]
+
+# Sentences about the recall process itself, not the product (e.g. late-reporting penalties).
+STANDARD_SKIP = re.compile(
+    r"\btimel(y|iness)\b|\bcivil penalt|\bfailure to (timely )?report|\bsettle", re.IGNORECASE
+)
+
+_ASTM = re.compile(r"\bASTM[- ]?([A-Z])\s?(\d{2,5})", re.IGNORECASE)
+_CFR = re.compile(r"\b16\s*C\.?F\.?R\.?\s*(?:part\s*|§\s*)?(\d{3,4})", re.IGNORECASE)
+
+# (pattern, canonical name). Order matters: more specific first.
+NAMED_STANDARDS: list[tuple[re.Pattern[str], str]] = [
+    (re.compile(p, re.IGNORECASE), name)
+    for p, name in [
+        (r"poison prevention packaging act|\bPPPA\b", "Poison Prevention Packaging Act"),
+        (r"\bSTURDY act\b", "STURDY Act (furniture tip-over)"),
+        (r"\bspa safety act\b", "Virginia Graeme Baker Pool and Spa Safety Act"),
+        (r"\bbabies act\b", "Safe Sleep for Babies Act"),
+        (
+            r"\breese'?s law\b|\bbutton[- ]cell|\bcoin (cell )?batter",
+            "Reese's Law (button and coin batteries)",
+        ),
+        (r"gasoline burn prevention act", "Children's Gasoline Burn Prevention Act"),
+        (r"portable fuel container safety act", "Portable Fuel Container Safety Act"),
+        (r"flammable fabrics act", "Flammable Fabrics Act"),
+        (r"lead paint (standard|ban)|ban on lead paint|lead in paint", "Federal lead paint ban"),
+        (r"lead content (ban|limit|standard)", "Federal lead content limit"),
+        (r"phthalates? (ban|limit|standard|prohibition)", "Federal phthalates limit"),
+        (r"crib bumpers? ban", "Crib bumper ban"),
+        (r"small parts? (ban|regulation|standard|requirement)", "Small parts ban"),
+        (
+            r"flammability (standards?|requirements?|regulations?) for children'?s sleepwear|"
+            r"children'?s sleepwear[^.;]{0,40}flammability",
+            "Children's sleepwear flammability",
+        ),
+        (r"mattress(es)? flammability|flammability[^.;]{0,30}mattress", "Mattress flammability"),
+        (r"open[- ]flame standard", "Mattress open-flame standard"),
+        (r"\bATV (safety )?(standard|regulation)", "ATV safety standard"),
+        (
+            r"\bbicycle helmets?\b[^.;]{0,30}standard|standard for bicycle helmets",
+            "Bicycle helmet standard",
+        ),
+        (r"\bbicycle (safety )?(standard|regulation)", "Bicycle safety standard"),
+        (r"battery[- ]operated toys?", "Battery-operated toy regulation"),
+        (r"federal hazardous substances? act|\bFHSA\b", "Federal Hazardous Substances Act"),
+        (r"consumer product safety act", "Consumer Product Safety Act"),
+    ]
+]
+
+_MANDATORY_FOR = re.compile(
+    r"\b(?:mandatory|federal|safety)(?: \w+){0,2} (?:standards?|regulations?|requirements?|rules?) "
+    r"for (?:the )?(?!(?:this|these|such|its|their)\b)"
+    r"((?:(?!because\b|posing\b|which\b|that\b|and\b|as\b|including\b)[\w'-]+ ?){1,6})",
+    re.IGNORECASE,
+)
+
+
+# "the federal rattle standard", "pacifier safety regulations": a product word before the noun.
+_PRODUCT_STANDARD = re.compile(
+    r"\b(?!(?:federal|mandatory|voluntary|industry|safety|applicable|performance|these|this|"
+    r"the|all|its|their|s|cpsc'?s?|government|labeling|testing|certification|structural)\b)"
+    r"([a-z][\w-]+) (?:safety )?(standards?|regulations?|rules?|ban)\b",
+    re.IGNORECASE,
+)
+
+
+def standard_name(sentence: str) -> str | None:
+    """The best name for the standard a sentence refers to, or None."""
+    if m := _ASTM.search(sentence):
+        return f"ASTM {m.group(1).upper()}{m.group(2)}"
+    if m := _CFR.search(sentence):
+        return f"16 CFR {m.group(1)}"
+    for pattern, name in NAMED_STANDARDS:
+        if pattern.search(sentence):
+            return name
+    if m := _MANDATORY_FOR.search(sentence):
+        return "Mandatory standard for " + m.group(1).strip().rstrip(",.;").lower()
+    if m := _PRODUCT_STANDARD.search(sentence):
+        return f"{m.group(1).capitalize()} {m.group(2).lower().removesuffix('s')}"
+    return None

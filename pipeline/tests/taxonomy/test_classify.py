@@ -1,5 +1,7 @@
 import re
 
+import pytest
+
 from safescale.taxonomy.classify import MAX_EVIDENCE, classify, evidence
 
 
@@ -64,3 +66,75 @@ def test_long_evidence_is_trimmed_verbatim_around_the_match():
 def test_labels_come_in_category_order():
     result = classify(title="", hazard_text="Drowning, laceration and fire.", description=None)
     assert result.categories == ["fire_overheating", "laceration", "drowning"]
+
+
+def _violations(hazard_text, title="", description=None):
+    result = classify(title=title, hazard_text=hazard_text, description=description)
+    return [(v.standard, v.source) for v in result.violations]
+
+
+@pytest.mark.parametrize(
+    ("hazard_text", "standard"),
+    [
+        ("The dressers do not comply with ASTM F2057-19, posing a tip-over hazard.", "ASTM F2057"),
+        ("The bunk beds fail to meet 16 CFR part 1513.", "16 CFR 1513"),
+        (
+            "The paint contains excessive levels of lead, violating the federal lead paint "
+            "standard.",
+            "Federal lead paint ban",
+        ),
+        (
+            "The product contains methyl salicylate which must be in child resistant packaging "
+            "as required by the Poison Prevention Packaging Act (PPPA).",
+            "Poison Prevention Packaging Act",
+        ),
+        (
+            "The robes fail to meet the federal flammability standards for children's sleepwear.",
+            "Children's sleepwear flammability",
+        ),
+        (
+            "The bed rails violate the mandatory standard for adult portable bed rails because "
+            "users can become entrapped.",
+            "Mandatory standard for adult portable bed rails",
+        ),
+        ("The recalled rattles violate the federal rattle standard.", "Rattle standard"),
+        (
+            "The toys violate the federal standard for consumer products containing button cell "
+            "or coin batteries.",
+            "Reese's Law (button and coin batteries)",
+        ),
+        ("The chests do not comply with the U.S. safety standard.", None),
+        ("The pacifiers fail to meet federal safety standards.", None),
+    ],
+)
+def test_standard_violation_names(hazard_text, standard):
+    assert _violations(hazard_text) == [(standard, "hazard")]
+
+
+def test_no_violation_without_a_trigger():
+    assert _violations("The heater can overheat, posing a fire hazard.") == []
+    assert _violations("Required by federal law, the label warns of the hazard.") == []
+
+
+def test_process_violations_are_not_product_violations():
+    text = "The firm agreed to settle an alleged timeliness violation."
+    assert _violations(None, title="T", description=text) == []
+
+
+def test_title_ignored_when_hazard_text_already_has_the_violation():
+    result = _violations(
+        "The gates violate the mandatory standard for expansion gates.",
+        title="Gates Recalled; Violates Mandatory Standard for Gates and Enclosures",
+    )
+    assert result == [("Mandatory standard for expansion gates", "hazard")]
+
+
+def test_lacking_a_required_feature_is_a_violation():
+    text = "These lighters do not have child-resistant mechanisms, as required by federal law."
+    assert _violations(text) == [(None, "hazard")]
+
+
+def test_violation_evidence_is_verbatim():
+    text = "The gate can open. The gates violate the mandatory standard for expansion gates."
+    (violation,) = classify(title="", hazard_text=text, description=None).violations
+    assert violation.evidence in text and "violate" in violation.evidence

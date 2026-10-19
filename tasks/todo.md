@@ -19,12 +19,12 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-hazard-taxonomy.md](../SPEC-hazard-taxon
 
 ### Task 3: Standards-violation rules
 **Acceptance:**
-- [ ] Trigger + named standard (ASTM F…, 16 CFR …, named federal standards) extracted; trigger without a name gives `standard=None`
+- [x] Trigger + named standard (ASTM F…, 16 CFR …, named federal standards) extracted; trigger without a name gives `standard=None`
 **Verify:** `uv run pytest tests/taxonomy/test_classify.py`
 **Files:** `taxonomy/rules.py`, `taxonomy/classify.py`, tests · **Scope:** S
 
 ### Checkpoint: classifier
-- [ ] All tests + lint pass; on the full local corpus (gold ids excluded): `other`-only ≤ 10%, ≥ 1,000 violation flags, ≥ half named
+- [x] All tests + lint pass; on the full local corpus (gold ids excluded): `other`-only ≤ 10%, ≥ 1,000 violation flags, ≥ half named
 
 ### Task 4: Migration 004
 **Acceptance:**

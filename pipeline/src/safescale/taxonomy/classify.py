@@ -5,11 +5,20 @@ from dataclasses import dataclass, field
 from typing import Literal
 
 from safescale.taxonomy.categories import CATEGORY_CODES, Category
-from safescale.taxonomy.rules import HAZARD_RULES
+from safescale.taxonomy.rules import (
+    HAZARD_RULES,
+    STANDARD_SKIP,
+    STANDARD_TRIGGERS,
+    standard_name,
+)
 
 Source = Literal["hazard", "title", "description"]
 MAX_EVIDENCE = 160
-_SENTENCE_END = re.compile(r"(?<=[.!?;])\s+")
+# Sentence ends, but not after common abbreviations ("the U.S. standard", "Acme Inc. recalls").
+_SENTENCE_END = re.compile(
+    r"(?<=[.!?;])(?<!\bU\.S\.)(?<!\bInc\.)(?<!\bCo\.)(?<!\bNo\.)(?<!\bMfg\.)(?<!\bCorp\.)"
+    r"(?<!\bLtd\.)(?<!\bSt\.)(?<!\bvs\.)\s+"
+)
 
 
 @dataclass(frozen=True)
@@ -46,7 +55,40 @@ def classify(*, title: str, hazard_text: str | None, description: str | None) ->
         source, text = next(((s, t) for s, t in primary if t.strip()), ("description", ""))
         text = text or description or ""
         labels = [HazardLabel("other", text[:MAX_EVIDENCE].strip() or "(no text)", source)]
-    return Classification(labels=labels)
+    violations = _find_violations(primary)
+    if not violations and description:
+        violations = _find_violations([("description", description)])
+    return Classification(labels=labels, violations=violations)
+
+
+def _find_violations(fields: list[tuple[Source, str]]) -> list[StandardViolation]:
+    """One violation per distinct named standard; one unnamed violation if none are named.
+
+    Fields are tried in order and the first one with any violation wins: titles usually repeat
+    the hazard text in other words, which would otherwise double-count the same standard.
+    """
+    named: dict[str, StandardViolation] = {}
+    unnamed: StandardViolation | None = None
+    for source, text in fields:
+        if named or unnamed:
+            break
+        for sentence in _sentences(text):
+            trigger = next((m for t in STANDARD_TRIGGERS if (m := t.search(sentence))), None)
+            if not trigger or STANDARD_SKIP.search(sentence):
+                continue
+            name = standard_name(sentence)
+            fragment = evidence(sentence, trigger)
+            if name and name not in named:
+                named[name] = StandardViolation(name, fragment, source)
+            elif not name and unnamed is None:
+                unnamed = StandardViolation(None, fragment, source)
+    if named:
+        return list(named.values())
+    return [unnamed] if unnamed else []
+
+
+def _sentences(text: str) -> list[str]:
+    return [s for s in _SENTENCE_END.split(text) if s.strip()] if text else []
 
 
 def _match_fields(fields: list[tuple[Source, str]]) -> list[HazardLabel]:
