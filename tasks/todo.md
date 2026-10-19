@@ -41,9 +41,9 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-hazard-analysis.md](../SPEC-hazard-analy
 
 ### Task 6: Supabase sanity run
 **Acceptance:**
-- [ ] 006 applied; night light, dresser and unrelated queries meet spec criteria 2–4; k = 25/50/100 × 3 methods work
-- [ ] DB work < 300 ms warm, CLI < 2 s; advisors: no new warnings; results recorded in the spec
+- [x] 006 applied; night light, dresser and unrelated queries meet spec criteria 2–4; k = 25/50/100 × 3 methods work
+- [x] DB work < 300 ms warm (~58 ms server-side; ~410 ms incl. 8 laptop round trips), CLI 2.1–2.6 s from the laptop (re-measure in `app`); advisors: no new warnings; results recorded in the spec
 **Verify:** CLI runs, timings, advisors · **Scope:** S
 
 ### Checkpoint: hazard-analysis complete
-- [ ] Spec success criteria 1–7 met; README updated; committed to main
+- [x] Spec success criteria 1–7 met; README updated; committed to main

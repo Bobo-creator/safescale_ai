@@ -2,14 +2,13 @@
 
 import psycopg
 from pgvector import Vector
-from pgvector.psycopg import register_vector
 
 from safescale.analysis.investigate import cited_standards, investigation_areas
 from safescale.analysis.profile import build_profile, overall_signal
 from safescale.analysis.report import RELEVANCE_FLOOR, HazardReport, Match
-from safescale.analysis.terms import failure_terms, shared_terms
+from safescale.analysis.terms import failure_terms, query_lexemes, shared_terms
 from safescale.retrieval.embedder import Embedder
-from safescale.retrieval.search import Hit, Method, search
+from safescale.retrieval.search import Hit, Method, ensure_vector, search
 from safescale.taxonomy.rules import TAXONOMY_VERSION
 from safescale.taxonomy.store import labels_for
 
@@ -32,7 +31,7 @@ def build_matches(
     A hit without a stored embedding gets cosine 0, so it is listed but never counted.
     """
     ids = [hit.recall_id for hit in hits]
-    register_vector(conn)
+    ensure_vector(conn)
     rows = conn.execute(_COSINES, (Vector(query_embedding), ids)).fetchall()
     cosines = {rid: cos for rid, cos, _ in rows if cos is not None}
     hazard_texts = {rid: text for rid, _, text in rows}
@@ -87,6 +86,7 @@ def analyze(
     matches = build_matches(conn, hits, vector, relevance_floor=relevance_floor)
     relevant = sum(m.relevant for m in matches)
     profile = build_profile(matches, base_rates(conn))
+    query_words = query_lexemes(conn, query)
     signal, drivers, insufficient = overall_signal(profile, relevant)
     return HazardReport(
         query=query,
@@ -99,8 +99,8 @@ def analyze(
         overall_signal=signal,
         signal_drivers=drivers,
         insufficient_evidence=insufficient,
-        shared_terms=shared_terms(conn, query, matches),
-        failure_terms=failure_terms(conn, query, matches),
+        shared_terms=shared_terms(conn, query_words, matches),
+        failure_terms=failure_terms(conn, query_words, matches),
         investigation_areas=investigation_areas(matches),
         standards=cited_standards(matches),
         taxonomy_version=TAXONOMY_VERSION,

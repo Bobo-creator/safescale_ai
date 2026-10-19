@@ -53,7 +53,7 @@ def search(
     if method != "keyword":
         if embedder is None:
             raise ValueError(f"method {method!r} needs an embedder")
-        register_vector(conn)
+        ensure_vector(conn)
         _check_model(conn, embedder.model)
         [vector] = [query_embedding] if query_embedding is not None else embedder.embed([query])
         params["embedding"] = Vector(vector)
@@ -64,6 +64,12 @@ def search(
         params,
     ).fetchall()
     return [Hit(*row) for row in rows]
+
+
+def ensure_vector(conn: psycopg.Connection) -> None:
+    """Register pgvector's type once per connection (each registration is a round trip)."""
+    if conn.adapters.types.get("vector") is None:
+        register_vector(conn)
 
 
 def _check_model(conn: psycopg.Connection, model: str) -> None:

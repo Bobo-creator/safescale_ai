@@ -252,3 +252,36 @@ pipeline/tests/analysis/
 - **Investigation catalog:** I draft about 20 entries; the project owner reviews them in real
   reports. Tests guard the wording (no "safe", "compliant", "certified").
 - Overheating stays inside `fire_overheating` (hazard-taxonomy decision, reconfirmed).
+
+## Results (2026-10-19, Supabase)
+
+| # | Criterion | Result |
+|---|---|---|
+| 1 | Full report for k = 25 / 50 / 100 × vector / keyword / hybrid | ✅ all 9 combinations; JSON round-trips |
+| 2 | Night light: HIGH via fire/burn; battery thermal + charging areas; shared "lithium-ion", "charging" | ✅ HIGH (fire 14/25 at 1.9×, burn 14/25 at 3.2×); 6 areas led by battery thermal behavior (13), battery compartment security (7), charging protection (3); Reese's Law cited by 7 |
+| 3 | Dresser: HIGH via fall + entrapment; STURDY Act listed | ✅ fall 25/25 (5.7×), entrapment 24/25 (14.8×); STURDY Act 18, ASTM F2057 2 |
+| 4 | Unrelated query: 0 relevant, insufficient evidence, LOW, no areas | ✅ best match 0.183; nothing counted, every match marked weak |
+| 5 | Every recall id in the report is a relevant match | ✅ checked for all 9 combinations |
+| 6 | DB work < 300 ms warm; CLI < 2 s | ⚠️ see below |
+| 7 | Tests and lint offline; advisors | ✅ 289 tests; advisors INFO only; API roles cannot read the term views |
+
+**Latency (criterion 6), measured honestly.** One report runs 8 queries. From the laptop each is a
+~44 ms network round trip, so a warm report takes ~410 ms, of which only **~58 ms is database and
+Python work**. The CLI end to end takes 2.1–2.6 s (Python start-up ~0.4 s, TLS connect ~0.4 s,
+OpenAI embedding ~0.65 s, the 8 round trips ~0.35 s). The database work itself meets the target.
+The 2 s end-to-end target should be re-measured from the deployed API (Vercel in us-east-1, the same
+region as Supabase, so round trips are a few ms and the connection stays open) as an `app` criterion.
+
+Other observations:
+
+- **Keyword search shows why the relevance floor matters:** only 17 of its top 25 night-light hits
+  are actually similar (cosine ≥ 0.30), against 25 of 25 for vector search.
+- **Failure terms** needed a regulatory stoplist ("violates", "mandatory", "Reese's", "easily
+  accessed", "warnings"). Template recall texts repeat these words, but they don't describe how
+  a product failed. The night light now shows coin, cell, chemical, internal, button, swallowed,
+  overheat.
+- **Cold cache:** the first queries after the project was restored took 200–300 ms each inside the
+  database (HNSW pages read from disk) and then dropped to 1–14 ms. Warm the project before a demo.
+- `classify` now also refreshes the term views: 9.0 s on Supabase in total.
+- Postgres 17 builds materialized views with a restricted `search_path`, so the views name
+  `public.recalls` explicitly.

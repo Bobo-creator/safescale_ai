@@ -29,7 +29,8 @@ _WORD_ALIASES = {
 }
 _PART_ALIASES = {"hword_asciipart", "hword_part", "hword_numpart"}
 
-# Recall boilerplate that says nothing about the failure (stems, as Postgres produces them).
+# Recall and regulatory boilerplate that says nothing about how the product failed (stems, as
+# Postgres produces them).
 STOPLIST = {
     "recal",
     "recall",
@@ -59,6 +60,28 @@ STOPLIST = {
     "report",
     "incid",
     "includ",
+    # regulatory wording
+    "violat",
+    "mandatori",
+    "standard",
+    "requir",
+    "law",
+    "rees",
+    "feder",
+    "compli",
+    "complianc",
+    "addit",
+    "also",
+    "meet",
+    "regul",
+    "act",
+    "warn",
+    "label",
+    "packag",
+    "easili",
+    "access",
+    "contain",
+    "fail",
 }
 
 
@@ -114,7 +137,7 @@ def rank_terms(
     ]
 
 
-def _query_lexemes(conn: psycopg.Connection, query: str) -> dict[str, tuple[str, bool]]:
+def query_lexemes(conn: psycopg.Connection, query: str) -> dict[str, tuple[str, bool]]:
     """lexeme -> (the user's own word, is_part), in query order."""
     out: dict[str, tuple[str, bool]] = {}
     for alias, token, lexemes in conn.execute(
@@ -125,65 +148,70 @@ def _query_lexemes(conn: psycopg.Connection, query: str) -> dict[str, tuple[str,
     return out
 
 
-def shared_terms(conn: psycopg.Connection, query: str, matches: list[Match]) -> list[Term]:
+def shared_terms(
+    conn: psycopg.Connection, query_words: dict[str, tuple[str, bool]], matches: list[Match]
+) -> list[Term]:
+    """`query_words` comes from query_lexemes(); one query fetches matches and frequencies."""
     ids = [m.recall_id for m in matches if m.relevant]
-    if not ids:
+    if not ids or not query_words:
         return []
-    wanted = _query_lexemes(conn, query)
     rows = conn.execute(
         """
-        select r.recall_id, t.lexeme
-        from recalls r cross join lateral unnest(r.search_tsv) as t
+        select r.recall_id, t.lexeme, df.ndoc, (select count(*) from recalls)
+        from recalls r
+        cross join lateral unnest(r.search_tsv) as t
+        left join recall_term_df df on df.lexeme = t.lexeme
         where r.recall_id = any(%s) and t.lexeme = any(%s)
         """,
-        (ids, list(wanted)),
+        (ids, list(query_words)),
     ).fetchall()
     evidence: dict[str, TermEvidence] = defaultdict(TermEvidence)
-    for recall_id, lexeme in rows:
+    df: dict[str, int] = {}
+    n_docs = 0
+    for recall_id, lexeme, ndoc, total in rows:
         ev = evidence[lexeme]
         ev.recall_ids.add(recall_id)
-        token, is_part = wanted[lexeme]
+        token, is_part = query_words[lexeme]
         ev.surfaces[token] += 1
         ev.is_part = is_part
-    df, n_docs = _df(conn, "recall_term_df", list(evidence), "select count(*) from recalls")
+        df[lexeme], n_docs = ndoc or 0, total
     return rank_terms(evidence, df, n_docs, len(ids), min_matches=MIN_SHARED_MATCHES)
 
 
-def failure_terms(conn: psycopg.Connection, query: str, matches: list[Match]) -> list[Term]:
+def failure_terms(
+    conn: psycopg.Connection, query_words: dict[str, tuple[str, bool]], matches: list[Match]
+) -> list[Term]:
+    """Recurring words in the matches' hazard text that the description doesn't mention."""
     ids = [m.recall_id for m in matches if m.relevant]
     if not ids:
         return []
     rows = conn.execute(
         """
-        select r.recall_id, d.alias, d.token, d.lexemes[1]
-        from recalls r cross join lateral ts_debug('english', r.hazard_text) as d
-        where r.recall_id = any(%s) and r.hazard_text is not null and d.lexemes <> '{}'
+        select d.recall_id, d.alias, d.token, d.lexeme, df.ndoc,
+               (select count(*) from recalls where hazard_text is not null)
+        from (
+          select r.recall_id, t.alias, t.token, t.lexemes[1] as lexeme
+          from recalls r cross join lateral ts_debug('english', r.hazard_text) as t
+          where r.recall_id = any(%s) and r.hazard_text is not null and t.lexemes <> '{}'
+        ) d
+        left join recall_hazard_term_df df on df.lexeme = d.lexeme
         """,
         (ids,),
     ).fetchall()
     evidence: dict[str, TermEvidence] = defaultdict(TermEvidence)
-    for recall_id, alias, token, lexeme in rows:
+    df: dict[str, int] = {}
+    n_docs = 0
+    for recall_id, alias, token, lexeme, ndoc, total in rows:
         if alias not in _WORD_ALIASES:
             continue
         ev = evidence[lexeme]
         ev.recall_ids.add(recall_id)
         ev.surfaces[token.lower()] += 1
         ev.is_part = ev.is_part and alias in _PART_ALIASES
-    df, n_docs = _df(
-        conn,
-        "recall_hazard_term_df",
-        list(evidence),
-        "select count(*) from recalls where hazard_text is not null",
-    )
-    exclude = set(_query_lexemes(conn, query))
+        df[lexeme], n_docs = ndoc or 0, total
     return rank_terms(
-        evidence, df, n_docs, len(ids), min_matches=MIN_FAILURE_MATCHES, exclude=exclude
+        evidence, df, n_docs, len(ids), min_matches=MIN_FAILURE_MATCHES, exclude=set(query_words)
     )
-
-
-def _df(conn, view: str, lexemes: list[str], count_sql: str) -> tuple[dict[str, int], int]:
-    df = dict(conn.execute(f"select lexeme, ndoc from {view} where lexeme = any(%s)", (lexemes,)))
-    return df, conn.execute(count_sql).fetchone()[0]
 
 
 def refresh_term_stats(conn: psycopg.Connection) -> None:

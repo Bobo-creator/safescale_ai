@@ -6,6 +6,7 @@ from safescale.analysis.report import Match
 from safescale.analysis.terms import (
     TermEvidence,
     failure_terms,
+    query_lexemes,
     rank_terms,
     refresh_term_stats,
     shared_terms,
@@ -71,7 +72,9 @@ def stats(fixture_recalls):
 
 def test_shared_terms_use_the_users_wording(stats):
     ids = [r[0] for r in stats.execute("select recall_id from recalls")]
-    terms = shared_terms(stats, "Rechargeable lithium-ion BATTERY packs", _matches(stats, ids))
+    terms = shared_terms(
+        stats, query_lexemes(stats, "Rechargeable lithium-ion BATTERY packs"), _matches(stats, ids)
+    )
     words = {t.term for t in terms}
     assert "BATTERY" in words  # the user's spelling, not the stem 'batteri'
     assert all(t.matches >= 2 for t in terms)
@@ -80,7 +83,7 @@ def test_shared_terms_use_the_users_wording(stats):
 
 def test_failure_terms_exclude_query_words_and_need_three_matches(stats):
     ids = [r[0] for r in stats.execute("select recall_id from recalls")]
-    terms = failure_terms(stats, "fire", _matches(stats, ids))
+    terms = failure_terms(stats, query_lexemes(stats, "fire"), _matches(stats, ids))
     assert terms and all(t.matches >= 3 for t in terms)
     assert "fire" not in {t.term for t in terms}
     assert all(t.term == t.term.lower() for t in terms)
@@ -89,4 +92,5 @@ def test_failure_terms_exclude_query_words_and_need_three_matches(stats):
 def test_no_relevant_matches_means_no_terms(stats):
     ids = [r[0] for r in stats.execute("select recall_id from recalls")]
     weak = _matches(stats, ids, relevant=False)
-    assert shared_terms(stats, "battery", weak) == [] and failure_terms(stats, "x", weak) == []
+    words = query_lexemes(stats, "battery")
+    assert shared_terms(stats, words, weak) == [] and failure_terms(stats, words, weak) == []
