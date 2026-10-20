@@ -37,7 +37,7 @@ Early development: CS Seminar MVP (Layer 1: Product Hazard Intelligence).
 | retrieval | [SPEC-retrieval.md](SPEC-retrieval.md) | Done: 10,039 recalls embedded; vector / keyword / hybrid search |
 | hazard-analysis | [SPEC-hazard-analysis.md](SPEC-hazard-analysis.md) | Done: hazard profile with lift, LOW / MODERATE / HIGH signal, shared and failure terms, investigation areas, cited standards |
 | explain | [SPEC-explain.md](SPEC-explain.md) | Done: cited, validated explanations (gpt-6-luna, ~$0.001 each) |
-| app | — | Not started |
+| app | [SPEC-app.md](SPEC-app.md) | Live: **https://safescale-ai.vercel.app** (FastAPI + Next.js on Vercel) |
 | evaluation | — | Not started |
 
 See [CAPABILITY_MAP.md](CAPABILITY_MAP.md) for module boundaries, build order and key decisions.

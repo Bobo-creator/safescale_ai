@@ -210,3 +210,25 @@ e2e/                             # Playwright tests
   remains an easy later change (one env var).
 - **Rate limits:** 30 analyses and 10 explanations per visitor per hour; 300 explanations per day.
 - **Method selector:** kept, under "Advanced" (vector is the default).
+
+## Results (2026-10-20, production: https://safescale-ai.vercel.app)
+
+| # | Criterion | Result |
+|---|---|---|
+| 1 | Night-light example end to end on production | ✅ Playwright @smoke (desktop + phone) green: signal, profile, 25 evidence cards, validated explanation, citation jump, disclaimer |
+| 2 | Analysis < 2 s, explanation < 12 s (median, warm, from the browser) | ✅ analysis **0.59 s** (0.47–1.05 s, 10 runs); explanation **8.5 s** (6.2–9.6 s, 5 runs; includes the server re-running the analysis). First cold request ≈ 4 s |
+| 3 | 429s, daily cap, no IPs or descriptions stored | ✅ tested in pytest; on production the table holds only 40-character salted buckets, and this machine hit its 10 explanations/hour as designed |
+| 4 | `safescale_app` can't write or run DDL; `anon` reads nothing; advisors | ✅ verified through the transaction pooler; advisors show only the two intended INFO notices |
+| 5 | Playwright on desktop and phone, keyboard path | ✅ 10/10 locally, 4/4 @smoke on production |
+| 6 | Lighthouse: accessibility ≥ 95, performance ≥ 90 | ✅ mobile 99 / 100 / 100 / 100, desktop 100 / 98→100 (perf / a11y / best practices / SEO) after adding a `<main>` landmark |
+| 7 | Supabase stays awake | ⏳ daily `/api/health` cron registered (12:00 UTC); re-check on or after 2026-10-27 |
+
+Notes from the deploy:
+
+- **Same region pays off:** the database round trip is 3–6 ms from Vercel (`iad1`) against ~89 ms from the laptop.
+- Vercel services take the Python entrypoint as a **file path** relative to the service root
+  (`src/safescale/api/app.py`), and don't accept `excludeFiles`; `.vercelignore` keeps tests,
+  environments, data and `.env` out of the 736 KB upload.
+- Preview deployments are behind Vercel authentication (tested with `vercel curl`); production is public.
+- Secrets were piped from `.env` into Vercel as hidden "Secret" variables, never printed.
+- Latency measurement script: `evaluation/app_latency/measure.mjs` (raw numbers in `results.json`).

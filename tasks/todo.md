@@ -51,9 +51,10 @@ Plan: [plan.md](plan.md) · Spec: [SPEC-app.md](../SPEC-app.md)
 
 ### Task 7: Vercel deploy + verification (outward-facing)
 **Acceptance:**
-- [ ] `vercel.json` services/rewrites/cron/region; env vars set; preview deploy → e2e green → production
-- [ ] Speed (median of 10 from the browser): analysis < 2 s, explanation < 12 s; Lighthouse a11y ≥ 95, perf ≥ 90; results in the spec
+- [x] `vercel.json` services/rewrites/cron/region; env vars set; preview deploy → e2e green → production
+- [x] Speed (median of 10 from the browser): analysis < 2 s, explanation < 12 s; Lighthouse a11y ≥ 95, perf ≥ 90; results in the spec
 **Verify:** e2e against the deployment, timing script, Lighthouse · **Scope:** M
 
 ### Checkpoint: app complete
-- [ ] Spec success criteria 1–6 met; criterion 7 (keep-alive) re-checked a week later; README updated; committed to main
+- [x] Spec success criteria 1–6 met; README updated; committed to main
+- [ ] Criterion 7: confirm Supabase is still awake on or after 2026-10-27 (daily cron registered)
