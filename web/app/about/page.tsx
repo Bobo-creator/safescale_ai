@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SiteFooter } from "@/components/site-footer";
 import { CATEGORY_LABELS } from "@/lib/format";
 
-export const metadata: Metadata = { title: "How it works · SafeScale AI" };
+export const metadata: Metadata = { title: "Methodology" };
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -15,8 +16,9 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 
 export default function About() {
   return (
-    <main className="mx-auto max-w-3xl px-5 py-14 sm:px-8">
-      <h1 className="text-3xl font-light leading-tight tracking-tight sm:text-4xl">How SafeScale AI works</h1>
+    <>
+    <main className="mx-auto w-full max-w-3xl px-5 py-14 sm:px-8">
+      <h1 className="text-3xl font-light leading-tight tracking-tight sm:text-4xl">Methodology</h1>
       <p className="mt-4 text-lg text-graphite">
         It compares a product you are designing with every product the U.S. Consumer Product Safety
         Commission has recalled, and shows which hazards keep coming back in the closest matches.
@@ -83,10 +85,12 @@ export default function About() {
       </Section>
 
       <p className="mt-14">
-        <Link href="/" className="text-cobalt underline decoration-cobalt/30 underline-offset-4 hover:decoration-cobalt">
+        <Link href="/analyze" className="rounded-md bg-cobalt px-5 py-3 font-medium text-white dark:text-paper">
           Analyze a product
         </Link>
       </p>
     </main>
+    <SiteFooter />
+    </>
   );
 }

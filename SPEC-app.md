@@ -232,3 +232,20 @@ Notes from the deploy:
 - Preview deployments are behind Vercel authentication (tested with `vercel curl`); production is public.
 - Secrets were piped from `.env` into Vercel as hidden "Secret" variables, never printed.
 - Latency measurement script: `evaluation/app_latency/measure.mjs` (raw numbers in `results.json`).
+
+## Update (2026-10-20): landing page and routes
+
+The site now opens on a landing page, and the tool has its own route:
+
+| Route | What it is |
+|---|---|
+| `/` | Landing page. Hero: the brief's night-light description beside its **real** production result (hazard profile with baseline ticks, top evidence card verbatim), then the problem, how it works (4 sequential steps), what a signal does and doesn't tell you, how it's measured, and a closing form |
+| `/analyze` | The tool (was `/`). `?q=…` prefills the description (read in the browser with `useSyncExternalStore`, so the page stays static); the landing examples and form use it. Loading shows a results skeleton |
+| `/about` | Methodology (renamed in the nav) |
+
+- The fixed disclaimer bar stays on `/analyze`, where results appear; other pages carry it in the
+  site footer.
+- New logo mark and favicon: a profile bar with its baseline tick.
+- Numbers on the landing page come from a production run and are computed the same way as in the
+  app (multiples from the real hazard counts), so the two always agree.
+- Playwright: 12 tests (landing, landing form → tool, methodology, plus the tool tests) pass.

@@ -84,3 +84,20 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Landing hero: the profile bars draw in once, left to right, then the baseline ticks appear. */
+@keyframes strip-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes tick-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.strip-grow {
+  transform-origin: left center;
+  animation: strip-grow 900ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.tick-in {
+  animation: tick-in 300ms ease-out both;
+}

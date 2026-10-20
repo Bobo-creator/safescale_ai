@@ -4,7 +4,7 @@ const NIGHT_LIGHT = "Children's night light";
 const DISCLAIMER = /does not certify that a product is safe or compliant/;
 
 async function analyzeExample(page: Page, example = NIGHT_LIGHT) {
-  await page.goto("/");
+  await page.goto("/analyze");
   await page.getByRole("button", { name: example, exact: true }).click();
   await page.getByRole("button", { name: "Analyze hazards" }).click();
   await expect(page.getByText(/historical signal/)).toBeVisible();
@@ -21,7 +21,7 @@ test("night light: signal, profile, evidence, then a cited explanation @smoke", 
   await expect(page.getByRole("heading", { name: "Why these recalls match" })).toBeVisible();
   await expect(page.getByRole("button", { name: /^Show similar recall \d+$/ }).first()).toBeVisible();
   await expect(page.getByText(/Recall data only contains products that had problems/)).toBeVisible();
-  await expect(page.getByRole("contentinfo", { name: "Disclaimer" })).toContainText(DISCLAIMER);
+  await expect(page.getByRole("complementary", { name: "Disclaimer" })).toContainText(DISCLAIMER);
 });
 
 test("a citation jumps to and focuses its evidence card @smoke", async ({ page }) => {
@@ -47,7 +47,7 @@ test("selecting a hazard filters the evidence list", async ({ page }) => {
 });
 
 test("depth and method can be changed", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/analyze");
   await page.getByRole("button", { name: "Baby crib", exact: true }).click();
   await page.getByText("50", { exact: true }).click();
   await page.getByText("Advanced").click();
@@ -58,7 +58,7 @@ test("depth and method can be changed", async ({ page }) => {
 });
 
 test("an unrelated product gets the not-enough-evidence message", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/analyze");
   await page
     .getByRole("textbox")
     .fill("Cloud accounting software subscription for small businesses with invoicing dashboard");
@@ -70,16 +70,16 @@ test("an unrelated product gets the not-enough-evidence message", async ({ page 
 });
 
 test("too-short descriptions can't be submitted", async ({ page }) => {
-  await page.goto("/");
+  await page.goto("/analyze");
   await page.getByRole("textbox").fill("lamp");
   await expect(page.getByRole("button", { name: "Analyze hazards" })).toBeDisabled();
   await expect(page.getByText("Add a few more words.")).toBeVisible();
 });
 
 test("keyboard only: type, submit with Ctrl+Enter, reach a citation", async ({ page }) => {
-  await page.goto("/");
-  await page.keyboard.press("Tab"); // SafeScale AI
-  await page.keyboard.press("Tab"); // How it works
+  await page.goto("/analyze");
+  await page.keyboard.press("Tab"); // Skip to content
+  await page.keyboard.press("Enter");
   await page.keyboard.press("Tab"); // the description box
   await expect(page.getByRole("textbox")).toBeFocused();
   await page.keyboard.type("Six-drawer wooden dresser for a child's bedroom, 48 inches tall.");
@@ -97,12 +97,36 @@ test("phone layout: no sideways scrolling, results stack @phone @smoke", async (
   await expect(page.getByRole("heading", { name: "Similar recalls", exact: true })).toBeVisible();
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
   expect(overflow).toBeLessThanOrEqual(0);
-  await expect(page.getByRole("contentinfo", { name: "Disclaimer" })).toBeVisible();
+  await expect(page.getByRole("complementary", { name: "Disclaimer" })).toBeVisible();
 });
 
-test("the How it works page explains the signal", async ({ page }) => {
+test("landing page: explains the product and leads into the tool @smoke", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("link", { name: "How it works" }).click();
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "See which hazards got products like yours recalled.",
+  );
+  await expect(page.getByText("A real result: the 25 closest of 10,039 U.S. recalls.", { exact: false })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "How it works" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "What a signal tells you, and what it doesn't" })).toBeVisible();
+  await expect(page.getByRole("contentinfo")).toContainText(DISCLAIMER);
+
+  await page.getByRole("link", { name: "Try the night light example" }).click();
+  await expect(page).toHaveURL(/\/analyze\?q=/);
+  await expect(page.getByRole("textbox")).toHaveValue(/night light/);
+  await expect(page.getByRole("textbox")).toBeFocused();
+});
+
+test("landing form sends the description to the tool", async ({ page }) => {
+  await page.goto("/");
+  await page.getByLabel("Product description").fill("Folding electric bicycle with a 48 V lithium battery pack");
+  await page.getByRole("button", { name: "Analyze a product" }).click();
+  await expect(page).toHaveURL(/\/analyze\?q=Folding/);
+  await expect(page.getByRole("textbox")).toHaveValue("Folding electric bicycle with a 48 V lithium battery pack");
+});
+
+test("the methodology page explains the signal", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("banner").getByRole("link", { name: "Methodology" }).click();
   await expect(page.getByRole("heading", { name: "What the signal means" })).toBeVisible();
   await expect(page.getByText(/not a probability/)).toBeVisible();
 });

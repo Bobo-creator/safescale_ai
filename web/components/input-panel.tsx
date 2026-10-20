@@ -14,11 +14,14 @@ const METHODS: { value: Method; label: string; hint: string }[] = [
 export function InputPanel({
   busy,
   onSubmit,
+  initialQuery = "",
 }: {
   busy: boolean;
   onSubmit: (q: Query) => void;
+  /** From /analyze?q=… (the landing page's examples and form). */
+  initialQuery?: string;
 }) {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(initialQuery.slice(0, 1000));
   const [k, setK] = useState<Depth>(25);
   const [method, setMethod] = useState<Method>("vector");
   const textId = useId();
@@ -43,6 +46,7 @@ export function InputPanel({
 
       <textarea
         id={textId}
+        autoFocus={Boolean(initialQuery)}
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyDown={(e) => {
@@ -53,7 +57,7 @@ export function InputPanel({
         rows={3}
         maxLength={1000}
         placeholder="e.g. Rechargeable children's night light with a 2000 mAh lithium-ion battery and USB-C charging"
-        className="mt-6 block w-full max-w-4xl resize-y rounded-md border border-rule bg-sheet px-4 py-3 text-lg leading-relaxed shadow-[inset_0_1px_0_rgba(27,37,51,0.04)] placeholder:text-graphite/70 focus:border-cobalt focus:outline-none"
+        className="mt-6 block min-h-28 w-full max-w-4xl resize-y rounded-md [field-sizing:content] border border-rule bg-sheet px-4 py-3 text-lg leading-relaxed shadow-[inset_0_1px_0_rgba(27,37,51,0.04)] placeholder:text-graphite/70 focus:border-cobalt focus:outline-none"
       />
 
       <div className="mt-3 flex max-w-4xl flex-wrap items-baseline gap-x-3 gap-y-2 text-sm">
