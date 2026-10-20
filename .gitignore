@@ -20,3 +20,5 @@ __pycache__/
 
 # Playwright MCP output
 .playwright-mcp/
+.vercel
+.env*
